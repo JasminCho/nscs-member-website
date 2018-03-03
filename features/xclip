@@ -1,0 +1,142 @@
+Feature: As a member I want to see the calendar on the landing page.
+
+  Background: Home Screen       # new_features.feature:3
+    Given I land on Home screen # new_features.feature:4
+
+  @exampleone
+  Scenario: Seeing the calendar landing on page. # new_features.feature:7
+    Given I am a user.                           # new_features.feature:8
+    When I land on the home page.                # new_features.feature:9
+    Then I should see the calendar.              # new_features.feature:10
+
+  @exampletwo
+  Scenario: Warning pops if calendar is not shown.                     # new_features.feature:13
+    Given I am a user.                                                 # new_features.feature:14
+    When I land on the home page.                                      # new_features.feature:15
+    And The calendar is not showing.                                   # new_features.feature:16
+    Then I should see "Your browser not appear to support Javascript*" # new_features.feature:17
+
+  @examplethree
+  Scenario: Clicking an event on calendar should redirect to another event. # new_features.feature:20
+    Given I am on home page.                                                # new_features.feature:21
+    And I see the calendar.                                                 # new_features.feature:22
+    When I click on an event.                                               # new_features.feature:23
+    Then I should be redirected to the event page.                          # new_features.feature:24
+
+3 scenarios (3 undefined)
+14 steps (14 undefined)
+0m0.010s
+
+You can implement step definitions for undefined steps with these snippets:
+
+Given("I land on Home screen") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given("I am a user.") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When("I land on the home page.") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("I should see the calendar.") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When("The calendar is not showing.") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("I should see {string}") do |string|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given("I am on home page.") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given("I see the calendar.") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When("I click on an event.") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("I should be redirected to the event page.") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Feature: As a member I want to see the calendar on the landing page.
+
+  Background: Home Screen[90m       # new_features.feature:3[0m
+    [33mGiven I land on Home screen[90m # new_features.feature:4[0m[0m
+
+  [36m@exampleone[0m
+  Scenario: Seeing the calendar landing on page.[90m # new_features.feature:7[0m
+    [33mGiven I am a user.[90m                           # new_features.feature:8[0m[0m
+    [33mWhen I land on the home page.[90m                # new_features.feature:9[0m[0m
+    [33mThen I should see the calendar.[90m              # new_features.feature:10[0m[0m
+
+  [36m@exampletwo[0m
+  Scenario: Warning pops if calendar is not shown.[90m                     # new_features.feature:13[0m
+    [33mGiven I am a user.[90m                                                 # new_features.feature:14[0m[0m
+    [33mWhen I land on the home page.[90m                                      # new_features.feature:15[0m[0m
+    [33mAnd The calendar is not showing.[90m                                   # new_features.feature:16[0m[0m
+    [33mThen I should see "Your browser not appear to support Javascript*"[90m # new_features.feature:17[0m[0m
+
+  [36m@examplethree[0m
+  Scenario: Clicking an event on calendar should redirect to another event.[90m # new_features.feature:20[0m
+    [33mGiven I am on home page.[90m                                                # new_features.feature:21[0m[0m
+    [33mAnd I see the calendar.[90m                                                 # new_features.feature:22[0m[0m
+    [33mWhen I click on an event.[90m                                               # new_features.feature:23[0m[0m
+    [33mThen I should be redirected to the event page.[90m                          # new_features.feature:24[0m[0m
+
+3 scenarios ([33m3 undefined[0m)
+14 steps ([33m14 undefined[0m)
+0m0.011s
+[33m[0m
+[33mYou can implement step definitions for undefined steps with these snippets:[0m
+[33m[0m
+[33mGiven("I land on Home screen") do[0m
+[33m  pending # Write code here that turns the phrase above into concrete actions[0m
+[33mend[0m
+[33m[0m
+[33mGiven("I am a user.") do[0m
+[33m  pending # Write code here that turns the phrase above into concrete actions[0m
+[33mend[0m
+[33m[0m
+[33mWhen("I land on the home page.") do[0m
+[33m  pending # Write code here that turns the phrase above into concrete actions[0m
+[33mend[0m
+[33m[0m
+[33mThen("I should see the calendar.") do[0m
+[33m  pending # Write code here that turns the phrase above into concrete actions[0m
+[33mend[0m
+[33m[0m
+[33mWhen("The calendar is not showing.") do[0m
+[33m  pending # Write code here that turns the phrase above into concrete actions[0m
+[33mend[0m
+[33m[0m
+[33mThen("I should see {string}") do |string|[0m
+[33m  pending # Write code here that turns the phrase above into concrete actions[0m
+[33mend[0m
+[33m[0m
+[33mGiven("I am on home page.") do[0m
+[33m  pending # Write code here that turns the phrase above into concrete actions[0m
+[33mend[0m
+[33m[0m
+[33mGiven("I see the calendar.") do[0m
+[33m  pending # Write code here that turns the phrase above into concrete actions[0m
+[33mend[0m
+[33m[0m
+[33mWhen("I click on an event.") do[0m
+[33m  pending # Write code here that turns the phrase above into concrete actions[0m
+[33mend[0m
+[33m[0m
+[33mThen("I should be redirected to the event page.") do[0m
+[33m  pending # Write code here that turns the phrase above into concrete actions[0m
+[33mend[0m
+
