@@ -15,8 +15,7 @@ ruby '2.4.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -57,6 +56,8 @@ group :test, :development do
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required but highly recommended
   gem 'database_cleaner'
+  # Use sqlite3 as the database for Active Record
+gem 'sqlite3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
