@@ -1,19 +1,37 @@
-When(/^I click on Sign in button\.$/) do
-  pending
+Given("I am on the login page") do
+  visit root_path
 end
 
-Then(/^I should be redirected to my homepage\.$/) do
-  pending
+When("I click on the login button") do
+  
+end
+    
+And("I successfully sign in") do 
+  
 end
 
-When(/^I failed to sign in\.$/) do
-  pending
+Then("I should be redirected to my homepage") do
+  
 end
 
-Then(/^I should be redirected to home page with error message\.$/) do
-  pending
+
+
+
+
+
+
+Given("I am on the login page") do
+  visit root_path
 end
 
-When(/^I successfully sign in\.$/) do
-  pending
+When("I click on the login button") do
+  
+end
+
+And("I failed to sign in") do
+  
+end
+
+Then("I should be redirected to the same page with error message") do
+  
 end
