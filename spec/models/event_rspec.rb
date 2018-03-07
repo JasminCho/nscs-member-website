@@ -29,7 +29,19 @@ describe Event do
 	end
 
 	
-	describe '#check_event_return' do
+	describe '#check_event_return_date' do
+		it 'Checks formatted date' do
+			date = Time.now
+			event = Event.new(date.month, date.day, date.year, "Some Event")
+			expect(event.return_date).to eql(date.month.to_s +"/" date.day.to_s +"/"+date.year.to_s)
+		end
+	end
 
+	describe '#check_event_title' do
+		it 'Checks event title' do
+			event = Event.new(date.month, date.day, date.year, "Some Event")
+			expect(event.return_title).to eql("Some Event")
+		end
+	end
 
 end
