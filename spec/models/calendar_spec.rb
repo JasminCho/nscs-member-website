@@ -2,8 +2,8 @@
 
 require 'rails_helper'
 require 'date'
-require_relative 'event'
-require_relative 'calendar'
+require_relative '../../app/models/event'
+require_relative '../../app/models/calendar'
 
 
 
