@@ -1,17 +1,18 @@
 
 
-#require 'rspec_helper'
+require 'rails_helper'
 require 'date'
-require_relative 'calendar'
 require_relative 'event'
+require_relative 'calendar'
 
 
-describe Calendar do
+
+describe Calendar, type: :model do
 	describe '#new_event' do
 		it 'returns the confirmation' do
-			calendar = Calendar.new
+			calendar= Calendar.new
 			event = Event.new(12, 12, 2019, "Some Event")
-			expect(calendar.event).to eql(true)
+			expect(calendar.add_event(event)).to eql(true)
 		end
 	end
 end
