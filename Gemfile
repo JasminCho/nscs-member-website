@@ -57,7 +57,7 @@ group :test, :development do
   # database_cleaner is not required but highly recommended
   gem 'database_cleaner'
   # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
