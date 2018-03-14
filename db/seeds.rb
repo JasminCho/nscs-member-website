@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+fake_members = [
+    { email: 'gregorio_garza@email.tamu.edu', name: 'Greg' },
+    { email: 'yang.421@tamu.edu', name: 'Sen' },
+    { email: 'phamminhtris@tamu.edu', name: 'Tri Pham' },
+    { email: 'jasmincho@tamu.edu', name: 'Jasmin' },
+    { email: 'jtiu.edu@tamu.edu', name: 'Julian' },
+    { email: 'axk141430@tamu.edu', name: 'Akash' }
+]
+
+fake_members.each do |member|
+  Member.create!(member)
+end
