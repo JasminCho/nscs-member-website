@@ -5,5 +5,12 @@
   <body>
     <h1>WELCOME TO NSCS OFFICIAL WEBSITE</h1>
     <p>We are in the login page</p>
+    
+    Showing all events:
+    <ul>
+    <% @newsfeeds.each do |news| %>
+      <li> <% news.event %> </li>
+    <% end %>
+    </ul>
   </body>
 </html>

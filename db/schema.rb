@@ -10,19 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20180312210954) do
-=======
-ActiveRecord::Schema.define(version: 20180315025158) do
->>>>>>> 640894442ebe2973b81b236584c3aecdc166ec13
+ActiveRecord::Schema.define(version: 20180317185315) do
 
   create_table "members", force: :cascade do |t|
     t.string "email"
     t.string "name"
     t.boolean "admin"
-<<<<<<< HEAD
     t.integer "hours"
-=======
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "newsfeeds", force: :cascade do |t|
+    t.string "event"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -31,7 +33,6 @@ ActiveRecord::Schema.define(version: 20180315025158) do
     t.string "name"
     t.string "oauth_token"
     t.datetime "oauth_expires_at"
->>>>>>> 640894442ebe2973b81b236584c3aecdc166ec13
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
