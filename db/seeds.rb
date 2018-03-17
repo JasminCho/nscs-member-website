@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 fake_members = [
-    { email: 'gregorio_garza@email.tamu.edu', name: 'Greg', admin: true, hours: 1 },
-    { email: 'yang.421@tamu.edu', name: 'Sen', admin: true, hours: 1 },
-    { email: 'phamminhtris@tamu.edu', name: 'Tri Pham', admin: true, hours: 1 },
-    { email: 'jasmincho@tamu.edu', name: 'Jasmin', admin: true, hours: 1 },
-    { email: 'jtiu.edu@tamu.edu', name: 'Julian' , admin: true, hours:1 },
-    { email: 'axk141430@tamu.edu', name: 'Akash' , admin: true, hours: 1}
+    { email: 'gregorio_garza@email.tamu.edu', name: 'Greg', admin: true },
+    { email: 'yang.421@tamu.edu', name: 'Sen', admin: true },
+    { email: 'phamminhtris@tamu.edu', name: 'Tri Pham', admin: true },
+    { email: 'jasmincho@tamu.edu', name: 'Jasmin', admin: true },
+    { email: 'jtiu.edu@tamu.edu', name: 'Julian' , admin: true },
+    { email: 'axk141430@tamu.edu', name: 'Akash' , admin: true }
 ]
 
 fake_members.each do |member|
