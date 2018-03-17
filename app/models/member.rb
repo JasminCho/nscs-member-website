@@ -1,2 +1,4 @@
-class Member < ApplicationRecord
+class Member < ActiveRecord::Base
+
 end
+
