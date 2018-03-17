@@ -19,9 +19,9 @@ fake_members.each do |member|
 end
 
 fake_newsfeed = [
-  {event: "NSCS official website is now deployed in Heroku"},
-  {event: "NSCS developers say that website is well on its way"},
-  {event: "Sen elected as NSCS's new president"}
+  {event: 'NSCS official website is now deployed in Heroku'},
+  {event: 'NSCS developers say that website is well on its way'},
+  {event: 'Sen elected as NSCS\'s new president'}
 ]
 
 fake_newsfeed.each do |event|

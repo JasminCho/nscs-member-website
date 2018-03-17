@@ -1,16 +1,11 @@
 Rails.application.routes.draw do
   get 'newsfeeds/new'
-
   get 'newsfeeds/create'
-
   get 'newsfeeds/edit'
-
   get 'newsfeeds/update'
-
   get 'newsfeeds/destroy'
 
   get 'sessions/create'
-
   get 'sessions/destroy'
 
   get 'members/login'

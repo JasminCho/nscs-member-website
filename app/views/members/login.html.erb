@@ -6,11 +6,16 @@
     <h1>WELCOME TO NSCS OFFICIAL WEBSITE</h1>
     <p>We are in the login page</p>
     
-    Showing all events:
-    <ul>
-    <% @newsfeeds.each do |news| %>
-      <li> <% news.event %> </li>
-    <% end %>
-    </ul>
+    <strong>Everything below this text will be moved to homepage later (I'm just testing it here)</strong>
+    <table style="border: 2px solid red; margin-top:20px;">
+      <tr>
+        <th style="text-align:left;">News!</th>
+      </tr>
+      <% @newsfeeds.each do |news| %>
+        <tr>
+          <td style="border: 2px solid red;"> <%= news.event %> </td>
+        </tr>
+      <% end %>
+    </table>
   </body>
 </html>
