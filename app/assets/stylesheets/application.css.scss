@@ -17,25 +17,20 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-// .bodyContent {
-//   margin-top: 50px;
-// }
-//
-// .navbar {
-//   background-color: gray;
-// }
-//
-// a {
-//   color: white;
-// }
+.bodyContent {
+  margin-top: 50px;
+}
 
+.navbar {
+  background-color: gray;
+}
+
+a {
+  color: white;
+}
 
 body {
   padding-top: 54px;
-}
-
-.container {
-  color: red;
 }
 
 @media (min-width: 992px) {
