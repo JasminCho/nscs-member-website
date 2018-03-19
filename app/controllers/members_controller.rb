@@ -12,4 +12,8 @@ class MembersController < ApplicationController
     
     def about
     end
+
+    def officers
+
+    end
 end

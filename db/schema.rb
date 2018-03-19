@@ -16,9 +16,6 @@ ActiveRecord::Schema.define(version: 20180317185315) do
     t.string "email"
     t.string "name"
     t.boolean "admin"
-    t.integer "hours"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "newsfeeds", force: :cascade do |t|

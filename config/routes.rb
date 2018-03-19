@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'members/login'
   get 'members/about'
   get 'members/faq'
+  get 'members/officers'
 
   # below are routes needed for google authentication
   get 'auth/:provider/callback', to: 'sessions#create'
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:create, :destroy]
   
-  root "members#login"
+  root 'members#login'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
