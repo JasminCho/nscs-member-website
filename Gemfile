@@ -11,7 +11,8 @@ gem 'jbuilder',     '2.7.0'
 
 # for authentication
 gem 'omniauth-google-oauth2'
-
+# for calendar
+gem 'google-api-client', require:'google/apis/calendar_v3'
 group :development, :test do
   gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
