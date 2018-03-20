@@ -1,10 +1,7 @@
 class MembersController < ApplicationController
     
-    def login
-        @newsfeeds = Newsfeed.all
-    end
-    
     def home
+        @newsfeeds = Newsfeed.all
     end
     
     def faq

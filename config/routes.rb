@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  get 'user/login'
+
   get 'newsfeeds/new'
   get 'newsfeeds/create'
   get 'newsfeeds/edit'
@@ -8,8 +11,8 @@ Rails.application.routes.draw do
   get 'sessions/create'
   get 'sessions/destroy'
 
-  get 'members/login'
   get 'members/about'
+  get 'members/home'
   get 'members/faq'
   get 'members/officers'
 
@@ -20,7 +23,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:create, :destroy]
   
-  root 'members#login'
+  root 'user#login'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ls<!DOCTYPE html>
 <html>
 <head>
   <title>NscsWebsite</title>
@@ -20,6 +20,22 @@
   </div>
 
   <!-- Page Content -->
+  
+  
+  <!-- JULIAN's STUFF -->
+    <strong>Everything below this text will be moved to homepage later (I'm just testing it here)</strong>
+    <table style="border: 2px solid red; margin-top:20px;">
+      <tr>
+        <th style="text-align:left;">News!</th>
+      </tr>
+      <% @newsfeeds.each do |news| %>
+        <tr>
+          <td style="border: 2px solid red;"> <%= news.event %> </td>
+        </tr>
+      <% end %>
+    </table>
+  <!-- END OF JULIAN's STUFF-->
+  
   <div class="container">
 
     <div class="row">
