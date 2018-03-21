@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/home', to: 'members#home'
   get '/faq', to: 'members#faq'
   get '/officers', to: 'members#officers'
+  get '/contact', to: 'members#contact'
 
   # below are routes needed for google authentication
   get 'auth/:provider/callback', to: 'sessions#create'
