@@ -15,4 +15,10 @@ class MembersController < ApplicationController
     
     def contact
     end
+    
+    def meetings
+    end
+    
+    def points
+    end
 end
