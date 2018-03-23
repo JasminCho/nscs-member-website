@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get 'user/login'
+  get '/login', to: 'user#login'
 
   get 'newsfeeds/new'
   get 'newsfeeds/create'
@@ -11,10 +11,13 @@ Rails.application.routes.draw do
   get 'sessions/create'
   get 'sessions/destroy'
 
-  get 'members/about'
-  get 'members/home'
-  get 'members/faq'
-  get 'members/officers'
+  get '/about', to: 'members#about'
+  get '/home', to: 'members#home'
+  get '/faq', to: 'members#faq'
+  get '/officers', to: 'members#officers'
+  get '/contact', to: 'members#contact'
+  get '/meetings', to: 'members#meetings'
+  get '/points', to: 'members#points'
 
   # below are routes needed for google authentication
   get 'auth/:provider/callback', to: 'sessions#create'
