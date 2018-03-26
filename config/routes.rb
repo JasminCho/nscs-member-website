@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'newsfeeds/edit'
   get 'newsfeeds/update'
   get 'newsfeeds/destroy'
+  
+  resources :newsfeeds
 
   get 'sessions/create'
   get 'sessions/destroy'

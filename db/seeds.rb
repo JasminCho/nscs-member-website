@@ -18,12 +18,17 @@ fake_members.each do |member|
   Member.create!(member)
 end
 
+Newsfeed.destroy_all
+
+=begin
 fake_newsfeed = [
   {event: 'NSCS official website is now deployed in Heroku'},
   {event: 'NSCS developers say that website is well on its way'},
   {event: 'Sen elected as NSCS\'s new president'}
 ]
 
+
 fake_newsfeed.each do |event|
   Newsfeed.create(event)
 end
+=end

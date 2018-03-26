@@ -28,9 +28,9 @@ ls<!DOCTYPE html>
       <tr>
         <th style="text-align:left;">News!</th>
       </tr>
-      <% @newsfeeds.each do |news| %>
+      <% @newsfeed.each do |news| %>
         <tr>
-          <td style="border: 2px solid red;"> <%= news.event %> </td>
+          <td style="border: 2px solid red;"> <%= news.news %> </td>
         </tr>
       <% end %>
     </table>
