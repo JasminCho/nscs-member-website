@@ -34,6 +34,10 @@ ls<!DOCTYPE html>
         </tr>
       <% end %>
     </table>
+    
+    <% if @admin %>
+    <%= link_to "Enter New Announcement", newsfeeds_new_path %>
+    <% end %>
   <!-- END OF JULIAN's STUFF-->
   
   <div class="container">
