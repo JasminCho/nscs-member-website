@@ -2,8 +2,10 @@ class MembersController < ApplicationController
     
     def home
         @newsfeed = Newsfeed.all
-        if session[:user].admin == true
-            @admin = true
+        if session[:user]
+            if session[:user].admin == true
+                @admin = true
+            end
         end
     end
     
