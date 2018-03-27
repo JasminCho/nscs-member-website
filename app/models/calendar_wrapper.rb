@@ -1,5 +1,6 @@
 class CalendarWrapper
         attr_accessor :client
+
 	def initialize(current_user)
 		configure_client(current_user)
 	end
@@ -15,27 +16,11 @@ class CalendarWrapper
 				"client_secret"=> ENV['google_client_secret']
 			}
 			})
-	
-		#	@client.key = ENV['GOOGLE_CALENDAR_API_KEY']
-		#	@client.authorization = current_user.oauth.token
-		#	@client.authentication.access_token = current_user.oauth_token
-		#	@client.authentication.refresh_token = current_user.refresh_token
-		#@client.authentication.client_id =  ENV['google_client_id']
-		#@client.authentication.client_secret= ENV['google_client_secret']
-	#	@client.authorization = authorization.to_authorization
-		#@client.authentication.refresh!
-		#@client.authorization.access_token = current_user.oauth_token
-		if !authorization.nil?
-			puts "authorization"
-			puts authorization
-			puts "to authorization"
-			puts authorization.to_authorization
-		end
-
-			
+				
 		@client.authorization = authorization.to_authorization
 	#	@client.authorization.refresh!
 		@service = @client.discovered_api('calendar', 'v3')
+	#	@calendar = ENV['NSCS_Calendar_ID']
 	end
 	
 	def get_calendar_list()
@@ -47,26 +32,30 @@ class CalendarWrapper
 		end
 	end
 
-	def calendar_id()
-		calendar_id = "tamu.edu_lkjcimlfp2qgv12vqhhoqdnk28@group.calendar.google.com"
-	#	response = @client.execute(api_method: @service.freebusy.query,
-		#freebusy method only responds to a couple of months (maybe <=3)
-	#	response = @client.execute(api_method: @service.
-	#	body: JSON.dump({timeMin: "2018-01-20T11:04:00+0000",
-	#	   timeMax: "2018-03-20T11:04:00+0000",
-	#	   timeZone: "GMT",
-	#	   items: ["tamu.edu_lkjcimlfp2qgv12vqhhoqdnk28@group.calendar.google.com"]}),
-	#	headers: {'Content-Type' => 'application/json'})
-	#	events = JSON.parse(response.body)
-		puts "Here are the Methods"; puts @service.events.list
+	def list_events()
+
 		response = @client.execute(api_method: @service.events.list,
-					   parameters: {'calendarId' => calendar_id})
+			   parameters: {'calendarId' => ENV['NSCS_Calendar_ID']})
                               # max_results: 10,
                               # single_events: true,
                               # order_by: 'startTime',
                               # time_min: Time.now.iso8601))
 		calendars = JSON.parse(response.body)
 	end
+
+	def is_valid_time(timeBegin, timeEnd)
+		
+	
+		#freebusy method only responds to a couple of months (maybe <=3)
+		response = @client.execute(api_method: @service.freebusy.query,
+		   body: JSON.dump({timeMin: timeBegin,
+		   timeMax: timeEnd,
+		   timeZone: "GMT",
+		   items: ENV['NSCS_Calendar_ID']}),
+		headers: {'Content-Type' => 'application/json'})
+		events = JSON.parse(response.body)
+	end
+		
 
 end
 
