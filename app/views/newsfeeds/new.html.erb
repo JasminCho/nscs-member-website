@@ -1,2 +1,7 @@
-<h1>Newsfeeds#new</h1>
-<p>Find me in app/views/newsfeeds/new.html.erb</p>
+<h1> HEY ADMIN! INSERT YOUR ANNOUNCEMENT HERE! </h1>
+
+    <%= form_for(@newsfeeds) do |n| %>
+      <%= n.label :Enter_News_Here %>
+      <%= n.text_field :news %> <!-- :news here is the name of the column name in @newsfeed. This is what require will get in controller -->
+      <%= n.submit "POST"%>
+    <% end %>

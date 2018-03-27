@@ -23,14 +23,14 @@ ls<!DOCTYPE html>
   
   
   <!-- JULIAN's STUFF -->
-    <strong>Everything below this text will be moved to homepage later (I'm just testing it here)</strong>
+    <%= link_to "Post New Announcement!", newsfeeds_new_path %>
     <table style="border: 2px solid red; margin-top:20px;">
       <tr>
         <th style="text-align:left;">News!</th>
       </tr>
-      <% @newsfeeds.each do |news| %>
+      <% @newsfeed.each do |news| %>
         <tr>
-          <td style="border: 2px solid red;"> <%= news.event %> </td>
+          <td style="border: 2px solid red;"> <%= news.news %> </td>
         </tr>
       <% end %>
     </table>

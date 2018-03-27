@@ -1,15 +1,21 @@
 class NewsfeedsController < ApplicationController
   def index
-    @newsfeed = Newsfeed.all
   end
   
   def show
   end
   
   def new
+    @newsfeeds = Newsfeed.new
   end
 
   def create
+    @newsfeeds = Newsfeed.new(newsfeeds_params)
+    if @newsfeeds.save
+      redirect_to(home_path)
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -19,5 +25,11 @@ class NewsfeedsController < ApplicationController
   end
 
   def destroy
+  end
+  
+  private
+  
+  def newsfeeds_params 
+    params.require(:newsfeed).permit(:news)
   end
 end
