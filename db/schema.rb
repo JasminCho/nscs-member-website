@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180315025158) do
+ActiveRecord::Schema.define(version: 20180326021340) do
 
   create_table "members", force: :cascade do |t|
     t.string "email"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20180315025158) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "refresh_token"
   end
 
 end
