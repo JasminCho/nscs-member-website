@@ -1,121 +1,109 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>NscsWebsite</title>
-  <%= csrf_meta_tags %>
+  <head>
+    <title>NscsWebsite</title>
+    <%= csrf_meta_tags %>
 
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
-<div class="body-content">
-  <div class="business-header">
+    <%= stylesheet_link_tag :application, :home, media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <!-- Where calendar goes -->
-          <h1>Calendar</h1>
+      <!-- Calendar -->
+      <div class="body-content">
+        <div class="business-header">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <!-- Where calendar goes -->
+                <h1>Calendar</h1>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+      <!-- Announcements -->
+      <div class="row">
+        <div class="col-sm-8">
+          <h2 class="mt-4">Announcements</h2>
+            <!-- JULIAN's STUFF -->
+              <%= link_to "Post New Announcement", newsfeeds_new_path %>
+              <table style="border: 2px solid red; margin-top:20px;">
+                <tr>
+                  <th style="text-align:left;">News!</th>
+                </tr>
+                <% @newsfeed.each do |news| %>
+                  <tr>
+                    <td style="border: 2px solid red;"> <%= news.news %> </td>
+                  </tr>
+                <% end %>
+              </table>
+            <!-- END OF JULIAN's STUFF-->
+        </div>
 
-  <!-- Page Content -->
-  
-  
-  <!-- JULIAN's STUFF -->
-    <%= link_to "Post New Announcement!", newsfeeds_new_path %>
-    <table style="border: 2px solid red; margin-top:20px;">
-      <tr>
-        <th style="text-align:left;">News!</th>
-      </tr>
-      <% @newsfeed.each do |news| %>
-        <tr>
-          <td style="border: 2px solid red;"> <%= news.news %> </td>
-        </tr>
-      <% end %>
-    </table>
-  <!-- END OF JULIAN's STUFF-->
-  
-  <div class="container">
-
-    <div class="row">
-      <div class="col-sm-8">
-        <h2 class="mt-4">Announcements</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta
-          quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo,
-          maiores!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in
-          nisi, natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate.
-          Voluptatum.</p>
         <p>
           <a class="btn btn-primary btn-lg" href="#">Recent Meeting &raquo;</a>
         </p>
+        <div class="col-sm-4">
+          <h2 class="mt-4">Contact Us</h2>
+          <address>
+            <strong>Info blah blah</strong>
+            <br>3481 Melrose Place
+            <br>Beverly Hills, CA 90210
+            <br>
+          </address>
+          <address>
+            <abbr title="Phone">P:</abbr>
+            (123) 456-7890
+            <br>
+            <abbr title="Email">E:</abbr>
+            <a href="mailto:#">name@example.com</a>
+          </address>
+        </div>
       </div>
-      <div class="col-sm-4">
-        <h2 class="mt-4">Contact Us</h2>
-        <address>
-          <strong>Info blah blah</strong>
-          <br>3481 Melrose Place
-          <br>Beverly Hills, CA 90210
-          <br>
-        </address>
-        <address>
-          <abbr title="Phone">P:</abbr>
-          (123) 456-7890
-          <br>
-          <abbr title="Email">E:</abbr>
-          <a href="mailto:#">name@example.com</a>
-        </address>
+
+      <div class="row">
+        <div class="col-sm-4 my-4">
+          <div class="card">
+            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Event 1</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
+                neque sequi doloribus.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Find Out More!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 my-4">
+          <div class="card">
+            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Event 2</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
+                neque sequi doloribus totam ut praesentium aut.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Find Out More!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 my-4">
+          <div class="card">
+            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Event 3</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
+                neque.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Find Out More!</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-    <!-- /.row -->
-
-    <div class="row">
-      <div class="col-sm-4 my-4">
-        <div class="card">
-          <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Event 1</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
-              neque sequi doloribus.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4 my-4">
-        <div class="card">
-          <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Event 2</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
-              neque sequi doloribus totam ut praesentium aut.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4 my-4">
-        <div class="card">
-          <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Event 3</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
-              neque.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <!-- /.row -->
-
-  </div>
-  <!-- /.container -->
-</div>
-</body>
+  </body>
 </html>

@@ -18,25 +18,9 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "materialize";
 
-.bodyContent {
-  margin-top: 50px;
-}
 
 .navbar {
-  background-color: black;
-}
-
-a {
-  color: white;
-}
-
-body {
-  padding-top: 54px;
-}
-
-@media (min-width: 992px) {
-  body {
-    padding-top: 56px;
-  }
+  font-size: 12pt;
 }
