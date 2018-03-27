@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'simplecov'
+
+gem 'capybara', '~>2.18'
+gem 'gherkin', '~> 5.0'
+gem 'rspec', '~> 3.0'
 gem 'rails',        '5.1.5'
 gem 'puma',         '3.9.1'
 gem 'sass-rails',   '5.0.6'
