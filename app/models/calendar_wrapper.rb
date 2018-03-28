@@ -16,7 +16,7 @@ class CalendarWrapper
 				"client_secret"=> ENV['google_client_secret']
 			}
 			})
-				
+			
 		@client.authorization = authorization.to_authorization
 	#	@client.authorization.refresh!
 		@service = @client.discovered_api('calendar', 'v3')

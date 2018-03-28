@@ -31,7 +31,9 @@ class CalendarWrapper
 			puts "to authorization"
 			puts authorization.to_authorization
 		end
-
+		if authorization.nil?
+			puts "The authorization failed"
+		end
 			
 		@client.authorization = authorization.to_authorization
 	#	@client.authorization.refresh!
