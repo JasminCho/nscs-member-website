@@ -73,6 +73,7 @@ class CalendarWrapper
 
 	def check_event_time(time)
 		calendar_id = "tam"
+	end
 
 end
 
