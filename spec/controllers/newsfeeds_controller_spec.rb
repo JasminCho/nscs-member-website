@@ -1,9 +1,9 @@
-require 'spec_helper'
+#require 'spec_helper'
 require_relative '../../app/controllers/newsfeeds_controller'
 
-RSpec.configure do |config|
-  config.infer_spec_type_from_file_location!
-end
+#RSpec.configure do |config|
+#  config.infer_spec_type_from_file_location!
+#end
 
 RSpec.describe NewsfeedsController, type: :controller do
   describe "GET index" do

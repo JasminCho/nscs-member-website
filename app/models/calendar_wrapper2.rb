@@ -17,6 +17,7 @@ class CalendarWrapper
                                                              }
                                                              })
 
+
     #	@client.key = ENV['GOOGLE_CALENDAR_API_KEY']
     #	@client.authorization = current_user.oauth.token
     #	@client.authentication.access_token = current_user.oauth_token
