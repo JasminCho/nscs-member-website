@@ -24,6 +24,10 @@ class MembersController < ApplicationController
 
     # members' methods
     def index
+        @members = Member.all
+    end
 
+    def new
+        @member = Member.new
     end
 end

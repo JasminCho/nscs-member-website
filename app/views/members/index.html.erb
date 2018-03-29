@@ -1,0 +1,5 @@
+<h1>List of all members</h1>
+
+<%= @members.each {|member| "Name #{member.name}, Email: #{member.email}, Admin: #{member.admin}, PACE: #{member.pace}\n"}%>
+
+<%= link_to 'Add new member', new_members_url %>

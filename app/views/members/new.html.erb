@@ -1,0 +1,12 @@
+<h1>Add new member</h1>
+<%= form_for(@member) do |f| %>
+  <%= f.label :name, 'Name' %>
+  <%= f.text_field :name %>
+  <%= f.label :email, 'Email' %>
+  <%= f.text_field :email %>
+  <%= f.label :admin, 'Is Admin?'%>
+  <%= f.check_box :admin %>
+  <%= f.label :pace, 'Has pace?'%>
+  <%= f.check_box :pace %>
+  <%= f.button :submit %>
+<% end %>

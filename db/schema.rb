@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20180326202902) do
     t.string "email"
     t.string "name"
     t.boolean "admin"
+    t.boolean "pace"
   end
 
   create_table "newsfeeds", force: :cascade do |t|
