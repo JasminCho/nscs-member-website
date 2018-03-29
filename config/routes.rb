@@ -21,7 +21,8 @@ Rails.application.routes.draw do
   get '/meetings', to: 'members#meetings'
   get '/points', to: 'members#points'
 
-
+  # members' routes
+  get 'members/index', to: 'members#index'
 
   #calendar routes
   get 'calendars/get_calendars', to: 'calendars#get_calendars', as: 'calendar'

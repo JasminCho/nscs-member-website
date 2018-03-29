@@ -21,4 +21,9 @@ class MembersController < ApplicationController
     
     def points
     end
+
+    # members' methods
+    def index
+
+    end
 end
