@@ -1,5 +1,6 @@
 class NewsfeedsController < ApplicationController
   def index
+    @newsfeeds = Newsfeed.all
   end
   
   def show
@@ -12,7 +13,7 @@ class NewsfeedsController < ApplicationController
   def create
     @newsfeeds = Newsfeed.new(newsfeeds_params)
     if @newsfeeds.save
-      redirect_to(home_path)
+      redirect_to(newsfeeds_index_path)
     else
       render 'new'
     end

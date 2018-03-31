@@ -1,0 +1,13 @@
+<%= link_to "Post New Announcement", newsfeeds_new_path %>
+<table style="border: 2px solid red; margin-top:20px;">
+  <tr>
+    <th style="text-align:left;">News!</th>
+  </tr>
+  <% @newsfeeds.each do |news| %>
+  <tr>
+    <td style="border: 2px solid red;"> <%= news.news %> </td>
+    <td style="border: 2px solid red;"> <%= link_to "Edit", "#" %> </td>
+    <td style="border: 2px solid red;"> <%= link_to "Delete", "#" %> </td>
+  </tr>
+  <% end %>
+ </table>

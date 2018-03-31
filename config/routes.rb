@@ -2,11 +2,12 @@ Rails.application.routes.draw do
   
   get '/login', to: 'user#login'
 
+  get 'newsfeeds/index'
   get 'newsfeeds/new'
-  get 'newsfeeds/create'
+  post 'newsfeeds/create'
   get 'newsfeeds/edit'
-  get 'newsfeeds/update'
-  get 'newsfeeds/destroy'
+  patch 'newsfeeds/update'
+  delete 'newsfeeds/destroy'
   
   resources :newsfeeds
 
