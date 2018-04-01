@@ -32,6 +32,16 @@ class MembersController < ApplicationController
   end
 
   def create
+    @member = Member.new(members_params)
+    if @member.save
+      redirect_to(members_index_path)
+    else
+      render 'new'
+    end
+  end
 
+  private
+  def members_params
+    params.required(:member).permit(:name, :email, :admin, :pace)
   end
 end
