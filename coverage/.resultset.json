@@ -17,6 +17,22 @@
         null,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/tripham/Desktop/Code/CSCE431/nscs-member-website/spec/rails_helper.rb": [
@@ -127,6 +143,14 @@
         1,
         2,
         null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/tripham/Desktop/Code/CSCE431/nscs-member-website/app/controllers/application_controller.rb": [
@@ -147,6 +171,6 @@
         null
       ]
     },
-    "timestamp": 1522291572
+    "timestamp": 1522622757
   }
 }

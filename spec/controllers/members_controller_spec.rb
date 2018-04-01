@@ -13,4 +13,20 @@ RSpec.describe MembersController, type: :controller do
     end
 
   end
+
+  describe 'CREATE member' do
+    it 'receives non-nil arguments' do
+      post :create, :params => {:email => "email", :name =>"name", :admin => true, :pace => true}
+      expect(controller.params[:name]).not_to be_nil
+    end
+
+    it 'receives correct arguments' do
+      post :create, :params => {:email => "email", :name =>"name", :admin => true, :pace => true}
+      expect(controller.params[:name]).to eq("name")
+      expect(controller.params[:email]).to eq("email")
+      expect(controller.params[:admin]).to eq("true")
+      expect(controller.params[:pace]).to eq("true")
+    end
+
+  end
 end
