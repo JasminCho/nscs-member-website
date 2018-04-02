@@ -40,6 +40,22 @@ class MembersController < ApplicationController
     end
   end
 
+  def edit
+    @member = Member.find(params[:id])
+  end
+
+  def update
+    @member = Member.find(params[:id])
+    @member.update(members_params)
+
+    redirect_to members_url(:id => @member.id)
+  end
+
+  def show
+    id = params[:id] # retrieve movie ID from URI route
+    @member = Member.find(id) # look up movie by unique ID
+  end
+
   private
   def members_params
     params.required(:member).permit(:name, :email, :admin, :pace)

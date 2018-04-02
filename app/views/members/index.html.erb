@@ -10,7 +10,7 @@
   <br/>
   <%= "PACE: #{member.pace}" %>
   <br/>
-  <%= link_to 'more', members_url(member) %>
+  <%= link_to 'more', members_url(:id => member.id) %>
   <br/>
 <% end %>
 <%= link_to 'Add new member', new_members_url %>
