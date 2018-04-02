@@ -1,5 +1,16 @@
 <h1>List of all members</h1>
 
-<%= @members.each {|member| "Name #{member.name}, Email: #{member.email}, Admin: #{member.admin}, PACE: #{member.pace}\n"}%>
-
+<% @members.each do |member| %>
+  <p>===============================</p>
+  <%= "Name #{member.name}" %>
+  <br/>
+  <%= "Email: #{member.email}" %>
+  <br/>
+  <%= "Admin: #{member.admin}" %>
+  <br/>
+  <%= "PACE: #{member.pace}" %>
+  <br/>
+  <%= link_to 'more', members_url(member) %>
+  <br/>
+<% end %>
 <%= link_to 'Add new member', new_members_url %>
