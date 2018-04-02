@@ -56,8 +56,18 @@ class MembersController < ApplicationController
     @member = Member.find(id) # look up movie by unique ID
   end
 
+  def destroy
+    id = params[:id]
+    @member = Member.find(id)
+    @member.destroy
+
+    redirect_to members_index_path
+  end
+
   private
+
   def members_params
-    params.required(:member).permit(:name, :email, :admin, :pace)
+    puts params
+    params.permit(:name, :email, :admin, :pace)
   end
 end

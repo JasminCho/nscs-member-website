@@ -7,5 +7,6 @@
 <br/>
 <%= "PACE: #{@member.pace}" %>
 <br/>
-<%=	 link_to 'Edit member info', edit_members_url(:id => @member.id) %>
-<%=  link_to 'Back to member list', members_index_url %>
+<%= link_to 'Edit member info', edit_members_url(:id => @member.id) %>
+<%= link_to 'Delete member',members_url(:id => @member.id), method: :delete %>
+<%= link_to 'Back to member list', members_index_url %>
