@@ -1,11 +1,12 @@
-class CalendarsController < ApplicationController
-	helper_method  :get_cals
+class CalendarsController < ActionController::Base
 	attr_accessor :calendar
-	before_action :logged_in_user?, :calendar_in? unless :initialize
+	#before_action :logged_in_user?, :calendar_in? unless :initialize
 
 
 	def initialize
-		@calendar = CalendarWrapper.new(current_user)
+		
+		user=User.find(session[:user_id])
+		@calendar = CalendarWrapper.new(user)
 	end
 	
 	def calendar_in?
@@ -18,7 +19,7 @@ class CalendarsController < ApplicationController
 
 	def get_events
 	
-			@calendar = CalendarWrapper.new(current_user)
+	#		@calendar = CalendarWrapper.new(current_user)
 			@calendar.list_events
 	end
 
