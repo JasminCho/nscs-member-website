@@ -4,10 +4,15 @@ class SessionsController < ApplicationController
     puts "These are the tokens in omniauth.auth"
     puts request.env["omniauth.auth"]
     #log_in(user) #check members_helper
+=begin
+    if login_in(user.id)
+      session[:user_id] = user.id
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
+=end
     session[:user_id] = user.id #if statement check if user is in member here
-    puts "here is user"
-    puts user
-    redirect_to root_path
   end
 
   def destroy
