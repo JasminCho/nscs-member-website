@@ -3,9 +3,6 @@ class NewsfeedsController < ApplicationController
     @newsfeeds = Newsfeed.all
   end
   
-  def show
-  end
-  
   def new
     @newsfeeds = Newsfeed.new
   end
@@ -20,12 +17,23 @@ class NewsfeedsController < ApplicationController
   end
 
   def edit
+    @newsfeeds = Newsfeed.find(params[:id])
   end
 
   def update
+    @newsfeeds = Newsfeed.find(params[:id])
+    if @newsfeeds.update_attributes(newsfeeds_params)
+      flash[:success] = "Newsfeed updated"
+      redirect_to(newsfeeds_index_path)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    Newsfeed.find(params[:id]).destroy
+    flash[:success] = "News deleted"
+    redirect_to newsfeeds_index_path
   end
   
   private

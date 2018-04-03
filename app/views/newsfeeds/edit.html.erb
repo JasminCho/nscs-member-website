@@ -1,2 +1,9 @@
-<h1>Newsfeeds#edit</h1>
-<p>Find me in app/views/newsfeeds/edit.html.erb</p>
+<h1>EDIT THIS POST!</h1>
+
+<%= form_for(@newsfeeds) do |news| %>
+
+  <%= news.label :edit %>
+  <%= news.text_field :news%>
+
+  <%= news.submit "Save changes" %>
+<% end %>

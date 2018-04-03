@@ -11,7 +11,8 @@ fake_members = [
     { email: 'phamminhtris@tamu.edu', name: 'Tri Pham', admin: true },
     { email: 'jasmincho@tamu.edu', name: 'Jasmin', admin: true },
     { email: 'jtiu.edu@tamu.edu', name: 'Julian' , admin: true },
-    { email: 'axk141430@tamu.edu', name: 'Akash' , admin: true }
+    { email: 'axk141430@tamu.edu', name: 'Akash' , admin: true },
+    { email: 'jtiu.edu@gmail.edu', name: 'Julian' , admin: false },
 ]
 
 fake_members.each do |member|
