@@ -1,10 +1,10 @@
-class CalendarsController < ActionController::Base
+class CalendarsController < ApplicationController
 	attr_accessor :calendar
-	#before_action :logged_in_user?, :calendar_in? unless :initialize
+	helper_method :get_events
+	before_action :logged_in_user?, #:calendar_in? #unless :initialize
 
 
-	def initialize
-		
+	def start_calendar
 		user=User.find(session[:user_id])
 		@calendar = CalendarWrapper.new(user)
 	end

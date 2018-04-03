@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     puts session[:user_id]
     puts "here is user"
     puts user
-    redirect_to root_path
+    redirect_to current_user_path
   end
 
   def destroy
