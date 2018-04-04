@@ -16,7 +16,9 @@ gem 'jbuilder',     '2.7.0'
 gem 'figaro'
 gem 'bootstrap-sass'
 gem 'bootstrap_jt', '~> 0.1.0'
-gem 'aws-sdk'
+gem 'aws-sdk-rails'
+gem 'aws-sdk', '~> 3'
+gem 'aws-sdk-v1'
 gem 'materialize-sass'
 
 # for authentication
