@@ -1,7 +1,7 @@
 <h1>All uploads</h1>
 
 <%= form_tag uploads_path, enctype: 'multipart/form-data' do %>
-	<%= file_field_tag :file  %>
+	<%= file_field_tag :file, required: true %>
 	<%= submit_tag 'Upload file' %>
 <% end %>
 
