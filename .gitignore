@@ -20,4 +20,7 @@
 /node_modules
 /yarn-error.log
 
+# Ignore config files to avoid making keys public
+/config/locales/application.yml
+
 .byebug_history

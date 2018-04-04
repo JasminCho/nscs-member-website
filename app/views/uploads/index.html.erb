@@ -1,0 +1,13 @@
+<h1>All uploads</h1>
+
+<%= form_tag uploads_path, enctype: 'multipart/form-data' do %>
+	<%= file_field_tag :file  %>
+	<%= submit_tag 'Upload file' %>
+<% end %>
+
+<% @uploads.each do |upload| %>
+	<div>
+		<%= link_to upload.name, upload.url %>
+		<%= image_tag "http://s3.amazonaws.com/" + S3_BUCKET.name.to_s + "/" + upload.name, size: "200x200", alt: "test"%>
+	</div>
+<% end %>
