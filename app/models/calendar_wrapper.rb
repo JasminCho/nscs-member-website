@@ -46,7 +46,7 @@ class CalendarWrapper
 	#WARNING Needs to call is_admin? before, so it can check client.nill?	
 	def modify_roles(email, role)
 		response = @client.execute(api_method: @service.acl.insert,
-					   parameters: {'calendarId' => ENV['NSCS_Calendar_ID']}), body: JSON.dump({role: role, scope: {type: "user", "value": email}})
+					   parameters: {'calendarId' => ENV['NSCS_Calendar_ID']}, body: JSON.dump({role: role, scope: {type: "user", "value": email}}))
 	      	end
 		
 		
@@ -54,6 +54,7 @@ class CalendarWrapper
 	def add_user()
 		if(!@lcient.nil?)
 		end
+	end
 
 	def get_calendar_list()
 		if(!@client.nil?)

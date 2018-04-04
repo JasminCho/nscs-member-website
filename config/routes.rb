@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   get 'members/index', to: 'members#index'
 
   #calendar routes
-  get 'calendars/get_events', to: 'calendars#get_events:', as: 'list_events'
+  get 'calendars/get_events', to: 'calendars#get_events', as: 'list_events'
   get 'calendars/login', to: 'calendars#current_user', as: 'login_calendar'
 #  get 'calendars/get_calendars/callback', to: redirect('/')
   # below are routes needed for google authentication
