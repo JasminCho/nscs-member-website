@@ -5,6 +5,8 @@ class MembersController < ApplicationController
     end
     
     def faq
+        objs = S3ModuleHelper::s3_get_buckets
+        byebug
     end
     
     def about

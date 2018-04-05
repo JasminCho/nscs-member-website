@@ -1,4 +1,4 @@
-module S3Module
+module S3ModuleHelper
 #returns array of bucket names in our region, our region defined in config/initializers/aws.rb
 # Use:     buckets = s3_get_buckets --> 'buckets' will have an array of the names of the S3 buckets on the account
   def self.s3_get_buckets
