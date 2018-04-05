@@ -3,20 +3,23 @@ class SessionsController < ApplicationController
     user = User.from_omniauth(request.env["omniauth.auth"])
     puts "These are the tokens in omniauth.auth"
     puts request.env["omniauth.auth"]
-    #log_in(user) #check members_helper
-=begin
-    if login_in(user.id)
+
+    if member? user.name #this is actually email if you use tamu email
       session[:user_id] = user.id
+      session[:email] = user.name
       redirect_to root_path
     else
+      flash.now[:danger] = 'You are not a member!'
       redirect_to root_path
     end
-=end
-    session[:user_id] = user.id #if statement check if user is in member here
+    
+    session[:email2] = user.name
   end
 
   def destroy
     session[:user_id] = nil
+    session[:email] = nil # added after member? function
+    current_user2
     redirect_to root_path
   end
 end

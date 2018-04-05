@@ -34,11 +34,14 @@
         </div>
       </div>
       <!-- Announcements -->
+      <%= session[:email2] %>
       <div class="row">
         <div class="col-sm-8">
           <h2 class="mt-4">Announcements</h2>
             <!-- JULIAN's STUFF -->
-              <%= link_to "If you're admin, click here to add/edit/delete announcements", newsfeeds_index_path %> <!-- ONLY ADMIN IS SUPPOSE TO SEE THIS LINK -->
+              <% if current_user2 %>
+                <%= link_to "If you're admin, click here to add/edit/delete announcements", newsfeeds_index_path %> <!-- ONLY ADMIN IS SUPPOSE TO SEE THIS LINK -->
+              <% end %>
               <table style="border: 2px solid red; margin-top:20px;">
                 <tr>
                   <th style="text-align:left;">News!</th>

@@ -1,4 +1,7 @@
 class NewsfeedsController < ApplicationController
+  
+  before_action :admin_user?
+  
   def index
     @newsfeeds = Newsfeed.all
   end
