@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get '/upload', to: 'uploads#index'
+
   get '/login', to: 'user#login'
 
   get 'newsfeeds/index'
@@ -32,6 +34,8 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
+
+  resources :uploads
   
   resources :sessions, only: [:create, :destroy]
   
