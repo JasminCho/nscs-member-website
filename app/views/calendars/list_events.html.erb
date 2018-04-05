@@ -1,0 +1,7 @@
+<!-----Remember to move this hash into controller.--->
+<%@events["items"].each do |event|%>
+	<tr>
+		<td>"Title of event" <%=event["summary"]%></td><br>
+		<%=link_to "Check out event", show_event_path(:event => event)%><br>
+	</tr>
+<%end%>

@@ -14,19 +14,29 @@ class CalendarsController < ApplicationController
 	end
 
 
-	def get_events
+	def list_events
 			puts "<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>"
 			@events = @calendar.list_events
 			puts @events			
 	end
 
 	def insert_event
+		#TODO checkout if instances vars between methods cause errs.
+		@new_event
 			params.require(:event)
 			params.require[:event].reqire(:title,:start_date,:end_date)	
 	end
 
-	def get_event
-	end	
+	def show_event
+		@event = params[:event]
+	end
+
+	def delete_event
+	end
+
+	def edit_event
+	end
+
 end
 
 
