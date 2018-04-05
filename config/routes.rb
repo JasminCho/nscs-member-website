@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get '/upload', to: 'uploads#index'
+
   get '/login', to: 'user#login'
 
   get 'newsfeeds/new'
@@ -32,7 +34,6 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
-#used to test s3 functionality right now
   resources :uploads
   
   resources :sessions, only: [:create, :destroy]

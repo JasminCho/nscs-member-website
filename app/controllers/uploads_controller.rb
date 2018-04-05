@@ -1,12 +1,12 @@
 class UploadsController < ApplicationController
+
   def new
   end
 
   def create
     # Make an object in your bucket for your upload
-    unless :file.blank?
-    	obj = S3_BUCKET.objects[params[:file].original_filename]
-    end
+    obj = S3_BUCKET.objects[params[:file].original_filename]
+
 
     # Upload the file
     obj.write(
@@ -17,7 +17,7 @@ class UploadsController < ApplicationController
 
     # Create an object for the upload
     @upload = Upload.new(
-    		url: obj.public_url,
+    	url: obj.public_url,
 			name: obj.key,
 			S3Obj: obj
     	)
