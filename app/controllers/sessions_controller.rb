@@ -17,8 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    session[:email] = nil # added after member? function
+    reset_session
     current_user2
     redirect_to root_path
   end
