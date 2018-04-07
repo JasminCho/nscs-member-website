@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/tripham/Desktop/Code/CSCE431/nscs-member-website/spec/controllers/members_controller_spec.rb": [
+      "C:/Users/phamm/Desktop/Code/CSCE431/nscs-member-website/spec/controllers/members_controller_spec.rb": [
         1,
         null,
         1,
@@ -14,12 +14,28 @@
         1,
         1,
         1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
         null,
         null,
         null,
         null
       ],
-      "/Users/tripham/Desktop/Code/CSCE431/nscs-member-website/spec/rails_helper.rb": [
+      "C:/Users/phamm/Desktop/Code/CSCE431/nscs-member-website/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -78,27 +94,27 @@
         null,
         null
       ],
-      "/Users/tripham/Desktop/Code/CSCE431/nscs-member-website/app/helpers/application_helper.rb": [
+      "C:/Users/phamm/Desktop/Code/CSCE431/nscs-member-website/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/tripham/Desktop/Code/CSCE431/nscs-member-website/app/helpers/members_helper.rb": [
+      "C:/Users/phamm/Desktop/Code/CSCE431/nscs-member-website/app/helpers/members_helper.rb": [
         1,
         null
       ],
-      "/Users/tripham/Desktop/Code/CSCE431/nscs-member-website/app/helpers/newsfeeds_helper.rb": [
+      "C:/Users/phamm/Desktop/Code/CSCE431/nscs-member-website/app/helpers/newsfeeds_helper.rb": [
         1,
         null
       ],
-      "/Users/tripham/Desktop/Code/CSCE431/nscs-member-website/app/helpers/sessions_helper.rb": [
+      "C:/Users/phamm/Desktop/Code/CSCE431/nscs-member-website/app/helpers/sessions_helper.rb": [
         1,
         null
       ],
-      "/Users/tripham/Desktop/Code/CSCE431/nscs-member-website/app/helpers/user_helper.rb": [
+      "C:/Users/phamm/Desktop/Code/CSCE431/nscs-member-website/app/helpers/user_helper.rb": [
         1,
         null
       ],
-      "/Users/tripham/Desktop/Code/CSCE431/nscs-member-website/app/controllers/members_controller.rb": [
+      "C:/Users/phamm/Desktop/Code/CSCE431/nscs-member-website/app/controllers/members_controller.rb": [
         1,
         null,
         1,
@@ -125,22 +141,71 @@
         null,
         null,
         1,
+        2,
         null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        2,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
         null,
         null
       ],
-      "/Users/tripham/Desktop/Code/CSCE431/nscs-member-website/app/controllers/application_controller.rb": [
+      "C:/Users/phamm/Desktop/Code/CSCE431/nscs-member-website/app/controllers/application_controller.rb": [
         1,
         1,
         1,
         null,
         1,
         0,
+        null,
+        null,
+        null
+      ],
+      "C:/Users/phamm/Desktop/Code/CSCE431/nscs-member-website/app/models/member.rb": [
+        1,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1522291463
+    "timestamp": 1522982776
   }
 }

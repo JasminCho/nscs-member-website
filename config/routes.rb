@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   # members' routes
   get 'members/index', to: 'members#index'
+  resource :members
 
   #calendar routes
   get 'calendars/get_calendars', to: 'calendars#get_calendars', as: 'calendar'
