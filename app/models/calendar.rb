@@ -125,11 +125,11 @@ class Calendar<ApplicationRecord
 	  	reminders: {
 	    	use_default: true,
 	    	overrides: [
-	      	{method' => 'email', 'minutes: 24 * 60},
-	      	{method' => 'popup', 'minutes: 10},
+	    #  	{method' => 'email', 'minutes: 24 * 60},
+	    #  	{method' => 'popup', 'minutes: 10},
 	    	]
 	  	}
-		}}))
+		})})
 
 	
 	
