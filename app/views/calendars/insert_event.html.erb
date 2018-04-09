@@ -1,6 +1,6 @@
 
 
-<$= form_for @new_event do |event_form| %>
+<%= form_for @new_event do |event_form| %>
   <%= event_form.label :title %>
   <%= event_form.text_field :title %>
   <%= event_form.label :start_date %>
@@ -13,10 +13,8 @@
   <%= event_form.text_field :description %>
   <%= event_form.label :start_date %>
   <%= event_form.datetime :start_date %>
-  <%= event_form.label :title %>
-  <%= event_form.text_field :title %>
-  <%= event_form.label :start_date %>
-  <%= event_form.datetime :start_date %>
- 
- 
+  <%= event_form.submit "Create" %>
+<%end%>
+
+
 

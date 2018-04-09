@@ -26,11 +26,16 @@ class CalendarsController < ApplicationController
 		#TODO checkout if instances vars between methods cause errs.
 		#TODO decide wether they want to choose to send notification or not.
 		#TODO Recurrense events?
-		@new_event
-			params.require(:new_event)
-			params.require[:new_event].require(:title,:start_date,:end_date,:location,:description,)	
-			params.require[:new_event].permit(:recurrance,:reminder)
+		@new_event = Event.new
+			#params.require(:new_event)
+			puts 'Wtf'
+			puts params
 
+#		
+#new_event.title = params[:new_event][:title]
+#		new_event.description = params[:new_event][:description]
+#		new_event.start_date = params[:new_event][:start_date]
+#		mew_event.end_date = params[:new_event][:end_date] 
 			
 	end
 
@@ -44,6 +49,11 @@ class CalendarsController < ApplicationController
 	def edit_event
 	end
 
+	def create
+		params.require(:new_event).require(:title,:start_date,:end_date,:location,:description,)	
+		params.require[:new_event].permit(:recurrance,:reminder)
+		@calendar.insert_event(params)
+	end
 
 end
 

@@ -132,6 +132,7 @@ class Calendar<ApplicationRecord
 		})})
 
 	
+	puts "It got created?"
 	
 	end
 
