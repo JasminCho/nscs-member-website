@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20180406145722) do
   end
 
   create_table "points", force: :cascade do |t|
+    t.string "email"
     t.string "event_name"
     t.integer "point"
     t.datetime "created_at", null: false

@@ -18,6 +18,17 @@ fake_members.each do |member|
   Member.create!(member)
 end
 
+fake_points = [
+    {email: 'gregorio_garza@email.tamu.edu', event_name: "Event A", point: 100},
+    {email: 'yang.421@tamu.edu', event_name: "Event B", point: 100},
+    {email: 'yang.421@tamu.edu', event_name: "Event C", point: 100},
+    {email: 'phamminhtris@tamu.edu', event_name: "Event A", point: 100}
+]
+
+fake_points.each do |point|
+  Point.create!(point)
+end
+
 Newsfeed.destroy_all
 
 =begin
