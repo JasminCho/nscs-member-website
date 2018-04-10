@@ -1,0 +1,10 @@
+.background-effect{
+    background: #9370DB;
+    animation: gradientChange 5s infinite alternate;
+}
+
+@keyframes gradientChange  {
+    100% {
+        background: #F8F8FF;
+    }
+}

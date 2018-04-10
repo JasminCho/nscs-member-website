@@ -20,7 +20,22 @@
 @import "bootstrap";
 @import "materialize";
 
+// .container {
+//   display: flex;
+// }
 
-.navbar {
-  // font-size: 12pt;
+.container > div {
+  flex: 1;
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.navbar-logo {
+  display: inline-block;
+  height: 30px;
+  margin-top: -5px;
 }
