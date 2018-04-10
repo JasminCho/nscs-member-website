@@ -1,10 +1,20 @@
 
+
 class Calendar<ApplicationRecord
 	has_many :events
 	attr_accessor :client
 
 	def initialize(current_user)
+		#Call the parent initialize.
+		#Don't override completely.
+		super()
 		configure_client(current_user)
+		response = @client.execute(api_method: @service.calendars.get,
+			parameters: {'calendarId' => ENV['NSCS_Calendar_ID']})
+		response = JSON.parse(response.body)
+		self.name=response["summary"]
+		self.calendar_id=ENV['NSCS_Calendar_ID']
+		#debugger
 	end
 
 	def configure_client(current_user)
@@ -23,6 +33,10 @@ class Calendar<ApplicationRecord
 		#	@client.authorization.refresh!
 		@service = @client.discovered_api('calendar', 'v3')
 		#	@calendar = ENV['NSCS_Calendar_ID']
+	end
+
+	def fetch_info
+		calendar = Hash.new
 	end
 
 
