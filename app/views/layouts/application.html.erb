@@ -12,7 +12,9 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <%= link_to "TAMU NSCS", about_path, {class: "navbar-brand"} %>
+          <%= link_to home_path do %>
+             <%= image_tag "nscs-logo.png", class:"navbar-logo" %>
+          <% end %>
         </div>
         <div>
           <ul class="nav navbar-nav">
@@ -54,14 +56,14 @@
           <div class="col l3 s12">
             <h5 class="white-text">Contact Info</h5>
             <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
+              <li><a class="white-text" href="https://www.facebook.com/nscs.tamu">Facebook</a></li>
+              <li><a class="white-text" href="https://nscs.org/nscs-scholarships/">Scholarships</a></li>
             </ul>
           </div>
           <div class="col l3 s12">
             <h5 class="white-text">Connect</h5>
             <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
+              <li><a class="white-text" href="https://www.nscsgear.org/store/catalog">NSCS Store</a></li>
               <li><a class="white-text" href="#!">Link 2</a></li>
             </ul>
           </div>
