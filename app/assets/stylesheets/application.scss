@@ -20,16 +20,16 @@
 @import "bootstrap";
 @import "materialize";
 
-.container {
-  display: flex;
-}
+// .container {
+//   display: flex;
+// }
 
 .container > div {
   flex: 1;
 }
 
 .page-footer {
-  // position: absolute;
+  position: absolute;
   bottom: 0;
   width: 100%;
 }
