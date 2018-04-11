@@ -12,7 +12,8 @@ class MeetingsController < ApplicationController
 
     @meeting = Meeting.new(
 			url: obj.public_url,
-			date: obj.key
+			date: obj.key,
+			name: obj.key
 		)
     
     # Save the upload
@@ -26,7 +27,10 @@ class MeetingsController < ApplicationController
 
   def index
   	@meetings = Meeting.all
-
-
+    @meetings.each do |s3_item|
+    	unless S3_BUCKET.objects[s3_item.name].exists?
+    		@meetings.delete(s3_item)
+    	end	
+    end	
   end
 end
