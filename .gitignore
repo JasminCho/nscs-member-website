@@ -30,3 +30,6 @@
 
 # Gemfile cache
 Gemfile.lock
+
+# Mac files
+.DS_Store
