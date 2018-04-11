@@ -1,3 +1,4 @@
+
 class CalendarsController < ApplicationController
 	attr_accessor :calendar
 	helper_method :get_events
@@ -51,6 +52,7 @@ class CalendarsController < ApplicationController
 	end
 
 	
+
 end
 
 

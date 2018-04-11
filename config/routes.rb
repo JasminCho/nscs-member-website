@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   
+  get '/upload', to: 'uploads#index'
+
   get '/login', to: 'user#login'
 
+  get 'newsfeeds/index'
   get 'newsfeeds/new'
-  get 'newsfeeds/create'
+  post 'newsfeeds/create'
   get 'newsfeeds/edit'
-  get 'newsfeeds/update'
-  get 'newsfeeds/destroy'
+  patch 'newsfeeds/update'
+  delete 'newsfeeds/destroy'
   
   resources :newsfeeds
 
@@ -23,6 +26,7 @@ Rails.application.routes.draw do
 
   # members' routes
   get 'members/index', to: 'members#index'
+  resource :members
 
   #calendar routes
   get 'calendars/get_events', to: 'calendars#list_events', as: 'list_events'
@@ -37,6 +41,8 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
+
+  resources :uploads
   
   resources :sessions, only: [:create, :destroy]
   

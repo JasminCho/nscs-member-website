@@ -6,16 +6,36 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- // a {
- //   color: white;
+ // .team {
+ //     padding:20px 0;
  // }
- //
- body {
-   padding-top: 54px;
+
+ .description{
+ 	font-weight: bold;
+ 	letter-spacing: 2px;
+ 	color: #999;
+ 	border-bottom: 1px solid rgba(0, 0, 0,0.1);
+ 	padding-bottom: 5px;
  }
- //
- // @media (min-width: 992px) {
- //   body {
- //     padding-top: 56px;
- //   }
- // }
+
+ .profile{
+ 	margin: 25px;
+ }
+
+ .profile h1{
+ 	font-weight: normal;
+ 	font-size: 20px;
+ 	margin:10px 0 10px 0;
+ }
+
+ .profile h2{
+ 	font-size: 14px;
+ 	font-weight: lighter;
+ 	margin-top: 5px;
+ }
+
+ .profile .img-box{
+ 	opacity: 1;
+ 	display: block;
+ 	position: relative;
+ }

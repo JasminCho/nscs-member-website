@@ -4,6 +4,7 @@ class CreateMembers < ActiveRecord::Migration[5.1]
       t.string 'email'
       t.string 'name'
       t.boolean 'admin'
+      t.boolean 'pace'
     end
   end
 end
