@@ -37,11 +37,7 @@ class MeetingsController < ApplicationController
 
   def destroy
   	object_to_destroy = Meeting.find(params[:id])
-  	s3_response = S3_CLIENT.delete_object
-  	({
-	    bucket: ENV['S3_BUCKET'], # required
-	    key: object_to_destroy.name, # required
-  	})
+  	S3_BUCKET.objects[object_to_destroy.name].delete
   	object_to_destroy.destroy
     flash[:success] = "Meeting deleted"
     redirect_to meetings_path
