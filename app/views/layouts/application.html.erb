@@ -1,82 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TAMU NSCS</title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>TAMU NSCS</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <%= link_to "TAMU NSCS", about_path, {class: "navbar-brand"} %>
-        </div>
-        <div>
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Home", home_path %></li>
-            <li><%= link_to "About Us", about_path %></li>
-            <li><%= link_to "FAQ", faq_path %></li>
-            <li><%= link_to "Officers", officers_path %></li>
-            <li><%= link_to "Meetings", meetings_path %></li>
-            <li><%= link_to "Points", points_path %></li>
-            <li><%= link_to "Gallery" %></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <% if current_user2 %>
-                <strong><%= current_user2.name %></strong>
-                <%= link_to "Sign out", signout_path, id: "sign_out" %>
-              <% else %>
-                <%= link_to "Sign in", "/auth/google_oauth2", id: "sign_in" %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!--  Body -->
-    <div class="container">
-      <%= yield %>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to home_path do %>
+        <%= image_tag "nscs-logo.png", class: "navbar-logo" %>
+      <% end %>
     </div>
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", home_path %></li>
+        <li><%= link_to "About Us", about_path %></li>
+        <li><%= link_to "FAQ", faq_path %></li>
+        <li><%= link_to "Officers", officers_path %></li>
+        <li><%= link_to "Meetings", meetings_path %></li>
+        <li><%= link_to "Points", points_path %></li>
 
-    <!-- Footer -->
-    <footer class="page-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">TAMU NSCS</h5>
-            <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-          </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">Contact Info</h5>
-            <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-            </ul>
-          </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">Connect</h5>
-            <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
-        Made by <a class="white-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-        </div>
-      </div>
-    </footer>
 
-    <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
-  </body>
+        <% if current_user %>
+          <li><%= current_user.name %></li>
+          <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+        <% else %>
+          <li><%= link_to "Sign in", "/auth/google_oauth2", id: "sign_in" %></li>
+        <% end %>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--  Body -->
+<div class="container">
+  <%= yield %>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">TAMU NSCS</h5>
+        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full
+          time job. Any amount would help support and continue development on this project and is greatly
+          appreciated.</p>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="white-text" href="https://www.facebook.com/nscs.tamu">Facebook</a></li>
+          <li><a class="white-text" href="https://nscs.org/nscs-scholarships/">Scholarships</a></li>
+          <li><a class="white-text" href="https://www.nscsgear.org/store/catalog">NSCS Store</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+</body>
 </html>
