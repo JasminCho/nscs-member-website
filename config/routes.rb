@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'meetings/new'
+  get 'meetings/create'
+  get 'meetings/index'
+
   get '/upload', to: 'uploads#index'
 
   get '/login', to: 'user#login'
@@ -21,7 +25,7 @@ Rails.application.routes.draw do
   get '/faq', to: 'members#faq'
   get '/officers', to: 'members#officers'
   get '/contact', to: 'members#contact'
-  get '/meetings', to: 'members#meetings'
+  #get '/meetings', to: 'members#meetings'
   get '/points', to: 'members#points'
 
   # members' routes
@@ -37,6 +41,7 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :uploads
+  resources :meetings
   
   resources :sessions, only: [:create, :destroy]
   

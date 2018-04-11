@@ -10,13 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180406145722) do
+ActiveRecord::Schema.define(version: 20180411185140) do
+
+  create_table "meetings", force: :cascade do |t|
+    t.string "url"
+    t.string "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "members", force: :cascade do |t|
     t.string "email"
     t.string "name"
     t.boolean "admin"
-    t.boolean "pace"
   end
 
   create_table "newsfeeds", force: :cascade do |t|
@@ -25,21 +31,20 @@ ActiveRecord::Schema.define(version: 20180406145722) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-  create_table "uploads", force: :cascade do |t|
-    t.string "url"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "S3Obj"
-=======
   create_table "points", force: :cascade do |t|
     t.string "email"
     t.string "event_name"
     t.integer "point"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
->>>>>>> tri_branch
+  end
+
+  create_table "uploads", force: :cascade do |t|
+    t.string "url"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "S3Obj"
   end
 
   create_table "users", force: :cascade do |t|
