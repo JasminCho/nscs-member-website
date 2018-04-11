@@ -24,3 +24,9 @@
 
 # ignore RubyMine files
 .idea/
+
+# yaml
+*.yml
+
+# Gemfile cache
+Gemfile.lock
