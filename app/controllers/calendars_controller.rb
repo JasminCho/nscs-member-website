@@ -14,8 +14,8 @@ class CalendarsController < ApplicationController
 		#Evaluate before leaving so expects the same as current_user parent!
 		@current_user
 	end
-
-	
+#Marcela Cabral
+#8305139250	
 	def list_events
 	
 			@events = @calendar.list_events
@@ -23,9 +23,10 @@ class CalendarsController < ApplicationController
 	end
 
 	def insert_event
-		#TODO checkout if instances vars between methods cause errs.
-		#TODO decide wether they want to choose to send notification or not.
-		#TODO Recurrense events?
+	
+	#TODO checkout if instances vars between methods cause errs.
+	#TODO decide wether they want to choose to send notification or not.
+	#TODO Recurrense events?
 		
 		redirect_to new_event and return
 	end

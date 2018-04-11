@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 		flash[:danger] = "Please log in"
 		redirect_to root_path
 	end
-  
+  end 
   # julian will delete this once current_user is established
   def current_user2
     @current_user2 ||= Member.find_by(email: session[:email]) if session[:email]
