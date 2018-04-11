@@ -12,6 +12,7 @@
     <body>
         <div class="meetings">
             <h3 class="title">Meetings2</h3>
+            <!-- ONLY ADMIN SHOULD SEE THIS BUTTON-->
             <%= form_tag meetings_path, enctype: 'multipart/form-data' do %>
                 <%= file_field_tag :file, required: true, multiple: false, accept:'.pdf,.pptx,.ppt'  %>
                 <%= submit_tag 'Upload Meeting File' %>
@@ -26,6 +27,9 @@
                                 <%= link_to meeting.date, meeting.url %>
                             </div>
                             </a>
+                            <!-- ONLY ADMIN SHOULD SEE THIS BUTTON-->
+                            <td style="border: 2px solid red;"> <%= link_to "Delete", meeting, method: :delete, data: {confirm: "Are you sure you want to delete this meeting?"} %> 
+                            </td>
                         </div>
                     </li>
                 <% end %>

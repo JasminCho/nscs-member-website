@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'meetings/new'
   get 'meetings/create'
   get 'meetings/index'
+  delete 'meetings/destroy'
 
   get '/upload', to: 'uploads#index'
 
