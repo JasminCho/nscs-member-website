@@ -7,7 +7,8 @@ class MeetingsController < ApplicationController
     
     obj.write(
       file: params[:file],
-      acl: :public_read
+      acl: :public_read,
+      storage_class: "REDUCED_REDUNDANCY"
     )
 
     @meeting = Meeting.new(
@@ -35,7 +36,13 @@ class MeetingsController < ApplicationController
   end
 
   def destroy
-  	Meeting.find(params[:id]).destroy
+  	object_to_destroy = Meeting.find(params[:id])
+  	s3_response = S3_CLIENT.delete_object
+  	({
+	    bucket: ENV['S3_BUCKET'], # required
+	    key: object_to_destroy.name, # required
+  	})
+  	object_to_destroy.destroy
     flash[:success] = "Meeting deleted"
     redirect_to meetings_path
   end
