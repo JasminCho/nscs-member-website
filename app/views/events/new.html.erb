@@ -1,0 +1,16 @@
+
+
+<%= form_for @event , url: create_event_path  do |event_form| %>
+  <%= event_form.label :title %>
+  <%= event_form.text_field :title %>
+  <%= event_form.label :start_date %>
+  <%= event_form.datetime_field :start_date %>
+  <%= event_form.label :end_date %>
+  <%= event_form.datetime_field :end_date %>
+  <%= event_form.label :location %>
+  <%= event_form.text_field :location %>
+  <%= event_form.label :description %>
+  <%= event_form.text_field :description %>
+  <%= event_form.submit "Create" %>
+<%end%>
+
