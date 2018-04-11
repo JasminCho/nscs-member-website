@@ -20,6 +20,9 @@
 /node_modules
 /yarn-error.log
 
+# Ignore all yml files
+*.yml
+
 .byebug_history
 
 # ignore RubyMine files
