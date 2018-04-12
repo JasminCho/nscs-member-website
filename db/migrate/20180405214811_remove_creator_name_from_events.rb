@@ -1,5 +1,5 @@
 class RemoveCreatorNameFromEvents < ActiveRecord::Migration[5.1]
   def change
-    remove_column :events, :field_name, :string
+    remove_column :events, :string
   end
 end
