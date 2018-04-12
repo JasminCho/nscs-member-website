@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'photos/new'
+  get 'photos/create'
+  get 'photos/index'
+
   get 'meetings/new'
   get 'meetings/create'
   get 'meetings/index'
@@ -43,6 +47,7 @@ Rails.application.routes.draw do
 
   resources :uploads
   resources :meetings
+  resources :photos
   
   resources :sessions, only: [:create, :destroy]
   

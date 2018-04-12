@@ -1,0 +1,16 @@
+<h1>Gallery</h1>
+
+
+<!-- ONLY ADMIN SHOULD SEE THIS BUTTON-->
+<%= form_tag photos_path, enctype: 'multipart/form-data' do %>
+	<%= file_field_tag :file, required: true, multiple: false, accept:'image/*'  %>
+<!-- ONLY ADMIN SHOULD SEE THIS BUTTON-->
+	<%= submit_tag 'Upload file' %>
+<% end %>
+
+<% @uploads.each do |upload| %>
+	<div>
+		<%= link_to upload.name, upload.url %>
+		<%= image_tag upload.url, size: "200x200", alt: "img"%>
+	</div>
+<% end %>
