@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180412032738) do
+ActiveRecord::Schema.define(version: 20180412063146) do
 
   create_table "calendars", force: :cascade do |t|
     t.string "name"
@@ -20,8 +20,6 @@ ActiveRecord::Schema.define(version: 20180412032738) do
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.datetime "start_date"
-    t.datetime "end_date"
     t.string "event_id"
     t.string "creator_name"
     t.string "creator_email"
@@ -29,6 +27,10 @@ ActiveRecord::Schema.define(version: 20180412032738) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "calendar_id"
+    t.time "start_time"
+    t.time "end_time"
+    t.date "start_date"
+    t.date "end_date"
     t.index ["calendar_id"], name: "index_events_on_calendar_id"
   end
 
@@ -46,10 +48,10 @@ ActiveRecord::Schema.define(version: 20180412032738) do
 
   create_table "officers", force: :cascade do |t|
     t.string "email"
-    t.string "name"
     t.string "position"
+    t.string "name"
     t.string "major"
-    t.string "year"
+    t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -61,9 +63,6 @@ ActiveRecord::Schema.define(version: 20180412032738) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-# Could not dump table "sqlite_stat1" because of following StandardError
-#   Unknown type '' for column 'tbl'
 
   create_table "uploads", force: :cascade do |t|
     t.string "url"

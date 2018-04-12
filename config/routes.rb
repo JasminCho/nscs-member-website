@@ -41,8 +41,8 @@ Rails.application.routes.draw do
   #  get 'calendars/get_calendars/callback', to: redirect('/')
   # below are routes needed for google authentica tion
 
-  get 'events/new', to: 'events#new', as: 'new_events'
-  post 'events/create', to: 'events#create', as: 'create_event'
+  get 'calendars/new', to: 'calendars#new_event', as: 'new_events'
+  post 'calendars/create', to: 'calendars#create_event', as: 'create_event'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'

@@ -36,6 +36,20 @@ class CalendarsController < ApplicationController
 
 
 	def new_event
+		@event = Calendar.new
+	end
+
+	def create_event
+		@event = Calendar.Event.new(event_params)
+		if @event.save!
+			refirect_to @event
+		else
+			render :new_event
+		end
+	end
+
+	def event_params
+		params.require(:event).merge(:calendar_id => ENV['NSCS_Calendar_ID']).permit(:title, :description, :start_date, :end_date, :location, :calendar_id)
 	end
 
 	def delete_event

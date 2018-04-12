@@ -1,6 +1,6 @@
 
 class Calendar<ApplicationRecord
-	#has_many :events
+	has_many :events
 	attr_accessor :client
 
 	def initialize(current_user)

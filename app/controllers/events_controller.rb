@@ -9,11 +9,9 @@ class EventsController < ApplicationController
 	def create
 		@event = Event.new(event_params)
 		if @event.save!
-			puts "The event was saved brotha"
 			redirect_to @event
 			
 		else
-			puts "Nah my son"
 			render :new
 		end
 	end
