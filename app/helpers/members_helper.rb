@@ -10,7 +10,7 @@ module MembersHelper
     end
     
     def admin_user? 
-        user = Member.find_by(email: session[:email])
+        user = Officer.find_by(email: session[:email])
         if user.nil?
             redirect_to(home_url)
             flash.now[:danger] = 'You are not an admin!'

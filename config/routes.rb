@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   get '/upload', to: 'uploads#index'
 
   get '/login', to: 'user#login'
+  
+  get '/officers', to: 'officers#index'
+  
+  get '/about', to: 'general_pages#about'
+  get '/home', to: 'general_pages#home'
 
   get 'newsfeeds/index'
   get 'newsfeeds/new'
@@ -16,11 +21,7 @@ Rails.application.routes.draw do
   get 'sessions/create'
   get 'sessions/destroy'
 
-  get '/about', to: 'members#about'
-  get '/home', to: 'members#home'
   get '/faq', to: 'members#faq'
-  get '/officers', to: 'members#officers'
-  get '/contact', to: 'members#contact'
   get '/meetings', to: 'members#meetings'
   get '/points', to: 'members#points'
 

@@ -661,6 +661,8 @@ GEM
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.23)
+    figaro (1.1.1)
+      thor (~> 0.14)
     formatador (0.2.5)
     gherkin (5.0.0)
     globalid (0.4.1)
@@ -888,6 +890,7 @@ DEPENDENCIES
   coffee-rails (= 4.2.2)
   cucumber-rails
   database_cleaner
+  figaro
   gherkin (~> 5.0)
   google-api-client (= 0.8.2)
   guard (= 2.13.0)

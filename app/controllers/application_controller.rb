@@ -9,24 +9,22 @@ class ApplicationController < ActionController::Base
 
   def current_user
     #redirect_to sessions_create_path
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
-   
+    @current_user ||= Member.find(session[:email]) if session[:email]
+  end
+  
+  def current_admin
+    @current_admin ||= Officer.find(session[:email]) if session[:email]
   end
   
   def logged_in?
-	!current_user.nil?
+	  !current_user.nil?
   end
 
   #This method allow us to call selectively from controllers, instead of applying to all. 
   def logged_in_user?
-	unless logged_in?
-		flash[:danger] = "Please log in"
-		redirect_to root_path
-	end
+	  unless logged_in?
+		  flash[:danger] = "Please log in"
+		  redirect_to root_path
+	  end
   end 
-  # julian will delete this once current_user is established
-  def current_user2
-    @current_user2 ||= Member.find_by(email: session[:email]) if session[:email]
-  end
-
 end
