@@ -16,13 +16,12 @@
             <%= form_tag meetings_path, enctype: 'multipart/form-data' do %>
                 <%= file_field_tag :file, required: true, multiple: false, accept:'.pdf,.pptx,.ppt'  %>
                 <%= submit_tag 'Upload Meeting File' %>
-                <input type="text" data-provide='datepicker-inline' >
             <% end %>
             <ul>
                 <% @meetings.each do |meeting| %>
                     <li class="meetingsitem">
                         <div class="item">
-                            <div class="time">6/1/2018</div>
+                            <div class="time">meeting.date</div>
                             <div>
                                 <%= link_to meeting.date, meeting.url %>
                             </div>
