@@ -18,6 +18,9 @@
     </div>
     <div>
       <ul class="nav navbar-nav navbar-right">
+        <% if current_admin%>
+          <li><%= link_to "ADMIN PRIVILAGES", admin_page_path %></li>
+        <% end %>
         <li><%= link_to "Home", home_path %></li>
         <li><%= link_to "About Us", about_path %></li>
         <li><%= link_to "FAQ", faq_path %></li>
