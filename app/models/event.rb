@@ -1,14 +1,6 @@
-class Event
-	attr_accessor :day, :month, :year, :title
-
-	def initialize(day, month, year, title)
+class Event < ApplicationRecord
+	belongs_to :Calendar
+	def change
+		add_foreign_key :calendar_id
 	end
-
-	def return_date()
-	end
-
-	def return_title()
-	end
-
 end
-

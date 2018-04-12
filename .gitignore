@@ -24,3 +24,12 @@
 
 # ignore RubyMine files
 .idea/
+
+# yaml
+*.yml
+
+# Gemfile cache
+Gemfile.lock
+
+# Mac files
+.DS_Store

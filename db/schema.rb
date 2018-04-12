@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180406145722) do
+ActiveRecord::Schema.define(version: 20180410203659) do
+
+  create_table "calendars", force: :cascade do |t|
+    t.string "name"
+    t.string "calendar_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string "event_id"
+    t.string "creator_name"
+    t.string "creator_email"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "calendar_id"
+  end
 
   create_table "members", force: :cascade do |t|
     t.string "email"
@@ -25,26 +44,26 @@ ActiveRecord::Schema.define(version: 20180406145722) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-  create_table "uploads", force: :cascade do |t|
-    t.string "url"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "S3Obj"
-=======
   create_table "points", force: :cascade do |t|
     t.string "email"
     t.string "event_name"
     t.integer "point"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
->>>>>>> tri_branch
+  end
+
+  create_table "uploads", force: :cascade do |t|
+    t.string "url"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "S3Obj"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
+    t.string "email"
     t.string "name"
     t.string "oauth_token"
     t.datetime "oauth_expires_at"
