@@ -49,25 +49,10 @@
       <div class="row">
         <div class="col-sm-8">
           <h2 class="mt-4">Announcements</h2>
-            <!-- JULIAN's STUFF -->
-              <% if current_user2 %>
-                <%= link_to "If you're admin, click here to add/edit/delete announcements", newsfeeds_index_path %> <!-- ONLY ADMIN IS SUPPOSE TO SEE THIS LINK -->
-              <% end %>
-              <table style="border: 2px solid red; margin-top:20px;">
-                <tr>
-                  <th style="text-align:left;">News!</th>
-                </tr>
-                <% @newsfeed.each do |news| %>
-                  <tr>
-                    <td style="border: 2px solid red;"> <%= news.news %> </td>
-                  </tr>
-                <% end %>
-              </table>
-            <!-- END OF JULIAN's STUFF-->
         </div>
       </div>
 
-      <!-- Gallery -->
+      <%# <!-- Gallery -->
       <!-- <div class="row">
         <div class="col-lg-12">
           <div class="carousel">
@@ -122,7 +107,7 @@
               <a href="#" class="btn btn-primary">Find Out More!</a>
             </div>
           </div>
-        </div> -->
+        </div> --> %>
 
       </div>
     </div>
