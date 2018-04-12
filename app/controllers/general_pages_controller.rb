@@ -12,6 +12,6 @@ class GeneralPagesController < ApplicationController
     def faq
     end
     
-    def AdminPage
+    def admin_page
     end
 end
