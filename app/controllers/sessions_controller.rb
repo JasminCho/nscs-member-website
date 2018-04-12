@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     if member? user.email 
       session[:user_id] = user.id
       session[:email] = user.email
-      redirect_to about_path
+      redirect_to root_path
     else
       flash.now[:danger] = 'You are not a member!'
       redirect_to root_path
