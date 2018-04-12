@@ -9,11 +9,11 @@ class ApplicationController < ActionController::Base
 
   def current_user
     #redirect_to sessions_create_path
-    @current_user ||= Member.find(session[:email]) if session[:email]
+    @current_user ||= Member.find_by(email: session[:email]) if session[:email]
   end
   
   def current_admin
-    @current_admin ||= Officer.find(session[:email]) if session[:email]
+    @current_admin ||= Officer.find_by(email: session[:email]) if session[:email]
   end
   
   def logged_in?
