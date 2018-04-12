@@ -8,9 +8,9 @@
 	<%= submit_tag 'Upload file' %>
 <% end %>
 
-<% @uploads.each do |upload| %>
+<% @photos.each do |photo| %>
 	<div>
-		<%= link_to upload.name, upload.url %>
-		<%= image_tag upload.url, size: "200x200", alt: "img"%>
+		<%= link_to photo.name, photo.url %>
+		<%= image_tag photo.url, size: "200x200", alt: "img"%>
 	</div>
 <% end %>
