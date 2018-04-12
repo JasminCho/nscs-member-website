@@ -26,8 +26,8 @@
         <li><%= link_to "Points", points_path %></li>
 
 
-        <% if current_user %>
-          <li><%= current_user.name %></li>
+        <% if current_member %>
+          <li><%= current_member.name %></li>
           <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
         <% else %>
           <li><%= link_to "Sign in", "/auth/google_oauth2", id: "sign_in" %></li>

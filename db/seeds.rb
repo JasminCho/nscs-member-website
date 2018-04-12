@@ -9,7 +9,9 @@ fake_members = [
     { email: 'jasmincho97@gmail.com', name: 'Jasmin', pace: true },
     { email: 'jtiu.edu@gmail.com', name: 'Julian' , pace: true },
     { email: 'akashkundu92@gmail.com', name: 'Akash' , pace: true },
-    { email: 'fatezero.sen@gmail.com', name: 'Sen' , pace: true }
+    { email: 'fatezero.sen@gmail.com', name: 'Sen' , pace: true },
+    { email: 'fredericcollinsss@gmail.com', name: 'Tri' , pace: true },
+    { email: 'ggregar@gmail.com', name: 'Greg' , pace: true }
 ]
 
 fake_members.each do |member|
@@ -19,8 +21,10 @@ end
 fake_officers = [
   { email: 'jtiu.edu@gmail.com', name: 'Julian', position: 'President', major: 'Junior', year: '2019'},
   { email: 'jasmincho97@gmail.com', name: 'Jasmin', position: 'Vice President', major: 'Junior', year: '2019'},
-  { email: 'akashkundu92@gmail.com', name: 'Akash', position: 'Vice President', major: 'Junior', year: '2019'},
-  { email: 'fatezero.sen@gmail.com', name: 'Sen', position: 'Vice President', major: 'Junior', year: '2019'}
+  { email: 'akashkundu92@gmail.com', name: 'Akash', position: 'Peasant', major: 'Junior', year: '2019'},
+  { email: 'fatezero.sen@gmail.com', name: 'Sen', position: 'Zero Fate', major: 'Junior', year: '2019'},
+  { email: 'fredericcollinsss@gmail.com', name: 'Tri', position: 'Tree', major: 'Junior', year: '2019'},
+  { email: 'ggregar@gmail.com', name: 'Greg', position: 'Latin Lover', major: 'Junior', year: '2019'}
 ]
 
 fake_officers.each do |officer|
