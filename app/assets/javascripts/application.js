@@ -15,3 +15,4 @@
 //= require bootstrap.min
 //= require npm
 //= require_tree .
+//= require bootstrap-datepicker
