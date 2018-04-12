@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180410203659) do
+ActiveRecord::Schema.define(version: 20180411174912) do
 
   create_table "calendars", force: :cascade do |t|
     t.string "name"
@@ -28,17 +28,29 @@ ActiveRecord::Schema.define(version: 20180410203659) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "calendar_id"
+    t.integer "calendar_id"
+    t.index ["calendar_id"], name: "index_events_on_calendar_id"
   end
 
   create_table "members", force: :cascade do |t|
     t.string "email"
     t.string "name"
     t.boolean "admin"
+    t.boolean "pace"
   end
 
   create_table "newsfeeds", force: :cascade do |t|
     t.string "news"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "officers", force: :cascade do |t|
+    t.string "email"
+    t.string "position"
+    t.string "name"
+    t.string "major"
+    t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,6 +62,9 @@ ActiveRecord::Schema.define(version: 20180410203659) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+# Could not dump table "sqlite_stat1" because of following StandardError
+#   Unknown type '' for column 'tbl'
 
   create_table "uploads", force: :cascade do |t|
     t.string "url"

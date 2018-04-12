@@ -12,6 +12,14 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
    
   end
+
+  def current_member
+    @member ||= Member.find_by(email: session[:email]) if session[:email]
+  end
+
+  def current_admin
+    @admin ||= Officer.find_by(email: session[:admin_email]) if session [:admin_email]
+  end
   
   def logged_in?
 	!current_user.nil?
