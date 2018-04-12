@@ -1,0 +1,10 @@
+<h1>Add new point</h1>
+<%= form_for(@point) do |f| %>
+    <%= f.label :email, 'Email'%>
+    <%= f.text_field :email, :value => params[:email], :diable => true %>
+    <%= f.label :event_name, 'Event name'%>
+    <%= f.text_field :event_name%>
+    <%= f.label :point, 'Point'%>
+    <%= f.number_field :point %>
+    <%= f.button :submit %>
+<% end %>

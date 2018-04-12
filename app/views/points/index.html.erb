@@ -32,6 +32,9 @@
                     <td>
                         <%= point.point %>
                     </td>
+                    <td>
+                        <%= link_to 'Delete', points_url(:id => point.id, :email => point.email), method: :delete %>
+                    </td>
                 </tr>
                 <% end %>
             
@@ -41,6 +44,7 @@
             <a href="https://www.csisd.org/apps/pages/index.jsp?uREC_ID=161705&type=d&pREC_ID=335513">Volunteer Application</a>
         </div>
     </div>
+    <%= link_to 'Add new point', new_points_url(:email => @member_email) %>
 </body>
 
 </html>
