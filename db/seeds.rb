@@ -38,7 +38,6 @@ fake_points.each do |point|
   Point.create!(point)
 end
 
-<<<<<<< HEAD
 =begin
 fake_newsfeed = [
   {event: 'NSCS official website is now deployed in Heroku'},
@@ -51,17 +50,3 @@ fake_newsfeed.each do |event|
   Newsfeed.create(event)
 end
 =end
-=======
-Newsfeed.destroy_all
-
-# fake_newsfeed = [
-#   {event: 'NSCS official website is now deployed in Heroku'},
-#   {event: 'NSCS developers say that website is well on its way'},
-#   {event: 'Sen elected as NSCS\'s new president'}
-# ]
-#
-#
-# fake_newsfeed.each do |event|
-#   Newsfeed.create(event)
-# end
->>>>>>> 86318d64152e2f14902ce8f45fcaee7f48370b80
