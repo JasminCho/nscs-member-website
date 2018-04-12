@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TAMU NSCS Home</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag :application, :home, media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>National Society of Collegiate Scholars</h1>
+          <h2>Texas A&M</h2>
+          <div class="container">
+            <div>Left</div>
+            <div>Middle</div>
+            <div>Right</div>
+          </div>
+          <p>The National Society of Collegiate Scholars at Texas A&M University
+            is an honor society that recognizes high-achieving students.
+            NSCS is proud to offer almost half a million dollars in scholarships.
+            More importantly, NSCS is a growth opportunity, leadership training ground,
+            and resource for our students. Students who join NSCS meet people on campus
+            they might not have meet without NSCS – people who become friends, long-term
+            supporters, and future colleagues. Our students get the tools and encouragement
+            they need to take part in transforming our campus and the community that means
+            the most to them.
+          </p>
+        </div>
+      </div>
+
+      <!-- Calendar -->
+      <div class="body-content">
+        <div class="business-header">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <!-- Where calendar goes -->
+                <h1>Calendar</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Announcements -->
+      <div class="row">
+        <div class="col-sm-8">
+          <h2 class="mt-4">Announcements</h2>
+            <!-- JULIAN's STUFF -->
+              <% if current_user %>
+                <%= link_to "If you're admin, click here to add/edit/delete announcements", newsfeeds_index_path %> <!-- ONLY ADMIN IS SUPPOSE TO SEE THIS LINK -->
+              <% end %>
+              <table style="border: 2px solid red; margin-top:20px;">
+                <tr>
+                  <th style="text-align:left;">News!</th>
+                </tr>
+                <% @newsfeed.each do |news| %>
+                  <tr>
+                    <td style="border: 2px solid red;"> <%= news.news %> </td>
+                  </tr>
+                <% end %>
+              </table>
+            <!-- END OF JULIAN's STUFF-->
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <!-- <div class="row">
+        <div class="col-lg-12">
+          <div class="carousel">
+            <h1>GALLERY</h1>
+            <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"></a>
+            <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"></a>
+            <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3"></a>
+            <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"></a>
+            <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"></a>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- General Events -->
+      <!-- <div class="row">
+        <h1>General Events</h1>
+        <div class="col-sm-4 my-4">
+          <div class="card">
+            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Event 1</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
+                neque sequi doloribus.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Find Out More!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 my-4">
+          <div class="card">
+            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Event 2</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
+                neque sequi doloribus totam ut praesentium aut.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Find Out More!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 my-4">
+          <div class="card">
+            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Event 3</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
+                neque.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Find Out More!</a>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+    </div>
+  </body>
+</html>

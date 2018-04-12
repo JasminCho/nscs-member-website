@@ -14,8 +14,7 @@ class CalendarsController < ApplicationController
 		#Evaluate before leaving so expects the same as current_user parent!
 		@current_user
 	end
-#Marcela Cabral
-#8305139250	
+	
 	def list_events
 	
 			@events = @calendar.list_events

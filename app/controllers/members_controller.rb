@@ -1,16 +1,8 @@
 class MembersController < ApplicationController
-
-  def home
-    @newsfeed = Newsfeed.all
-  end
+  
+  before_action :admin_user?
 
   def faq
-  end
-
-  def about
-  end
-
-  def officers
   end
 
   def contact

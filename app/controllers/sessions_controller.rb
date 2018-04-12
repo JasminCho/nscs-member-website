@@ -1,25 +1,18 @@
 class SessionsController < ApplicationController
-  
- 
   def create
     user = User.from_omniauth(request.env["omniauth.auth"])
-    puts "These are the tokens in omniauth.auth"
-    puts request.env["omniauth.auth"]
-    debugger
-    if member? user.name #this is actually email if you use tamu email
+    if member? user.email 
       session[:user_id] = user.id
-      session[:email] = user.name
+      session[:email] = user.email
       redirect_to root_path
     else
       flash.now[:danger] = 'You are not a member!'
       redirect_to root_path
     end    
-    session[:email2] = user.name
   end
 
   def destroy
     reset_session
-    current_user2
     redirect_to root_path
   end
 end
