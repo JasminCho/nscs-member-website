@@ -11,14 +11,6 @@ class ApplicationController < ActionController::Base
     #redirect_to sessions_create_path
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
-
-  def current_member
-    @current_member ||= Member.where(email: session[:user_email]) if session[:user_email]
-  end
-
-  # def current_officer
-  #   @current_officer || Officer.find(session[:user_email]) if session[:user_email]
-  # end
   
   def logged_in?
 	  !current_user.nil?
