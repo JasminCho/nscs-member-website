@@ -2,8 +2,8 @@ require 'aws-sdk-s3'  # v2: require 'aws-sdk'
 
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  attr_accessor :current_user
-  helper_method :current_user, :logged_in?, :logged_in_user?, :current_user2
+  attr_accessor :current_user, :current_admin
+  helper_method :current_user,:logged_in?, :logged_in_user?
   include MembersHelper
   include S3ModuleHelper
 
