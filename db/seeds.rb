@@ -28,16 +28,17 @@ fake_officers.each do |officer|
 end
 
 fake_points = [
-    {email: 'gregorio_garza@email.tamu.edu', event_name: "Event A", point: 100},
-    {email: 'yang.421@tamu.edu', event_name: "Event B", point: 100},
-    {email: 'yang.421@tamu.edu', event_name: "Event C", point: 100},
-    {email: 'phamminhtris@tamu.edu', event_name: "Event A", point: 100}
+  { email: 'gregorio_garza@email.tamu.edu', event_name: 'Event A', point: 100 },
+  { email: 'yang.421@tamu.edu', event_name: 'Event B', point: 100 },
+  { email: 'yang.421@tamu.edu', event_name: 'Event C', point: 100 },
+  { email: 'phamminhtris@tamu.edu', event_name: 'Event A', point: 100 }
 ]
 
 fake_points.each do |point|
   Point.create!(point)
 end
 
+<<<<<<< HEAD
 =begin
 fake_newsfeed = [
   {event: 'NSCS official website is now deployed in Heroku'},
@@ -50,3 +51,17 @@ fake_newsfeed.each do |event|
   Newsfeed.create(event)
 end
 =end
+=======
+Newsfeed.destroy_all
+
+# fake_newsfeed = [
+#   {event: 'NSCS official website is now deployed in Heroku'},
+#   {event: 'NSCS developers say that website is well on its way'},
+#   {event: 'Sen elected as NSCS\'s new president'}
+# ]
+#
+#
+# fake_newsfeed.each do |event|
+#   Newsfeed.create(event)
+# end
+>>>>>>> 86318d64152e2f14902ce8f45fcaee7f48370b80
