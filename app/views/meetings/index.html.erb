@@ -11,17 +11,17 @@
 
     <body>
         <div class="meetings">
-            <h3 class="title">Meetings2</h3>
+            <h3 class="title">Meetings & Files</h3>
             <!-- ONLY ADMIN SHOULD SEE THIS BUTTON-->
             <%= form_tag meetings_path, enctype: 'multipart/form-data' do %>
                 <%= file_field_tag :file, required: true, multiple: false, accept:'.pdf,.pptx,.ppt'  %>
+            <!-- ONLY ADMIN SHOULD SEE THIS BUTTON-->
                 <%= submit_tag 'Upload Meeting File' %>
             <% end %>
             <ul>
                 <% @meetings.each do |meeting| %>
                     <li class="meetingsitem">
                         <div class="item">
-                            <div class="time">meeting.date</div>
                             <div>
                                 <%= link_to meeting.date, meeting.url %>
                             </div>
