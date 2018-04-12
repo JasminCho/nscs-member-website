@@ -8,6 +8,7 @@ class PointsController < ApplicationController
     # end
 
     # @points = Point.where(email: member_email)
+    
   end
 
   def new
