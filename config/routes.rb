@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   get '/about', to: 'general_pages#about'
   get '/home', to: 'general_pages#home'
+  get '/AdminPage', to: 'general_pages#AdminPage'
 
   get 'newsfeeds/index'
   get 'newsfeeds/new'
