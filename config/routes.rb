@@ -31,7 +31,6 @@ Rails.application.routes.draw do
   # points' routes
   get 'points/index', to: 'points#index'
   resource :points
-
   
   #calendar routes
   get 'calendars/get_events', to: 'calendars#list_events', as: 'list_events'
