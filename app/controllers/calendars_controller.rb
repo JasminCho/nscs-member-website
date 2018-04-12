@@ -27,7 +27,7 @@ class CalendarsController < ApplicationController
 	#TODO decide wether they want to choose to send notification or not.
 	#TODO Recurrense events?
 		
-		redirect_to new_event and return
+	#	redirect_to new_event and return
 	end
 
 	def show_event
@@ -36,13 +36,13 @@ class CalendarsController < ApplicationController
 
 
 	def new_event
-		@event = Calendar.new
+		@event = Event.new
 	end
 
 	def create_event
-		@event = Calendar.Event.new(event_params)
+		@event = Event.new(event_params)
 		if @event.save!
-			refirect_to @event
+			redirect_to @event
 		else
 			render :new_event
 		end
