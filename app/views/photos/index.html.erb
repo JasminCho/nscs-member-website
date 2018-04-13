@@ -7,10 +7,13 @@
 <!-- ONLY ADMIN SHOULD SEE THIS BUTTON-->
 	<%= submit_tag 'Upload file' %>
 <% end %>
-
-<% @photos.each do |photo| %>
-	<div>
-		<%= link_to photo.name, photo.url %>
-		<%= image_tag photo.url, size: "200x200", alt: "img"%>
-	</div>
-<% end %>
+<div>
+	<% @photos.each do |photo| %>
+		<div>
+			<!-- <%= link_to photo.name, photo.url %>-->
+			<a href= "<%= photo.url %>" >
+				<%= image_tag photo.url, size: "200x200", alt: "img"%>
+			</a>
+		</div>
+	<% end %>
+</div>
