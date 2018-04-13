@@ -29,7 +29,7 @@ class PhotosController < ApplicationController
   end
 
   def index
-    @photos = Meeting.all
+    @photos = Photo.all
     @photos.each do |s3_item|
       unless S3_BUCKET.objects[s3_item.name].exists?
         @photos.delete(s3_item)
