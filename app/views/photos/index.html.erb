@@ -9,10 +9,10 @@
 <% end %>
 <div>
 	<% @photos.each do |photo| %>
-		<div>
+		<div style="display:inline-block">
 			<!-- <%= link_to photo.name, photo.url %>-->
 			<a href= "<%= photo.url %>" >
-				<%= image_tag photo.url, size: "200x200", alt: "img"%>
+				<%= image_tag photo.url, size: "300x300", alt: "img"%>
 			</a>
 		</div>
 	<% end %>
