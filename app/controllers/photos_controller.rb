@@ -1,39 +1,23 @@
 class PhotosController < ApplicationController
+    include S3ModuleHelper
+
   def new
   end
 
   def create
-    # Make an object in your bucket for your upload
-    obj = S3_BUCKET.objects[params[:file].original_filename]
-
-    # Upload the file
-    obj.write(
-      file: params[:file],
-      acl: :public_read,
-      storage_class: "REDUCED_REDUNDANCY"
-    )
-
-    # Create an object for the upload
-    @photo = Photo.new(
-    		url: obj.public_url,
-		    name: obj.key
-    	)
-
-    # Save the upload
-    if @photo.save
-      redirect_to photos_path, success: 'File successfully uploaded'
-    else
-      flash.now[:notice] = 'There was an error'
-      render :new
-    end
   end
 
   def index
-    @photos = Photo.all
-    @photos.each do |s3_item|
-      unless S3_BUCKET.objects[s3_item.name].exists?
-        @photos.delete(s3_item)
-      end 
-    end 
+    @photos = []
+    S3ModuleHelper::s3_get_objects(ENV['S3_BUCKET2']).each do |photo|
+      S3_CLIENT.put_object_acl({
+        acl: "public-read",
+        bucket_name: ENV['S3_BUCKET2'],
+        key: photo,
+      })
+      @photos << S3ModuleHelper::s3_get_file_url(photo, ENV['S3_BUCKET2'])
+    end
   end
+
+
 end  

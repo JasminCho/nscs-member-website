@@ -1,18 +1,9 @@
 <h1>Gallery</h1>
-
-
-<!-- ONLY ADMIN SHOULD SEE THIS BUTTON-->
-<%= form_tag photos_path, enctype: 'multipart/form-data' do %>
-	<%= file_field_tag :file, required: true, multiple: false, accept:'image/*'  %>
-<!-- ONLY ADMIN SHOULD SEE THIS BUTTON-->
-	<%= submit_tag 'Upload file' %>
-<% end %>
 <div>
 	<% @photos.each do |photo| %>
 		<div style="display:inline-block">
-			<!-- <%= link_to photo.name, photo.url %>-->
-			<a href= "<%= photo.url %>" >
-				<%= image_tag photo.url, size: "300x300", alt: "img"%>
+			<a href= "<%= photo %>" >
+				<%= image_tag photo, size: "300x300", alt: "img"%>
 			</a>
 		</div>
 	<% end %>

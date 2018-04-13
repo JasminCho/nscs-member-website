@@ -12,21 +12,21 @@ module S3ModuleHelper
 #returns array populated with the objects in the bucket specified by the 'name' arg
 #Use:      objects = s3_get_objects('nameOfBucket') --> 'objects' will have array of names/keys of objects inside the bucket specified
 #Use:      objects = s3_get_objects(buckets[1]) --> you can use result from s3_get_buckets function to give name of bucket
-  def self.s3_get_objects(bucket_name) 
-  	objects = []
-	s3 = Aws::S3::Resource.new(region: ENV['S3_REGION'])
-	bucket = s3.bucket(bucket_name)
-	if s3.bucket(bucket_name).exists?
-  		bucket = s3.bucket(bucket_name)
-  	else
-  		raise 'bucket does NOT exist'
-  	end
+  def self.s3_get_objects(bucket_name)
+    objects = []
+    s3 = Aws::S3::Resource.new(region: ENV['S3_REGION'])
+    bucket = s3.bucket(bucket_name)
+    if s3.bucket(bucket_name).exists?
+      bucket = s3.bucket(bucket_name)
+    else
+      raise 'bucket does NOT exist'
+    end
 	#bucket = S3_RESOURCE_REGION_BASED.bucket(name) 
 	#will DRY this out later ^^
-	bucket.objects.limit(50).each do |item|
-		objects << item.key
-	end
-	return objects
+    bucket.objects.limit(50).each do |item|
+		  objects << item.key
+    end
+    return objects
   end
 
 #returns public url for a certain item. will take bucket name as arg but if not provided, it will default to the one in onfig/initializers/aws.rb
