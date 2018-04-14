@@ -40,23 +40,38 @@ class CalendarsController < ApplicationController
 	end
 
 	def create_event
-		@event = Event.new(event_params)
+		@event = @calendar.events.new(event_params)
 		if @event.save!
-			redirect_to @event
+			@calendar.insert_event(@event)
+			@calendar.save!
+
+			debugger
+			#@event.update_attributes(@event)
+			flash[:notice]="Your event, " + @event[:title] + ", got saved!"
+			redirect_to new_events_path
 		else
+			@event.destroy!
 			render :new_event
 		end
 	end
 
 	def event_params
-		params.require(:event).merge(:calendar_id => ENV['NSCS_Calendar_ID']).permit(:title, :description, :start_date, :end_date, :location, :calendar_id)
+		params.require(:event).merge(:calendar_id => ENV['NSCS_Calendar_ID']).permit(:title, :description, :start_date, :end_date, :location, :calendar_id, :start_time, :end_time)
 	end
 
 	def delete_event
+		@calendar.delete_event)(params.require(:event_id))
+		flash[:notice]="Event got deleted succesfully."
+		redirect_to list_events_path
 	end
 
 	def edit_event
+		#@
 	end
+
+	def update_event
+	end
+
 
 	def create
 
@@ -65,6 +80,9 @@ class CalendarsController < ApplicationController
 		@calendar.insert_event(params)
 	end
 
+	#TODO make the routes.
+	#Finish the updating part.
+	#Make the views for the updating form.
 	
 
 end
