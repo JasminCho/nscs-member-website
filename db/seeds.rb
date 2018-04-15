@@ -42,6 +42,70 @@ fake_points.each do |point|
   Point.create!(point)
 end
 
+fake_faqs = [
+  {question: 'When and where are the meetings?',
+   answer: 'Every event is worth 3 points! For most of our events you will also be
+          able to receive additional points by bringing a friend (1pt) and/or
+          wearing your NSCS t-shirt (1pt). Occasionally there will be opportunities
+          to receive even more points, but these opportunities are time sensitive.
+          You will always hear of these opportunities at our monthly meetings and
+          once again in my emails. An example of this would be the animal shelter
+          donation we often host, where each item donated is worth one point.
+          Ultimately your goal is to reach 150 points by graduation to receive
+          your NSCS graduation cords. Ideally, we recommend every member shoot for
+          at least 25 points per semester to reach this goal by the end of their
+          senior year. We are not implying that you are required to meet this standard;
+          it is simply a recommendation. That being said, you can receive these
+          chords even if you do not reach 150 points by graduation, paying for
+          them out of pocket through the official NSCS website. We understand
+          that 150 points may sound like an excessive amount, but we do our best
+          to provide our members with as many fun and easy opportunities to receive
+          these points throughout the semester.'
+  },
+  { question: 'How does the point system work?',
+    answer: 'Every event is worth 3 points! For most of our events you will also be
+          able to receive additional points by bringing a friend (1pt) and/or
+          wearing your NSCS t-shirt (1pt). Occasionally there will be opportunities
+          to receive even more points, but these opportunities are time sensitive.
+          You will always hear of these opportunities at our monthly meetings and
+          once again in my emails. An example of this would be the animal shelter
+          donation we often host, where each item donated is worth one point.
+          Ultimately your goal is to reach 150 points by graduation to receive
+          your NSCS graduation cords. Ideally, we recommend every member shoot for
+          at least 25 points per semester to reach this goal by the end of their
+          senior year. We are not implying that you are required to meet this standard;
+          it is simply a recommendation. That being said, you can receive these
+          chords even if you do not reach 150 points by graduation, paying for
+          them out of pocket through the official NSCS website. We understand
+          that 150 points may sound like an excessive amount, but we do our best
+          to provide our members with as many fun and easy opportunities to receive
+          these points throughout the semester.'
+  },
+  { question: 'How can I stay in touch with NSCS?',
+    answer: 'You can always find out more information on our Facebook page. We do
+          our best to keep everything updated and posted on our events page. We
+          are also located on Maroonlink, but please note that the only events
+          that will ever be posted on this webpage are general meetings! If you
+          ever have any questions or concerns with the information posted on either
+          of these websites, please do not hesitate to contact an officer. Or if you
+          ever have any suggestions or ideas regrading NSCS, don\'t be shy, we would
+          love to hear from you!'
+  },
+  {  question: 'NSCS is a large organization, so how will I get to know anyone?',
+     answer: 'Our chapter of NSCS recently implemented small groups into our organization.
+          We use these small groups to make lasting connections with other students!
+          We have GroupMe\'s and use these to communicate with each other! If you
+          are a current member, please send your phone number and name to
+          tamunscsmedia@gmail.com and you will be added to a small group!
+          This will be a great way to get involved and an easy way to contact an
+          officer if you have any questions or concerns!'
+  }
+]
+
+fake_faqs.each do |faqs|
+  Faq.create(faqs)
+end
+
 =begin
 fake_newsfeed = [
   {event: 'NSCS official website is now deployed in Heroku'},

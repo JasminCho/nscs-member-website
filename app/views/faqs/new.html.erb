@@ -1,0 +1,11 @@
+<h1> HEY ADMIN! INSERT YOUR ANNOUNCEMENT HERE! </h1>
+
+    <%= form_for(@faqs) do |n| %>
+      <%= n.label :Question %>
+      <%= n.text_field :question %> 
+      
+      <%= n.label :Answer %>
+      <%= n.text_field :answer %> 
+      
+      <%= n.submit "POST"%>
+    <% end %>

@@ -1,0 +1,36 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="app/assets/stylesheets/faq.scss">
+<!------ Include the above in your HEAD tag ---------->
+
+<body class="background-effect">
+  <div>
+    <h1>FAQ</h1>
+  </div>
+
+  <% @faqs.each do |faq| %>
+  <div class="panel-group" id="accordion1">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+            <%= faq.question %> 
+            <% if current_admin %>
+              <%= link_to "Edit", edit_faq_path(faq) %> <%= link_to "Delete", faq, method: :delete, data: {confirm: "Are you sure?"} %>
+            <% end %>
+          </a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in">
+        <div class="panel-body">
+          <%= faq.answer %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <% if current_admin %>
+    <%= link_to "ADD A NEW QUESTION", new_faq_path %>
+  <% end %>
+</bodys>

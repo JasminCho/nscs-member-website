@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20180412223514) do
-
-  create_table "meetings", force: :cascade do |t|
-    t.string "url"
-    t.string "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
-ActiveRecord::Schema.define(version: 20180412063146) do
+ActiveRecord::Schema.define(version: 20180415023616) do
 
   create_table "calendars", force: :cascade do |t|
     t.string "name"
@@ -43,6 +34,21 @@ ActiveRecord::Schema.define(version: 20180412063146) do
     t.index ["calendar_id"], name: "index_events_on_calendar_id"
   end
 
+  create_table "faqs", force: :cascade do |t|
+    t.string "question"
+    t.text "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.string "url"
+    t.string "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+  end
+
   create_table "members", force: :cascade do |t|
     t.string "email"
     t.string "name"
@@ -55,15 +61,19 @@ ActiveRecord::Schema.define(version: 20180412063146) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "photos", force: :cascade do |t|
-    t.string "url"
-    
   create_table "officers", force: :cascade do |t|
     t.string "email"
     t.string "position"
     t.string "name"
     t.string "major"
     t.integer "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "url"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
