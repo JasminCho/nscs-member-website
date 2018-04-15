@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20180412223514) do
 
   create_table "meetings", force: :cascade do |t|
@@ -18,12 +19,34 @@ ActiveRecord::Schema.define(version: 20180412223514) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+ActiveRecord::Schema.define(version: 20180412063146) do
+
+  create_table "calendars", force: :cascade do |t|
+    t.string "name"
+    t.string "calendar_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "event_id"
+    t.string "creator_name"
+    t.string "creator_email"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "calendar_id"
+    t.time "start_time"
+    t.time "end_time"
+    t.date "start_date"
+    t.date "end_date"
+    t.index ["calendar_id"], name: "index_events_on_calendar_id"
   end
 
   create_table "members", force: :cascade do |t|
     t.string "email"
     t.string "name"
-    t.boolean "admin"
+    t.boolean "pace"
   end
 
   create_table "newsfeeds", force: :cascade do |t|
@@ -34,7 +57,13 @@ ActiveRecord::Schema.define(version: 20180412223514) do
 
   create_table "photos", force: :cascade do |t|
     t.string "url"
+    
+  create_table "officers", force: :cascade do |t|
+    t.string "email"
+    t.string "position"
     t.string "name"
+    t.string "major"
+    t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,6 +87,7 @@ ActiveRecord::Schema.define(version: 20180412223514) do
   create_table "users", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
+    t.string "email"
     t.string "name"
     t.string "oauth_token"
     t.datetime "oauth_expires_at"

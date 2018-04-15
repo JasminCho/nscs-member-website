@@ -6,31 +6,41 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 fake_members = [
-    { email: 'gregorio_garza@email.tamu.edu', name: 'Greg', admin: true },
-    { email: 'yang.421@tamu.edu', name: 'Sen', admin: true },
-    { email: 'phamminhtris@tamu.edu', name: 'Tri Pham', admin: true },
-    { email: 'jasmincho@tamu.edu', name: 'Jasmin', admin: true },
-    { email: 'jtiu.edu@tamu.edu', name: 'Julian' , admin: true },
-    { email: 'axk141430@tamu.edu', name: 'Akash' , admin: true },
-    { email: 'jtiu.edu@gmail.com', name: 'Julian' , admin: false }
+    { email: 'jasmincho97@gmail.com', name: 'Jasmin', pace: true },
+    { email: 'jtiu.edu@gmail.com', name: 'Julian' , pace: true },
+    { email: 'akashkundu92@gmail.com', name: 'Akash' , pace: true },
+    { email: 'fatezero.sen@gmail.com', name: 'Sen' , pace: true },
+    { email: 'fredericcollinsss@gmail.com', name: 'Tri' , pace: true },
+    { email: 'ggregar@gmail.com', name: 'Greg' , pace: true }
 ]
 
 fake_members.each do |member|
   Member.create!(member)
 end
 
+fake_officers = [
+  { email: 'jtiu.edu@gmail.com', name: 'Julian', position: 'President', major: 'Junior', year: '2019'},
+  { email: 'jasmincho97@gmail.com', name: 'Jasmin', position: 'Vice President', major: 'Junior', year: '2019'},
+  { email: 'akashkundu92@gmail.com', name: 'Akash', position: 'Peasant', major: 'Junior', year: '2019'},
+  { email: 'fatezero.sen@gmail.com', name: 'Sen', position: 'Zero Fate', major: 'Junior', year: '2019'},
+  { email: 'fredericcollinsss@gmail.com', name: 'Tri', position: 'Tree', major: 'Junior', year: '2019'},
+  { email: 'ggregar@gmail.com', name: 'Greg', position: 'Latin Lover', major: 'Junior', year: '2019'}
+]
+
+fake_officers.each do |officer|
+  Officer.create(officer)
+end
+
 fake_points = [
-    {email: 'gregorio_garza@email.tamu.edu', event_name: "Event A", point: 100},
-    {email: 'yang.421@tamu.edu', event_name: "Event B", point: 100},
-    {email: 'yang.421@tamu.edu', event_name: "Event C", point: 100},
-    {email: 'phamminhtris@tamu.edu', event_name: "Event A", point: 100}
+  { email: 'gregorio_garza@email.tamu.edu', event_name: 'Event A', point: 100 },
+  { email: 'yang.421@tamu.edu', event_name: 'Event B', point: 100 },
+  { email: 'yang.421@tamu.edu', event_name: 'Event C', point: 100 },
+  { email: 'phamminhtris@tamu.edu', event_name: 'Event A', point: 100 }
 ]
 
 fake_points.each do |point|
   Point.create!(point)
 end
-
-Newsfeed.destroy_all
 
 =begin
 fake_newsfeed = [

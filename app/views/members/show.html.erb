@@ -3,10 +3,9 @@
 <br/>
 <%= "Email: #{@member.email}" %>
 <br/>
-<%= "Admin: #{@member.admin}" %>
-<br/>
 <%= "PACE: #{@member.pace}" %>
 <br/>
 <%= link_to 'Edit member info', edit_members_url(:id => @member.id) %>
 <%= link_to 'Delete member',members_url(:id => @member.id), method: :delete %>
 <%= link_to 'Back to member list', members_index_url %>
+<%= link_to 'Show points', points_index_url(:email => @member.email)%>

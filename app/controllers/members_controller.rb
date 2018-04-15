@@ -1,16 +1,8 @@
 class MembersController < ApplicationController
-
-  def home
-    @newsfeed = Newsfeed.all
-  end
+  
+  before_action :admin_user?
 
   def faq
-  end
-
-  def about
-  end
-
-  def officers
   end
 
   def contact
@@ -67,6 +59,6 @@ class MembersController < ApplicationController
   private
 
   def members_params
-    params.require(:member).permit(:name, :email, :admin, :pace)
+    params.require(:member).permit(:name, :email, :pace)
   end
 end

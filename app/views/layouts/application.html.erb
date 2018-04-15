@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TAMU NSCS</title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>TAMU NSCS</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <%= link_to home_path do %>
-             <%= image_tag "nscs-logo.png", class:"navbar-logo" %>
-          <% end %>
-        </div>
-        <div>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home", home_path %></li>
-            <li><%= link_to "About Us", about_path %></li>
-            <li><%= link_to "FAQ", faq_path %></li>
-            <li><%= link_to "Officers", officers_path %></li>
-            <li><%= link_to "Meetings", meetings_path %></li>
-            <li><%= link_to "Points", points_path %></li>
-
-            <% if current_user %>
-              <li><%= current_user.name %></li>
-              <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
-            <% else %>
-              <li><%= link_to "Sign in", "/auth/google_oauth2", id: "sign_in" %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!--  Body -->
-    <div class="container">
-      <%= yield %>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to home_path do %>
+        <%= image_tag "nscs-logo.png", class: "navbar-logo" %>
+      <% end %>
     </div>
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_admin%>
+          <li><%= link_to "ADMIN PRIVILAGES", admin_page_path %></li>
+        <% end %>
+        <li><%= link_to "Home", home_path %></li>
+        <li><%= link_to "About Us", about_path %></li>
+        <li><%= link_to "FAQ", faq_path %></li>
+        <li><%= link_to "Officers", officers_path %></li>
+        <li><%= link_to "Meetings", meetings_path %></li>
+        <li><%= link_to "Points", points_path %></li>
+
+
+        <% if current_member %>
+          <li><%= current_member.name %></li>
+          <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+        <% else %>
+          <li><%= link_to "Sign in", "/auth/google_oauth2", id: "sign_in" %></li>
+        <% end %>
+
+      </ul>
+    </div>
+  </div>
+</nav>
 
     <!-- Footer -->
     <footer class="page-footer">
@@ -61,11 +61,13 @@
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </div>
+</footer>
 
-    <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
-  </body>
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+</body>
 </html>

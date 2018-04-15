@@ -22,8 +22,16 @@
 
 # Ignore all yml files
 *.yml
-
 .byebug_history
 
 # ignore RubyMine files
 .idea/
+
+# yaml
+*.yml
+
+# Gemfile cache
+Gemfile.lock
+
+# Mac files
+.DS_Store
