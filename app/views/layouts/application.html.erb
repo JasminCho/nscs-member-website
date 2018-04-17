@@ -20,14 +20,14 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", home_path %></li>
         <li><%= link_to "About Us", about_path %></li>
-        <li><%= link_to "FAQ", faq_path %></li>
+        <li><%= link_to "FAQ", faqs_path %></li>
         <li><%= link_to "Officers", officers_path %></li>
         <li><%= link_to "Meetings", meetings_path %></li>
         <li><%= link_to "Points", points_path %></li>
 
 
-        <% if current_member %>
-          <li><%= current_member.name %></li>
+        <% if current_user %>
+          <li><%= current_user.name %></li>
           <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
         <% else %>
           <li><%= link_to "Sign in", "/auth/google_oauth2", id: "sign_in" %></li>

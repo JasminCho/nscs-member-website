@@ -1,0 +1,21 @@
+<h1> HEY ADMIN! ADD A NEW USER HERE! </h1>
+
+    <%= form_for(@officers) do |n| %>
+      
+      <%= n.label :Name %>
+      <%= n.text_field :name %>       
+      
+      <%= n.label :Email%>
+      <%= n.text_field :email %>
+      
+      <%= n.label :Position %>
+      <%= n.text_field :position %> 
+      
+      <%= n.label :Major %>
+      <%= n.text_field :major %>
+      
+      <%= n.label :Year %>
+      <%= n.text_field :year %>
+      
+      <%= n.submit "Submit"%>
+    <% end %>

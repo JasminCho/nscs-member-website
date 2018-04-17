@@ -124,3 +124,22 @@
     </section>
   </body>
 </html>
+
+<!-- JULIAN'S STUFF. JAS, PLEASE EDIT LATER  -->
+************************** <br>
+<% @officers.each do |officer| %>
+  <%= officer.name %> <br>
+  <%= officer.email %> <br>
+  <%= officer.position %> <br>
+  <%= officer.major %> <br>
+  <%= officer.year %> <br>
+  <% if current_admin %>
+    <%= link_to "Edit", edit_officer_path(officer) %> 
+    <%= link_to "Delete", officer, method: :delete, data: {confirm: "Are you sure?"} %> <br>
+  <% end %>
+*************************** <br>
+<% end %>
+
+<% if current_admin %>
+  <%= link_to "ADD NEW OFFICER", officers_new_path %>
+<% end %>  

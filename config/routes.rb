@@ -1,13 +1,39 @@
 Rails.application.routes.draw do
   
+  get 'photos/new'
+  get 'photos/create'
+  get 'photos/index'
+
+  get 'meetings/new'
+  get 'meetings/create'
+  get 'meetings/index'
+  delete 'meetings/destroy'
+
   get '/upload', to: 'uploads#index'
 
   get '/login', to: 'user#login'
   
   get '/officers', to: 'officers#index'
+  get 'officers/new'
+  get 'officers/edit'
+  post 'officers/create'
+  patch 'officers/update'
+  delete 'officers/destroy'
+  
+  resources :officers
   
   get '/about', to: 'general_pages#about'
   get '/home', to: 'general_pages#home'
+  get '/admin_page', to: 'general_pages#AdminPage'
+  
+  get '/faqs', to: 'faqs#index'
+  get 'faqs/edit'
+  get 'faqs/new'
+  post 'faqs/create'
+  patch 'faqs/update'
+  delete 'faqs/destroy'
+
+  resources :faqs
 
   get 'newsfeeds/index'
   get 'newsfeeds/new'
@@ -22,7 +48,8 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   get '/faq', to: 'members#faq'
-  get '/meetings', to: 'members#meetings'
+  get '/officers', to: 'members#officers'
+  get '/contact', to: 'members#contact'
   get '/points', to: 'members#points'
 
   # members' routes
@@ -52,6 +79,8 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :uploads
+  resources :meetings
+  resources :photos
   
   resources :sessions, only: [:create, :destroy]
   

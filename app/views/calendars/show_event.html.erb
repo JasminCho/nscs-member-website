@@ -1,3 +1,7 @@
+ <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+  
 <tr>
 	<td>"Title of event" <%=@event["summary"]%></td><br>
 	<td>"Created at"<%=@event["created"]%></td><br>

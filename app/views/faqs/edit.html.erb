@@ -1,0 +1,12 @@
+<h1>EDIT THIS FAQ!</h1>
+
+<%= form_for(@faqs) do |faq| %>
+
+  <%= faq.label :question %>
+  <%= faq.text_field :question %>
+  
+  <%= faq.label :answer %>
+  <%= faq.text_field :answer %>
+
+  <%= faq.submit "Save changes" %>
+<% end %>

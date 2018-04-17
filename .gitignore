@@ -19,7 +19,9 @@
 
 /node_modules
 /yarn-error.log
-/configure/application.yml
+
+# Ignore all yml files
+*.yml
 .byebug_history
 
 # ignore RubyMine files
