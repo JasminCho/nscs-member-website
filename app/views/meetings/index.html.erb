@@ -12,11 +12,13 @@
     <body>
         <div class="meetings">
             <h3 class="title">Meetings & Files</h3>
-            <!-- ONLY ADMIN SHOULD SEE THIS BUTTON-->
-            <%= form_tag meetings_path, enctype: 'multipart/form-data' do %>
-                <%= file_field_tag :file, required: true, multiple: false, accept:'.pdf,.pptx,.ppt'  %>
-            <!-- ONLY ADMIN SHOULD SEE THIS BUTTON-->
-                <%= submit_tag 'Upload Meeting File' %>
+            <% if current_admin %>
+                <!-- ONLY ADMIN SHOULD SEE THIS BUTTON-->
+                <%= form_tag meetings_path, enctype: 'multipart/form-data' do %>
+                    <%= file_field_tag :file, required: true, multiple: false, accept:'.pdf,.pptx,.ppt'  %>
+                <!-- ONLY ADMIN SHOULD SEE THIS BUTTON-->
+                    <%= submit_tag 'Upload Meeting File' %>
+                <% end %>
             <% end %>
             <ul>
                 <% @meetings.each do |meeting| %>
@@ -28,7 +30,9 @@
                             </a>
                             <!-- ONLY ADMIN SHOULD SEE THIS BUTTON-->
                             <td style="border: 2px solid red;">
-                                <%= link_to "Delete Meeting", meeting, method: :delete, data: {confirm: "Are you sure you want to delete this meeting?"} %>
+                                <% if current_admin %>
+                                  <%= link_to "Delete Meeting", meeting, method: :delete, data: {confirm: "Are you sure you want to delete this meeting?"} %>
+                                <% end %>
                             </td>
                         </div>
                     </li>

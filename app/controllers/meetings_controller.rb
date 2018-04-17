@@ -1,6 +1,4 @@
 class MeetingsController < ApplicationController
-  def new
-  end
 
   def create
     obj = S3_BUCKET.objects[params[:file].original_filename]
