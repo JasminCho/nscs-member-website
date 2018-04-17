@@ -14,6 +14,13 @@ Rails.application.routes.draw do
   get '/login', to: 'user#login'
   
   get '/officers', to: 'officers#index'
+  get 'officers/new'
+  get 'officers/edit'
+  post 'officers/create'
+  patch 'officers/update'
+  delete 'officers/destroy'
+  
+  resources :officers
   
   get '/about', to: 'general_pages#about'
   get '/home', to: 'general_pages#home'
@@ -43,7 +50,6 @@ Rails.application.routes.draw do
   get '/faq', to: 'members#faq'
   get '/officers', to: 'members#officers'
   get '/contact', to: 'members#contact'
-  #get '/meetings', to: 'members#meetings'
   get '/points', to: 'members#points'
 
   # members' routes

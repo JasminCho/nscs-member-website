@@ -1,0 +1,19 @@
+<h1>EDIT THIS OFFICER!</h1>
+
+UNCHANGED FIELDS: <br>
+  EMAIL: <%= @officers.email %> <br>
+  POSITION: <%= @officers.position %> <br>
+
+<%= form_for(@officers) do |officer| %>
+
+  <%= officer.label :Name %>
+  <%= officer.text_field :name %>
+  
+  <%= officer.label :Major %>
+  <%= officer.text_field :major %>
+  
+  <%= officer.label :Year %>
+  <%= officer.text_field :year %>
+
+  <%= officer.submit "Save changes" %>
+<% end %>
