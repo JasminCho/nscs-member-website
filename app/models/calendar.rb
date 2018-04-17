@@ -36,10 +36,6 @@ class Calendar<ApplicationRecord
 		#	@calendar = ENV['NSCS_Calendar_ID']
 	end
 
-	def fetch_info
-		calendar = Hash.new
-	end
-
 
 	#WARNING There is no distingish between not a role and nil?
 	#WARNING There is no confirmation it is  the owner of the calendar.
