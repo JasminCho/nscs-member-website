@@ -47,10 +47,9 @@
       <!-- Announcements -->
       <div class="row">
         <div class="col-sm-8">
+          <% if current_member %>
           <h2 class="mt-4">Announcements</h2>
             <!-- JULIAN's STUFF -->
-              <% if current_user %>
-              <% end %>
               <table style="border: 2px solid red; margin-top:20px;">
                 <tr>
                   <th style="text-align:left;">News!</th>
@@ -62,6 +61,7 @@
                 <% end %>
               </table>
             <!-- END OF JULIAN's STUFF-->
+          <% end %>
         </div>
       </div>
 
