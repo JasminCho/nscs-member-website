@@ -26,12 +26,11 @@ ActiveRecord::Schema.define(version: 20180412063146) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "calendar_id"
+    t.string "calendar_id"
     t.time "start_time"
     t.time "end_time"
     t.date "start_date"
     t.date "end_date"
-    t.index ["calendar_id"], name: "index_events_on_calendar_id"
   end
 
   create_table "members", force: :cascade do |t|

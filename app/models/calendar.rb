@@ -1,5 +1,6 @@
 
 class Calendar<ApplicationRecord
+	self.primary_key = :calendar_id
 	has_many :events
 	attr_accessor :client
 
@@ -72,6 +73,7 @@ class Calendar<ApplicationRecord
 		end
 	end
 
+	#Gets all the calendars of a User. Probably unused.
 	def get_calendar_list()
 		if(!@client.nil?)
 			response = @client.execute(api_method: @service.calendar_list.list)
@@ -192,7 +194,9 @@ class Calendar<ApplicationRecord
 			}
 		response = @client.execute(api_method: @service.events.update,
 		parameters: {'calendarId' => ENV['NSCS_Calendar_ID'], 'eventId' => event[:event_id]}, body: JSON.dump(updated_event), headers: {'Content-Type' => 'application/json'})
-		response = JSON.parse(response)
+		response = JSON.parse(response.body)
+		#TODO check method if the packet is dropped.
+
 		event[:event_id]= response["id"]
 		event[:creator_name]= response["creator"]["displayName"]
 		event[:creator_email]= response["creator"]["email"]
@@ -212,10 +216,18 @@ class Calendar<ApplicationRecord
 		return dt.rfc3339
 	end
 
-	def update_event(event)
-
+	def from_calendar(event,response)
+		event[:title] = response["summary"]
+		event[:description] = response["description"]
+		event[:location] = response["location"]
+		event[:event_id]= response["id"]
+		event[:creator_name]= response["creator"]["displayName"]
+		event[:creator_email]= response["creator"]["email"]
+		event[:start_time]= DateTime.parse(response["start"]["dateTime"]).strftime('%I:%M:%S %p')
+		event[:end_time]= DateTime.parse(response["end"]["dateTime"]).strftime('%I:%M:%S %p')
+		event[:start_date] =  DateTime.parse(response["start"]["dateTime"]).to_s.to_date
+		event[:end_date]= DateTime.parse(response["end"]["dateTime"]).to_s.to_date
 
 	end
-
 end
 

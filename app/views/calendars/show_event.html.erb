@@ -7,4 +7,8 @@
 	<td>"Location" <%=@event["location"]%></td><br>
 	<td>"Description" <%=@event["description"]%></td><br>
 	<td>"Creator" <%=@event["creator"]["email"]%></td><br>
+	<%if current_member[:pace]%>
+		<%=link_to "Edit Event", edit_event_path(:event_id => @event["id"])%><br>
+		<%=link_to "Delete Event", delete_event_path(:event_id => @event["id"]), method: :post%><br>
+	<%end%>
 </tr>

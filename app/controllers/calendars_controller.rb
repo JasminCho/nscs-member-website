@@ -16,18 +16,21 @@ class CalendarsController < ApplicationController
 	end
 	
 	def list_events
-	
-			@events = @calendar.list_events
+
+			@events = synchronize
 
 	end
 
-	def insert_event
-	
-	#TODO checkout if instances vars between methods cause errs.
-	#TODO decide wether they want to choose to send notification or not.
-	#TODO Recurrense events?
-		
-	#	redirect_to new_event and return
+	def synchronize
+		@events = @calendar.list_events
+		@events["items"].each do |event|
+			if(Event.find_by_event_id(event["id"]).nil?)
+				add_event = @calendar.events.new
+				@calendar.from_calendar(add_event,event)
+				add_event.save!
+			end
+		end
+		return @events
 	end
 
 	def show_event
@@ -40,13 +43,13 @@ class CalendarsController < ApplicationController
 	end
 
 	def create_event
-		@event = @calendar.events.new(event_params)
+
+		@event = @calendar.events.new(new_event_params)
 		if @event.save!
 			@calendar.insert_event(@event)
 			@calendar.save!
 
-			debugger
-			#@event.update_attributes(@event)
+
 			flash[:notice]="Your event, " + @event[:title] + ", got saved!"
 			redirect_to new_events_path
 		else
@@ -55,35 +58,38 @@ class CalendarsController < ApplicationController
 		end
 	end
 
-	def event_params
+	def new_event_params
 		params.require(:event).merge(:calendar_id => ENV['NSCS_Calendar_ID']).permit(:title, :description, :start_date, :end_date, :location, :calendar_id, :start_time, :end_time)
 	end
 
+	def update_event_params
+		params.require(:event).merge(:calendar_id => ENV['NSCS_Calendar_ID']).permit(:title, :description, :start_date, :end_date, :location, :calendar_id, :start_time, :end_time, :id, :event_id)
+	end
+
 	def delete_event
-		@calendar.delete_event)(params.require(:event_id))
+		@calendar.delete_event(params.permit(:event_id))
+		Event.find_by_event_id(params.permit(:event_id)[:event_id]).destroy!
 		flash[:notice]="Event got deleted succesfully."
 		redirect_to list_events_path
 	end
 
-	def edit_event
-		#@
-	end
-
 	def update_event
+		@to_update = Event.find_by_event_id(params[:event][:event_id])
+
+		if @to_update.update!(update_event_params)
+			@calendar.update_event(@to_update)
+			@calendar.save!
+			flash[:notice]="Your event, " + @to_update[:title] + ", got saved!"
+			redirect_to list_events_path
+		else
+			flash[:notice]="Your event, " + @to_update[:title] + ", could not be updated"
+		end
 	end
 
-
-	def create
-
-		params.require(:new_event).require(:title,:start_date,:end_date,:location,:description,)	
-		params.require[:new_event].permit(:recurrance,:reminder)
-		@calendar.insert_event(params)
+	def edit_event
+		#Remember that this :id is an events id, not the database id.
+		@event = Event.find_by_event_id(params[:event_id])
 	end
-
-	#TODO make the routes.
-	#Finish the updating part.
-	#Make the views for the updating form.
-	
 
 end
 

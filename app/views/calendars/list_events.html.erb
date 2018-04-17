@@ -1,4 +1,15 @@
-<!-----Remember to move this hash into controller.--->
+<!---Remember to move this hash into controller.-->
+<html>
+  <body>
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+  </body>
+</html>
+
+
 <%@events["items"].each do |event|%>
 	<tr>
 		<td>"Title of event" <%=event["summary"]%></td><br>
