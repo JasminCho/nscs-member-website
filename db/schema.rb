@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20180412063146) do
   create_table "members", force: :cascade do |t|
     t.string "email"
     t.string "name"
-    t.boolean "pace"
   end
 
   create_table "newsfeeds", force: :cascade do |t|
@@ -75,7 +74,6 @@ ActiveRecord::Schema.define(version: 20180412063146) do
   create_table "users", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
-    t.string "email"
     t.string "name"
     t.string "oauth_token"
     t.datetime "oauth_expires_at"
