@@ -18,14 +18,16 @@
     </div>
     <div>
       <ul class="nav navbar-nav navbar-right">
+        <% if current_member %>
+          <li><%= link_to "Admin Only", admin_page_path %></li>
+        <% end %>
         <li><%= link_to "Home", home_path %></li>
         <li><%= link_to "About Us", about_path %></li>
         <li><%= link_to "FAQ", faqs_path %></li>
         <li><%= link_to "Officers", officers_path %></li>
         <li><%= link_to "Meetings", meetings_path %></li>
         <li><%= link_to "Points", points_path %></li>
-
-
+    
         <% if current_user %>
           <li><%= current_user.name %></li>
           <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
@@ -59,6 +61,9 @@
           <li><a class="white-text" href="https://www.facebook.com/nscs.tamu">Facebook</a></li>
           <li><a class="white-text" href="https://nscs.org/nscs-scholarships/">Scholarships</a></li>
           <li><a class="white-text" href="https://www.nscsgear.org/store/catalog">NSCS Store</a></li>
+          <% if current_member %>
+            <li><a class="white-text" href="http://nscs-documentation.s3-website.us-east-2.amazonaws.com/">Documentation</a></li>
+          <% end %>
         </ul>
       </div>
     </div>

@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'photos/create'
   get 'photos/index'
 
-  get 'meetings/new'
   get 'meetings/create'
   get 'meetings/index'
   delete 'meetings/destroy'
