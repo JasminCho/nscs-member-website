@@ -1,4 +1,7 @@
 class PointsController < ApplicationController
+  
+  before_action :admin_user?, only: [:new, :destroy]
+  
   def index
     @member_email = params[:email]
     @points = Point.where(email: @member_email)

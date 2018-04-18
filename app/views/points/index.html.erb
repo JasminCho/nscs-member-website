@@ -44,7 +44,9 @@
             <a href="https://www.csisd.org/apps/pages/index.jsp?uREC_ID=161705&type=d&pREC_ID=335513">Volunteer Application</a>
         </div>
     </div>
-    <%= link_to 'Add new point', new_points_url(:email => @member_email) %>
+    <% if current_admin %>
+        <%= link_to 'Add new point', new_points_url(:email => @member_email) %>
+    <% end %>
 </body>
 
 </html>
