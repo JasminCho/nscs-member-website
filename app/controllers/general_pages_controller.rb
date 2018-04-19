@@ -14,4 +14,7 @@ class GeneralPagesController < ApplicationController
     
     def admin_page
     end
+    
+    def unauthorized
+    end
 end

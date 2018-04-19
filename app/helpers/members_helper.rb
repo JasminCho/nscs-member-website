@@ -11,7 +11,7 @@ module MembersHelper
     
     def admin_user? 
         unless !current_admin.nil?
-            redirect_to(root_url)
+            redirect_to(unauthorized_path)
             flash.now[:danger] = 'You are not an admin!'
         end
     end

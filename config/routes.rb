@@ -23,7 +23,8 @@ Rails.application.routes.draw do
   
   get '/about', to: 'general_pages#about'
   get '/home', to: 'general_pages#home'
-  get '/admin_page', to: 'general_pages#AdminPage'
+  get '/admin_page', to: 'general_pages#admin_page'
+  get '/unauthorized', to: 'general_pages#unauthorized'
   
   get '/faqs', to: 'faqs#index'
   get 'faqs/edit'
