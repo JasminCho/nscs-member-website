@@ -109,7 +109,6 @@ class Calendar<ApplicationRecord
 			 headers: {'Content-Type' => 'application/json'})
 		
 		events = JSON.parse(response.body)
-		debugger
 		#TODO iterate over events.
 	end
 
@@ -155,7 +154,6 @@ class Calendar<ApplicationRecord
 		response = JSON.parse(response.body)
 		puts "It got created?"
 		
-		debugger
 		event[:event_id]= response["id"]
 		event[:creator_name]= response["creator"]["displayName"]
 		event[:creator_email]= response["creator"]["email"]
