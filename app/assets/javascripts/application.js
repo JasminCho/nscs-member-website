@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require bootstrap.min
+//= require jquery
 //= require npm
 //= require_tree .
 //= require bootstrap-datepicker
