@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_member
-    @member ||= Member.find_by(email: session[:email]) if session[:email]
+    @current_member ||= Member.find_by(email: session[:email]) if session[:email]
   end
   
   def logged_in?

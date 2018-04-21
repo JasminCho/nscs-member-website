@@ -2,19 +2,6 @@ class MembersController < ApplicationController
   
   before_action :admin_user?
 
-  def faq
-  end
-
-  def contact
-  end
-
-  def meetings
-  end
-
-  def points
-  end
-
-  # members' methods
   def index
     @members = Member.all
   end

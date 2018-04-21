@@ -110,7 +110,8 @@ class Calendar<ApplicationRecord
 		
 		events = JSON.parse(response.body)
 		
-		#TODO iterate over events.
+		#TODO iteratife over events.
+		
 	end
 
 	#TODO parse the time
@@ -155,7 +156,10 @@ class Calendar<ApplicationRecord
 		response = JSON.parse(response.body)
 		puts "It got created?"
 		
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 4967958f06ae5da283707f1ccff2e394b4f9b3c6
 		event[:event_id]= response["id"]
 		event[:creator_name]= response["creator"]["displayName"]
 		event[:creator_email]= response["creator"]["email"]
