@@ -1,5 +1,5 @@
 class Point < ApplicationRecord
-    validates :email, presence: true
+    validates_format_of :email, :with => /(\W|^)[\w.+\-]*@gmail\.com(\W|$)/, presence: true
     validates :event_name, presence: true
     validates :point, presence: true
 end
