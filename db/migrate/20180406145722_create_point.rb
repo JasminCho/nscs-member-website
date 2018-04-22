@@ -4,7 +4,6 @@ class CreatePoint < ActiveRecord::Migration[5.1]
       t.string :email
       t.string :event_name
       t.integer :point
-
       t.timestamps
     end
   end
