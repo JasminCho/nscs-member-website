@@ -6,3 +6,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     {ssl: {ca_file: Rails.root.join("cacert.pem").to_s}},
      scope: ['userinfo.profile','userinfo.email', 'calendar', 'drive'], access_type: 'offline', approval_prompt: 'force', prompt: 'consent'}    
 end
+
+OmniAuth.config.on_failure = Proc.new { |env|
+  OmniAuth::FailureEndpoint.new(env).redirect_to_failure
+}
