@@ -15,6 +15,7 @@ class MembersController < ApplicationController
     if @member.save
       redirect_to(members_index_path)
     else
+      flash[:invalid_member] = 'Invalid member attributes. Try again!'
       render 'new'
     end
   end
@@ -25,9 +26,12 @@ class MembersController < ApplicationController
 
   def update
     @member = Member.find(params[:id])
-    @member.update(members_params)
-
-    redirect_to members_url(:id => @member.id)
+    if @member.update(members_params)
+      redirect_to members_url(:id => @member.id)
+    else 
+      flash[:invalid_member] = 'Invalid member attributes. Try again!'
+      render 'edit'
+    end
   end
 
   def show
