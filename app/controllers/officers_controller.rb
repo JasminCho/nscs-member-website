@@ -37,6 +37,17 @@ class OfficersController < ApplicationController
     
     def update
         @officers = Officer.find(params[:id])
+        if params[:officer][:image_name].present?
+            S3_BUCKET.objects[@officers.image_name].delete
+            obj = S3_BUCKET.objects[params[:officer][:image_name].original_filename]
+            obj.write(
+              file: params[:officer][:image_name],
+              acl: :public_read,
+              storage_class: "REDUCED_REDUNDANCY"
+            )
+            @officers.url = obj.public_url
+            @officers.image_name = obj.key
+        end
         if @officers.update_attributes(officers_params)
           flash[:success] = "Officer updated"
           redirect_to(officers_path)

@@ -29,6 +29,11 @@
           <%= officer.text_field :year, class:"form-control" %>
         </div>
 
+        <%= officer.label :Image %>
+        <div class="form-group">
+          <%= officer.file_field :image_name, required: false, multiple: false, accept:'image/*', class:"form-control" %>
+        </div>
+
         <%= officer.submit "Save changes", class:"btn btn-primary" %>
       <% end %>
     </div>
