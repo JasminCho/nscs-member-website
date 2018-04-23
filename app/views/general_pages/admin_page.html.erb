@@ -1,10 +1,51 @@
-<br>
-<%= link_to "view/add/edit/delete members", members_index_path %>
-<br>
-<%= link_to "view/add/edit/delete officers", officers_path %>
-<br>
-<%= link_to "view/add/edit/delete faqs", faqs_path %>
-<br>
-<%= link_to "view/add/edit/delete announcements", newsfeeds_index_path %>
-<br>
-<%= link_to 'view/add/edit/delete events from the calendar', home_path %> <br>
+<%= stylesheet_link_tag "admin_page" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 admin-text">
+      <h1 class="title-text">Admin Page</h1>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <a href="/members/index" class="admin-icon"><i class="fa fa-heart"></i></a>
+            <div class="card-body">
+              <h2 class="card-title">Configure Members</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <a href="/officers" class="admin-icon"><i class="fa fa-heart"></i></a>
+            <div class="card-body">
+              <h2 class="card-title">Configure Officers</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <a href="/faqs" class="admin-icon"><i class="fa fa-heart"></i></a>
+            <div class="card-body">
+              <h2 class="card-title">Configure FAQs</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <a href="/newsfeeds/index" class="admin-icon"><i class="fa fa-heart"></i></a>
+            <div class="card-body">
+              <h2 class="card-title">Configure Newsfeed</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <a href="/home" class="admin-icon"><i class="fa fa-heart"></i></a>
+            <div class="card-body">
+              <h2 class="card-title">Configure Calendar</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
