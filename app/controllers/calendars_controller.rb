@@ -7,7 +7,9 @@ class CalendarsController < ApplicationController
 	#DRY method of calling current_user.
 	#If nill redirect to login and instantiate calendar.
 	def current_user
-		super
+		if(super.nil?)
+			return
+		end
 		@calendar = Calendar.new(@current_user)
 		@calendar.save!
 		puts @calendar
@@ -16,9 +18,11 @@ class CalendarsController < ApplicationController
 	end
 	
 	def list_events
-
+		if(!@calendar.nil?)
 			@events = synchronize
-
+		else
+			@events = Event.all
+		end
 	end
 
 	def synchronize
@@ -45,7 +49,7 @@ class CalendarsController < ApplicationController
 	def create_event
 
 		@event = @calendar.events.new(new_event_params)
-		if @event.save!
+		if @event.save
 			@calendar.insert_event(@event)
 			@calendar.save!
 
@@ -53,7 +57,7 @@ class CalendarsController < ApplicationController
 			flash[:notice]="Your event, " + @event[:title] + ", got saved!"
 			redirect_to new_events_path
 		else
-			@event.destroy!
+			invalid_message(@event, "saved")
 			render :new_event
 		end
 	end
@@ -73,16 +77,26 @@ class CalendarsController < ApplicationController
 		redirect_to list_events_path
 	end
 
-	def update_event
+	def update_event	
 		@to_update = Event.find_by_event_id(params[:event][:event_id])
-
-		if @to_update.update!(update_event_params)
+		
+		if @to_update.update(update_event_params)
 			@calendar.update_event(@to_update)
 			@calendar.save!
 			flash[:notice]="Your event, " + @to_update[:title] + ", got saved!"
 			redirect_to list_events_path
 		else
-			flash[:notice]="Your event, " + @to_update[:title] + ", could not be updated"
+			invalid_message(@to_update, "updated")
+			#:event_id => Hash.new
+			redirect_to edit_event_path( :event_id => @to_update[:event_id])
+		end
+	end
+
+	def invalid_message(inv_event, str)
+		if !inv_event.errors[:end_date].blank?
+			flash[:notice]="Your event, " + inv_event[:title] + ", could not be "+ str + " " + inv_event.errors[:end_date].first
+		elsif !inv_event.errors[:end_time].blank?
+			flash[:notice]="Your event, " + inv_event[:title] + ", could not be "+ str + " " + inv_event.errors[:end_time].first
 		end
 	end
 
