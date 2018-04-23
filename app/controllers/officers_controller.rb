@@ -9,7 +9,7 @@ class OfficersController < ApplicationController
     def new
         @officers = Officer.new
     end
-    
+
     def create
         @officers = Officer.new(officers_params)
         if @officers.save
@@ -44,6 +44,6 @@ class OfficersController < ApplicationController
     private
     
     def officers_params
-        params.require(:officer).permit(:email, :position, :name, :major, :year)
+        params.require(:officer).permit(:email, :position, :name, :major, :year, :image)
     end
 end
