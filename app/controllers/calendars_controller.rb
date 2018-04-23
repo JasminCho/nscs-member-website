@@ -2,7 +2,7 @@
 class CalendarsController < ApplicationController
 	attr_accessor :calendar
 	helper_method :get_events
-	before_action :logged_in_user?
+	before_action :logged_in_user?, :except => [:list_events]
 	
 	#DRY method of calling current_user.
 	#If nill redirect to login and instantiate calendar.
