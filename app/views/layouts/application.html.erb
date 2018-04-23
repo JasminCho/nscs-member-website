@@ -119,11 +119,11 @@
     $(document).ready(function() {
 
         var docHeight = $(window).height();
-        var footerHeight = $('#footer').height();
-        var footerTop = $('#footer').position().top + footerHeight;
+        var footerHeight = $('#myFooter').height();
+        var footerTop = $('#myFooter').position().top + footerHeight;
 
         if (footerTop < docHeight)
-            $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            $('#myFooter').css('margin-top', 10+ (docHeight - footerTop) + 'px');
     });
     </script>
   </body>

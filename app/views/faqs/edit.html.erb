@@ -1,12 +1,27 @@
-<h1>EDIT THIS FAQ!</h1>
+<%= stylesheet_link_tag "faq" %>
 
-<%= form_for(@faqs) do |faq| %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 faq-btns">
+      <h1 class="title-text">Edit Existing FAQ</h1>
+      <p>
+        Change the FAQ and/or its answer below!
+      </p>
 
-  <%= faq.label :question %>
-  <%= faq.text_field :question %>
-  
-  <%= faq.label :answer %>
-  <%= faq.text_field :answer %>
+      <%= form_for(@faqs) do |faq| %>
 
-  <%= faq.submit "Save changes" %>
-<% end %>
+        <%= faq.label :question %>
+        <div class="form-group">
+          <%= faq.text_area :question, class:"form-control" %>
+        </div>
+
+        <%= faq.label :answer %>
+        <div class="form-group">
+          <%= faq.text_area :answer, class:"form-control" %>
+        </div>
+
+        <%= faq.submit "Save changes", class:"btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
