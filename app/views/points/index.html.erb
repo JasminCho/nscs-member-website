@@ -1,52 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
+<%= stylesheet_link_tag "points" %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="app/assets/stylesheets/points.scss">
-</head>
-
-<body>
-    <div class="container center">
-        <div class="top">
-        <div class="points">
-            <h3>Points</h3>
-            <div class="Ragdoll">
-                <%= @name_of_member %>
-            </div>
-        </div>
-        <div class="mid center">
-            <table class="mid-table">
-                <tr>
-                    <th>Event</th>
-                    <th>Point</th>
-                </tr>
-                <% @points.each do |point| %>
-                <tr>
-                    <td>
-                        <%= point.event_name %>
-                    </td>
-                    <td>
-                        <%= point.point %>
-                    </td>
-                    <td>
-                        <%= link_to 'Delete', points_url(:id => point.id, :email => point.email), method: :delete %>
-                    </td>
-                </tr>
-                <% end %>
-            
-            </table>
-        </div>
-        <div class="bottom">
-            <a href="https://www.csisd.org/apps/pages/index.jsp?uREC_ID=161705&type=d&pREC_ID=335513">Volunteer Application</a>
-        </div>
+<div class="container">
+  <div class="row points">
+    <div class="col-lg-12">
+      <h1 class="title-text"><%= "#{@name_of_member}" %>'s Profile</h1>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Event</th>
+            <th scope="col">Points</th>
+          </tr>
+        </thead>
+        <% @points.each do |point| %>
+          <tbody>
+            <tr>
+              <td><%= point.event_name %> </td>
+              <td><%= point.point %></td>
+              <td><%= link_to 'Delete', points_url(:id => point.id, :email => point.email), method: :delete %></td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
     </div>
-    <% if current_admin %>
-        <%= link_to 'Add new point', new_points_url(:email => @member_email) %>
-    <% end %>
-</body>
 
-</html>
+    <% if current_admin %>
+        <%= link_to 'Add new point', new_points_url(:email => @member_email), class:"btn btn-primary" %>
+    <% end %>
+    <div class="row">
+      <div class="col-sm-6">
+        <h2 class="subheader-text">Member Eligibility</h2>
+        <p>
+          Membership in NSCS is through invitation only and extended to undergraduate
+          students in all majors who meet the requirements described below.
+        </p>
+        <h3>To be eligible, you must:</h3>
+        <ol>
+          <li>
+            Obtain at least a 3.4 GPA on a 4.0 scale and be in the top 20% of your class.
+          </li>
+          <li>
+            Be enrolled as a first-year or second-year undergraduate student at
+            the time of application and have successfully completed credits equivalent
+            to a minimum of one semester of full-time study but no more than half
+            the number required for completion of the bachelor’s degree requirements
+            of the institution where you are currently enrolled.
+          </li>
+          <li>
+            If you meet these requirements, you’ll receive an invitation to join
+            during your first or second year; you can also nominate yourself.
+            Once you receive an invitation to join, complete and return the
+            Confirmation of Society membership, and send it with the lifetime
+            membership fee of $95.
+          </li>
+        </ol>
+      </div>
+      <div class="col-sm-6">
+        <h2 class="subheader-text">Important Links</h2>
+        <ul>
+          <li>
+            <a href="https://www.csisd.org/apps/pages/index.jsp?uREC_ID=161705&type=d&pREC_ID=335513">PACE Forms</a>
+          </li>
+          <li>
+            <a href="https://docs.google.com/document/d/1uQ-htnO8B_225-1oRTh7paL3nKjrt56pmMdLIutDHZM/edit">Officer Applications</a>
+          </li>
+          <li>
+            <a href="https://drive.google.com/file/d/0B95bbGpLewqJbVhKTXNtQk5WU28/view">Community Service Verification Forms</a>
+          </li>
+          <li>
+            <a href="https://docs.google.com/spreadsheets/d/1BlnUugcKRyfW20l24koA2l1IBHb42R0P5u4LV9LLj5g/edit#gid=910662950">Bingo Signup Sheet</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
