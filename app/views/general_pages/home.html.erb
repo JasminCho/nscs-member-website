@@ -5,149 +5,114 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "home" %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
-
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <%= image_tag "members.jpg" %>
-        <div class="carousel-caption">
-          <h3>NSCS Members</h3>
-          <p>This is something something something</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <%= image_tag "acadbldg.jpg" %>
-        <div class="carousel-caption">
-          <h3>More Sell $</h3>
-          <p>Lorem ipsum...</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-</div>
-
-<div class="container text-center">
-  <h3>What We Do</h3><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Current Project</p>
-    </div>
-    <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Project 2</p>
-    </div>
-    <div class="col-sm-4">
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-    </div>
-  </div>
-</div><br>
-
   <body>
+    <div class="jumbotron jumbotron-fluid"></div>
+    <!-- Gallery -->
+    <!-- <div id="myCarousel" class="jumbotron jumbotron-fluid carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <%= image_tag "members.jpg" %>
+          <div class="carousel-caption">
+            <h3>NSCS Members</h3>
+            <p>This is something something something</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <%= image_tag "acadbldg.jpg" %>
+          <div class="carousel-caption">
+            <h3>Academic Building</h3>
+            <p>Lorem ipsum...</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <%= image_tag "generalmeeting.jpg" %>
+          <div class="carousel-caption">
+            <h3>NSCS Member Meeting</h3>
+            <p>Lorem ipsum...</p>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div> -->
+    <!-- End Gallery -->
+
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
-          <h1>National Society of Collegiate Scholars</h1>
-          <h2>Texas A&M</h2>
-          <p>The National Society of Collegiate Scholars at Texas A&M University
+        <div class="col-sm-8">
+          <h1 id="title-text">National Society of Collegiate Scholars</h1>
+          <h2 id="subheader-text">Texas A&M University Chapter</h2>
+          <p class="org-description">
+            The National Society of Collegiate Scholars at Texas A&M University
             is an honor society that recognizes high-achieving students.
             NSCS is proud to offer almost half a million dollars in scholarships.
             More importantly, NSCS is a growth opportunity, leadership training ground,
-            and resource for our students. Students who join NSCS meet people on campus
+            and resource for our students. <br/><br/>Students who join NSCS meet people on campus
             they might not have meet without NSCS – people who become friends, long-term
             supporters, and future colleagues. Our students get the tools and encouragement
             they need to take part in transforming our campus and the community that means
             the most to them.
           </p>
         </div>
-      </div>
-
-      <!-- Calendar -->
-      <div class="body-content">
-        <div >
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <!-- Where calendar goes -->
-                <iframe
-                  src="https://calendar.google.com/calendar/embed?src=ubace36j9l84a6jtc252d5g0m4%40group.calendar.google.com&ctz=America%2FChicago"
-                  style="border: 0"
-                  display="block"
-                  width="800"
-                  height="600"
-                  frameborder="0"
-                  scrolling="no">
-                </iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <% if current_admin %>
-        <%= link_to 'New Calendar Event', new_events_path %> <br>
-        <%= link_to 'Get Events', list_events_path %>
-      <% end %>
-
-      <!-- Announcements -->
-      <div class="row">
-        <div class="col-sm-8">
-          <% if current_member %>
-          <h2 class="mt-4">Announcements</h2>
-            <!-- JULIAN's STUFF -->
-              <table style="border: 2px solid red; margin-top:20px;">
-                <tr>
-                  <th style="text-align:left;">News!</th>
-                </tr>
+        <!-- Announcements -->
+        <div class="col-sm-4">
+          <div class="well well-lg table-responsive-xl">
+            <% if current_member %>
+              <table class="table table-striped">
+                <thead>
+                  <th><h2>Announcements</h2></th>
+                </thead>
                 <% @newsfeed.each do |news| %>
                   <tr>
-                    <td style="border: 2px solid red;"> <%= news.news %> </td>
+                    <td> <%= news.news %> </td>
                   </tr>
                 <% end %>
               </table>
-            <!-- END OF JULIAN's STUFF-->
-          <% end %>
-        </div>
-      </div>
-
-      <!-- Gallery -->
-      <!-- <div class="row">
-        <div class="col-lg-12">
-          <div class="carousel">
-            <h1>GALLERY</h1>
-            <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"></a>
-            <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"></a>
-            <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3"></a>
-            <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"></a>
-            <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"></a>
+            <% end %>
           </div>
         </div>
-      </div> -->
+      </div>
+      <hr>
+
+      <!-- Calendar -->
+      <div class="row">
+        <h2>Upcoming Events</h2>
+        <div class="col-lg-12 calendar-admin-btns">
+          <h4>Make changes to calendar</h4>
+          <% if current_admin %>
+            <%= link_to 'New Calendar Event', new_events_path, class:"btn btn-primary" %>
+            <%= link_to 'Get Events', list_events_path, class:"btn btn-primary" %>
+          <% end %>
+        </div>
+        <div class="col-lg-12 calendar-content">
+          <iframe
+            src="https://calendar.google.com/calendar/embed?src=ubace36j9l84a6jtc252d5g0m4%40group.calendar.google.com&ctz=America%2FChicago"
+            style="border-width: 0"
+            display="block"
+            width="800"
+            height="600"
+            frameborder="0"
+            scrolling="no">
+          </iframe>
+        </div>
+      </div>
+      <!-- End Calendar -->
 
       <!-- General Events -->
       <!-- <div class="row">
@@ -157,8 +122,7 @@
             <img class="card-img-top" src="http://placehold.it/300x200" alt="">
             <div class="card-body">
               <h4 class="card-title">Event 1</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
-                neque sequi doloribus.</p>
+              <p class="card-text">Lorem ipsum dolor sit amet, </p>
             </div>
             <div class="card-footer">
               <a href="#" class="btn btn-primary">Find Out More!</a>
@@ -170,8 +134,7 @@
             <img class="card-img-top" src="http://placehold.it/300x200" alt="">
             <div class="card-body">
               <h4 class="card-title">Event 2</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
-                neque sequi doloribus totam ut praesentium aut.</p>
+              <p class="card-text">Lorem ipsum dolor sit amet, .</p>
             </div>
             <div class="card-footer">
               <a href="#" class="btn btn-primary">Find Out More!</a>
@@ -183,16 +146,15 @@
             <img class="card-img-top" src="http://placehold.it/300x200" alt="">
             <div class="card-body">
               <h4 class="card-title">Event 3</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
-                neque.</p>
+              <p class="card-text">Lorem ipsum dolor sit amet, </p>
             </div>
             <div class="card-footer">
               <a href="#" class="btn btn-primary">Find Out More!</a>
             </div>
           </div>
-        </div> -->
+        </div>
+      </div> -->
 
-      </div>
     </div>
   </body>
 </html>

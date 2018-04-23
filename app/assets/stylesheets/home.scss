@@ -37,10 +37,31 @@
 //   }
 // }
 
+.jumbotron {
+  background-size: cover;
+  background-image:url('members.jpg');
+  background-repeat: no-repeat;
+  height: 500px;
+  background-position: center center;
+}
+
 .carousel-inner img {
-    width: 100%; /* Set width to 100% */
-    margin: auto;
-    min-height:200px;
+  margin: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  // width: 50%;
+  // max-width: 100%;
+  height: 100%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.item {
+  display: block;
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */
@@ -48,4 +69,45 @@
   .carousel-caption {
     display: none;
   }
+}
+
+#title-text {
+  color: #600909;
+}
+
+#subheader-text {
+  color: #595959;
+}
+
+.org-description {
+  font-size: 120%;
+}
+
+.well {
+    background-color: #600909 !important;
+}
+
+.calendar-admin-btns {
+  margin-bottom: 30px;
+}
+
+.calendar-admin-btns .btn {
+  background-color: #600909;
+}
+
+.calendar-content {
+   text-align: center;
+   position: relative;
+   padding-bottom: 75%;
+   height: 0;
+   overflow: hidden;
+   margin-bottom: 30px;
+}
+
+.calendar-content iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
