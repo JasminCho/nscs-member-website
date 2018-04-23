@@ -20,61 +20,153 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-// .container {
-//   display: flex;
-// }
-//
-// .container > div {
-//   flex: 1;
-// }
-//
-// .page-footer {
-//   position: relative;
-//   bottom: 0;
-//   width: 100%;
-// }
-
-.navbar-logo {
-  display: inline-block;
-  height: 30px;
-  margin-top: -5px;
-}
-//
-.navbar-default {
-  margin-bottom: 0;
-  border-radius: 0;
-  background-color: white;
+#myNavbar {
+  margin-bottom: 30px;
 }
 
-.navbar-static-top {
-  min-height: 80px;
+.navbar {
+ min-height: 80px !important;
+}
+
+.navbar-brand {
+ padding: 0 15px;
+ height: 80px;
+ line-height: 80px;
+}
+
+.navbar-toggle {
+ /* (80px - button height 34px) / 2 = 23px */
+ margin-top: 23px;
+ padding: 9px 10px !important;
 }
 
 .navbar-nav > li > a {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    line-height: 80px;
+  padding-top:25px !important;
+  padding-bottom:25px !important;
+  font-size: 100% !important;
+  font-weight: bold;
 }
 
-@media (max-width: 767px) {
-    .navbar-nav > li > a {
-    line-height: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;}
+@media (min-width: 768px) {
+ .navbar-nav > li > a {
+   /* (80px - line-height of 27px) / 2 = 26.5px */
+   padding-top: 26.5px;
+   padding-bottom: 26.5px;
+   line-height: 27px;
+ }
 }
 
-// body, html {
-//     height: 100%;
-//     line-height: 1.8;
-// }
-// /* Full height image header */
-// .bgimg-1 {
-//     background-position: center;
-//     background-size: cover;
-//     background-image: url("/w3images/mac.jpg");
-//     min-height: 100%;
-// }
-//
-// .w3-bar .w3-button {
-//     padding: 16px;
-// }
+.navbar-logo{
+  height: 50px;
+  padding-bottom: 10px;
+}
+
+#brand-text {
+  border-left: 1px solid gray;
+  padding-left: 10px;
+}
+
+#myFooter {
+    background-color: #600909;
+    color: white;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+#myFooter .logo {
+  height: 200px;
+}
+
+#myFooter .footer-copyright {
+    background-color: #3D0000;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+#myFooter .row {
+    margin-bottom: 30px;
+}
+
+#myFooter .footer-copyright p {
+    margin: 10px;
+    color: #ccc;
+}
+
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#myFooter h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter p {
+  color: #d2d1d1;
+}
+
+#myFooter a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+#myFooter .social-networks a {
+    font-size: 32px;
+    color: #f9f9f9;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+#myFooter .social-networks a:hover {
+    text-decoration: none;
+}
+
+#myFooter .facebook:hover {
+    color: #0077e2;
+}
+
+#myFooter .instagram:hover {
+    color: #d942f4;
+}
+
+#myFooter .twitter:hover {
+    color: #00aced;
+}
+
+@media screen and (max-width: 767px) {
+    #myFooter {
+        text-align: center;
+    }
+}
+
+
+/* CSS used for positioning the footers at the bottom of the page. */
+/* You can remove this. */
+
+html{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: 100%;
+}
+
+.content{
+   flex: 1 0 auto;
+   -webkit-flex: 1 0 auto;
+   min-height: 200px;
+}

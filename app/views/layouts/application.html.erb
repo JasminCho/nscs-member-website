@@ -7,27 +7,27 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="application.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
   </head>
 
   <body>
   <!-- Navigation Bar -->
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default myNavbar">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
           <div class="navbar-brand">
             <%= link_to home_path do %>
-              <%= image_tag "nscs-logo.png", class: "navbar-logo" %>
-            <% end %> | Texas A&M
+              <%= image_tag "nscslogo.png", class: "navbar-logo" %>
+              <!-- <span id="brand-text">TAMU Chapter</span> -->
+            <% end %>
           </div>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="collapse navbar-collapse" id="navbar">
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home", home_path %></li>
             <li><%= link_to "About Us", about_path %></li>
@@ -45,6 +45,7 @@
                   <li role="separator" class="divider"></li>
                   <% if current_admin %>
                     <li><%= link_to "Admin", admin_page_path %></li>
+                    <li><a href="http://nscs-documentation.s3-website.us-east-2.amazonaws.com/">Documentation</a></li>
                   <% end %>
                   <li role="separator" class="divider"></li>
                   <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
@@ -57,47 +58,58 @@
         </div>
       </div>
     </nav>
+    <!-- End Navigation Bar -->
 
     <!--  Body -->
-    <div class="container">
+    <div class="container content">
       <% flash.each do |key, value| %>
             <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
       <%= yield %>
     </div>
+    <!-- End Body -->
 
-    <!-- Footer -->
-    <footer class="page-footer" id="footer">
+    <!-- Footer Bar -->
+    <footer id="myFooter">
       <div class="container">
         <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">TAMU NSCS</h5>
-            <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full
-              time job. Any amount would help support and continue development on this project and is greatly
-              appreciated.</p>
+          <div class="col-sm-3">
+            <%= link_to home_path do %>
+              <%= image_tag "RGB-Crimson-Gold-Logo-1080x8352-300x298.png", class: "logo" %>
+            <% end %>
           </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">Links</h5>
+          <div class="col-sm-3">
+            <h5>Contact Us</h5>
+            <p>
+              123-456-7890<br/>
+              tamunscspres@gmail.com<br/>
+              Texas A&M University Rudder Tower<br/>
+              401 Joe Routt Blvd,<br/>
+              College Station, Texas 77840
+            </p>
+          </div>
+          <div class="col-sm-2">
+            <h5>Links</h5>
             <ul>
-              <li><a class="white-text" href="https://www.facebook.com/nscs.tamu">Facebook</a></li>
               <li><a class="white-text" href="https://nscs.org/nscs-scholarships/">Scholarships</a></li>
               <li><a class="white-text" href="https://www.nscsgear.org/store/catalog">NSCS Store</a></li>
-              <% if current_member %>
-                <li><a class="white-text" href="http://nscs-documentation.s3-website.us-east-2.amazonaws.com/">Documentation</a></li>
-              <% end %>
             </ul>
           </div>
-          <div class="w3-xlarge w3-section">
-            <a class="white-text" href="https://www.facebook.com/nscs.tamu"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-            <i class="fa fa-instagram w3-hover-opacity"></i>
-            <i class="fa fa-snapchat w3-hover-opacity"></i>
-            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-            <i class="fa fa-twitter w3-hover-opacity"></i>
-            <i class="fa fa-linkedin w3-hover-opacity"></i>
+          <div class="col-sm-2">
+            <h5>Connect With Us</h5>
+            <div class="social-networks">
+              <a href="https://twitter.com/NSCS?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.facebook.com/nscs.tamu" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/nscs/" class="instagram"><i class="fa fa-instagram"></i></a>
+            </div>
           </div>
         </div>
       </div>
+      <div class="footer-copyright">
+          <p>Copyright © 2018. NSCS Texas A&M Chapter. All rights reserved.</p>
+      </div>
     </footer>
+    <!-- End Footer Bar -->
 
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
