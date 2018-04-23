@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180423180631) do
+ActiveRecord::Schema.define(version: 20180423214145) do
 
   create_table "calendars", force: :cascade do |t|
     t.string "name"
@@ -68,7 +68,6 @@ ActiveRecord::Schema.define(version: 20180423180631) do
     t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
     t.string "url"
   end
 

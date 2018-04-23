@@ -11,7 +11,17 @@ class OfficersController < ApplicationController
     end
 
     def create
+
+        obj = S3_BUCKET.objects[params[:officer][:image].original_filename]
+        obj.write(
+          file: params[:officer][:image],
+          acl: :public_read,
+          storage_class: "REDUCED_REDUNDANCY"
+        )
+
         @officers = Officer.new(officers_params)
+        @officers.url = obj.public_url
+
         if @officers.save
             flash[:success] = "Officer added!"
             redirect_to officers_path
@@ -37,6 +47,7 @@ class OfficersController < ApplicationController
     
     def destroy
         Officer.find(params[:id]).destroy
+        S3_BUCKET.objects[object_to_destroy.name].delete
         flash[:success] = "Officer deleted"
         redirect_to officers_path
     end
