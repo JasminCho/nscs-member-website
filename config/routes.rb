@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   get 'photos/new'
   get 'photos/create'
   get 'photos/index'
@@ -11,21 +11,21 @@ Rails.application.routes.draw do
   get '/upload', to: 'uploads#index'
 
   get '/login', to: 'user#login'
-  
+
   get '/officers', to: 'officers#index'
   get 'officers/new'
   get 'officers/edit'
   post 'officers/create'
   patch 'officers/update'
   delete 'officers/destroy'
-  
+
   resources :officers
-  
+
   get '/about', to: 'general_pages#about'
   get '/home', to: 'general_pages#home'
   get '/admin_page', to: 'general_pages#admin_page'
   get '/unauthorized', to: 'general_pages#unauthorized'
-  
+
   get '/faqs', to: 'faqs#index'
   get 'faqs/edit'
   get 'faqs/new'
@@ -41,7 +41,7 @@ Rails.application.routes.draw do
   get 'newsfeeds/edit'
   patch 'newsfeeds/update'
   delete 'newsfeeds/destroy'
-  
+
   resources :newsfeeds
 
   get 'sessions/create'
@@ -59,7 +59,7 @@ Rails.application.routes.draw do
   # points' routes
   get 'points/index', to: 'points#index'
   resource :points
-  
+
   #calendar routes
   get 'calendars/get_events', to: 'calendars#list_events', as: 'list_events'
   get 'calendars/show_event', to: 'calendars#show_event', as: 'show_event'
@@ -81,9 +81,9 @@ Rails.application.routes.draw do
   resources :uploads
   resources :meetings
   resources :photos
-  
+
   resources :sessions, only: [:create, :destroy]
-  
-  root 'user#login'
+
+  root 'general_pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
