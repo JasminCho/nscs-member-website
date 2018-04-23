@@ -122,7 +122,7 @@ class Calendar<ApplicationRecord
 		end_date =timeparse(event[:end_date], event[:end_time])
 		#is_valid_time?(start_date,end_date)
 
-		event =  {
+		new_event =  {
 		summary: event[:title],
 	  	location: event[:location],
 	  	description:  event[:description],
@@ -150,7 +150,7 @@ class Calendar<ApplicationRecord
 	  	}
 		}
 		response = @client.execute(api_method: @service.events.insert,
-		parameters: {'calendarId' => ENV['NSCS_Calendar_ID']}, body: JSON.dump(event), headers: {'Content-Type' => 'application/json'})
+		parameters: {'calendarId' => ENV['NSCS_Calendar_ID']}, body: JSON.dump(new_event), headers: {'Content-Type' => 'application/json'})
 		
 		#Todo Method For checking dropped.
 		response = JSON.parse(response.body)
@@ -162,6 +162,7 @@ class Calendar<ApplicationRecord
 		event[:creator_email]= response["creator"]["email"]
 		event[:start_time]= DateTime.parse(response["start"]["dateTime"]).strftime('%I:%M:%S %p')
 		event[:end_time]= DateTime.parse(response["end"]["dateTime"]).strftime('%I:%M:%S %p')
+	
 		
 	end
 
@@ -199,11 +200,12 @@ class Calendar<ApplicationRecord
 		event[:creator_email]= response["creator"]["email"]
 		event[:start_time]= DateTime.parse(response["start"]["dateTime"]).strftime('%I:%M:%S %p')
 		event[:end_time]= DateTime.parse(response["end"]["dateTime"]).strftime('%I:%M:%S %p')
+	
 	end
 
-	def delete_event(event)
+	def delete_event(event_id)
 		response = @client.execute(api_method: @service.events.delete,
-			parameters: {'calendarId' => ENV['NSCS_Calendar_ID'], 'eventId' => event[:event_id]})		
+			parameters: {'calendarId' => ENV['NSCS_Calendar_ID'], 'eventId' => event_id})		
 	end
 		
 	def timeparse(date,time)

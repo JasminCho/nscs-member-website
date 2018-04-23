@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/ec2-user/environment/nscs-member-website/spec/controllers/faqs_controller_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/controllers/faqs_controller_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/rails_helper.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -67,23 +67,23 @@
         null,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/helpers/application_helper.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/helpers/faqs_helper.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/helpers/faqs_helper.rb": [
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/helpers/general_pages_helper.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/helpers/general_pages_helper.rb": [
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/helpers/meetings_helper.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/helpers/meetings_helper.rb": [
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/helpers/members_helper.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/helpers/members_helper.rb": [
         1,
         null,
         1,
@@ -103,19 +103,19 @@
         null,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/helpers/newsfeeds_helper.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/helpers/newsfeeds_helper.rb": [
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/helpers/officers_helper.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/helpers/officers_helper.rb": [
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/helpers/photos_helper.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/helpers/photos_helper.rb": [
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/helpers/s3_module_helper.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/helpers/s3_module_helper.rb": [
         1,
         null,
         null,
@@ -142,35 +142,35 @@
         null,
         null,
         1,
-        5,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        5,
-        5,
+        0,
+        0,
         null,
         null,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/helpers/sessions_helper.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/helpers/sessions_helper.rb": [
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/helpers/uploads_helper.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/helpers/uploads_helper.rb": [
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/helpers/user_helper.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/helpers/user_helper.rb": [
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/controllers/faqs_controller.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/controllers/faqs_controller.rb": [
         1,
         null,
         1,
@@ -219,7 +219,7 @@
         null,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/controllers/application_controller.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/controllers/application_controller.rb": [
         1,
         null,
         1,
@@ -251,87 +251,49 @@
         0,
         0,
         0,
-        null,
-        null,
-        null
-      ],
-      "/home/ec2-user/environment/nscs-member-website/spec/controllers/general_pages_controller_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/home/ec2-user/environment/nscs-member-website/app/controllers/general_pages_controller.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
         0,
         null,
+        0,
         null,
+        null
+      ],
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/controllers/general_pages_controller_spec.rb": [
         1,
-        null,
-        null,
-        1,
-        null,
         null,
         1,
         null,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/controllers/meetings_controller_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/controllers/general_pages_controller.rb": [
         1,
         null,
         1,
         null,
-        1,
-        1,
         1,
         0,
         null,
         null,
-        null,
-        1,
-        1,
-        1,
-        0,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
         1,
         null,
         null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
         null,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/controllers/meetings_controller.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/controllers/meetings_controller_spec.rb": [
         1,
         null,
         1,
+        null,
         1,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        0,
-        0,
-        null,
-        0,
+        1,
+        1,
         0,
         null,
         null,
@@ -340,46 +302,9 @@
         1,
         1,
         0,
-        0,
         null,
         null,
         null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/home/ec2-user/environment/nscs-member-website/spec/controllers/members_controller_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
         1,
         1,
         1,
@@ -389,23 +314,90 @@
         null,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/controllers/members_controller.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/controllers/meetings_controller.rb": [
         1,
         null,
         1,
+        1,
         null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/controllers/members_controller_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
         1,
         null,
         null,
         1,
+        1,
+        1,
         null,
         null,
+        null,
+        null,
+        1,
+        1,
+        1,
         1,
         null,
         null,
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
+        null,
+        null
+      ],
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/controllers/members_controller.rb": [
+        1,
+        null,
+        1,
         null,
         1,
         0,
@@ -455,14 +447,14 @@
         null,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/controllers/officers_controller_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/controllers/officers_controller_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/controllers/officers_controller.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/controllers/officers_controller.rb": [
         1,
         null,
         1,
@@ -513,7 +505,60 @@
         null,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/controllers/photos_controller_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/controllers/photos_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/controllers/photos_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/controllers/uploads_controller_spec.rb": [
         1,
         null,
         1,
@@ -541,60 +586,7 @@
         null,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/controllers/photos_controller.rb": [
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        5,
-        null,
-        null,
-        null,
-        null,
-        5,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/home/ec2-user/environment/nscs-member-website/spec/controllers/uploads_controller_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/home/ec2-user/environment/nscs-member-website/app/controllers/uploads_controller.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/controllers/uploads_controller.rb": [
         1,
         null,
         1,
@@ -640,7 +632,7 @@
         null,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/helpers/faqs_helper_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/helpers/faqs_helper_spec.rb": [
         1,
         null,
         null,
@@ -657,7 +649,7 @@
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/helpers/general_pages_helper_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/helpers/general_pages_helper_spec.rb": [
         1,
         null,
         null,
@@ -674,7 +666,7 @@
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/helpers/meetings_helper_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/helpers/meetings_helper_spec.rb": [
         1,
         null,
         null,
@@ -691,7 +683,7 @@
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/helpers/officers_helper_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/helpers/officers_helper_spec.rb": [
         1,
         null,
         null,
@@ -708,7 +700,7 @@
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/helpers/photos_helper_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/helpers/photos_helper_spec.rb": [
         1,
         null,
         null,
@@ -725,7 +717,7 @@
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/helpers/uploads_helper_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/helpers/uploads_helper_spec.rb": [
         1,
         null,
         null,
@@ -742,14 +734,14 @@
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/models/calendar_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/models/calendar_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/models/calendar.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/models/calendar.rb": [
         null,
         1,
         1,
@@ -861,7 +853,8 @@
         null,
         null,
         0,
-        0,
+        null,
+        null,
         null,
         null,
         null,
@@ -907,12 +900,13 @@
         0,
         0,
         null,
+        null,
         0,
         0,
         0,
         0,
         0,
-        0,
+        null,
         null,
         null,
         null,
@@ -950,6 +944,7 @@
         0,
         0,
         0,
+        null,
         null,
         null,
         1,
@@ -980,135 +975,147 @@
         null,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/models/application_record.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/models/event_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/models/event_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/models/event.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/models/event.rb": [
         1,
         1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/models/faq_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/models/faq_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/models/faq.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/models/faq.rb": [
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/models/meeting_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/models/meeting_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/models/meeting.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/models/meeting.rb": [
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/models/officer_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/models/officer_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/models/officer.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/models/officer.rb": [
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/models/photo_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/models/photo_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/models/photo.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/models/photo.rb": [
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/models/upload_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/models/upload_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/app/models/upload.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/app/models/upload.rb": [
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/views/meetings/create.html.erb_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/views/meetings/create.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/views/meetings/index.html.erb_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/views/meetings/index.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/views/meetings/new.html.erb_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/views/meetings/new.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/views/photos/create.html.erb_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/views/photos/create.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/views/photos/index.html.erb_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/views/photos/index.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/views/photos/new.html.erb_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/views/photos/new.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/views/uploads/create.html.erb_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/views/uploads/create.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/views/uploads/index.html.erb_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/views/uploads/index.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/home/ec2-user/environment/nscs-member-website/spec/views/uploads/new.html.erb_spec.rb": [
+      "/home/user1/Documents/CSCE431/nscs-member-website/spec/views/uploads/new.html.erb_spec.rb": [
         1,
         null,
         1,
@@ -1116,6 +1123,6 @@
         null
       ]
     },
-    "timestamp": 1524006924
+    "timestamp": 1524519290
   }
 }

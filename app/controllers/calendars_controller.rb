@@ -2,7 +2,7 @@
 class CalendarsController < ApplicationController
 	attr_accessor :calendar
 	helper_method :get_events
-	before_action :logged_in_user?, :except => [:list_events]
+	before_action :logged_in_user?, :except => [:list_events, :show_event]
 	
 	#DRY method of calling current_user.
 	#If nill redirect to login and instantiate calendar.
@@ -38,7 +38,7 @@ class CalendarsController < ApplicationController
 	end
 
 	def show_event
-		@event = params[:event]
+		@event =Event.find_by_event_id(params["event_id"])
 	end
 
 
@@ -48,9 +48,14 @@ class CalendarsController < ApplicationController
 
 	def create_event
 
+		#Grab form paramaters.
 		@event = @calendar.events.new(new_event_params)
+		#Save the form parameters.
 		if @event.save
+			#Receive the google extra id parameters.
 			@calendar.insert_event(@event)
+			#Save the google id params.	
+			@event.save!
 			@calendar.save!
 
 
@@ -71,7 +76,8 @@ class CalendarsController < ApplicationController
 	end
 
 	def delete_event
-		@calendar.delete_event(params.permit(:event_id))
+	
+		@calendar.delete_event(params.permit(:event_id)[:event_id])
 		Event.find_by_event_id(params.permit(:event_id)[:event_id]).destroy!
 		flash[:notice]="Event got deleted succesfully."
 		redirect_to list_events_path
@@ -79,9 +85,11 @@ class CalendarsController < ApplicationController
 
 	def update_event	
 		@to_update = Event.find_by_event_id(params[:event][:event_id])
-		
+		# First update it in the database.
 		if @to_update.update(update_event_params)
+			#IF updated in database, updated in cloud.
 			@calendar.update_event(@to_update)
+			#Save changes for calendar event.
 			@calendar.save!
 			flash[:notice]="Your event, " + @to_update[:title] + ", got saved!"
 			redirect_to list_events_path
