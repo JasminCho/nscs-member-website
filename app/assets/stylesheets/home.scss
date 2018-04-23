@@ -17,25 +17,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.business-header {
-  height: 50vh;
-  min-height: 300px;
-  background: url('http://placehold.it/1920x400') center center no-repeat scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+.row {
+  margin-bottom: 30px;
 }
 
 .card {
   height: 100%;
+  text-align: center;
 }
 
-// @media (min-width: 992px) {
-//   body {
-//     padding-top: 56px;
-//   }
-// }
+.event-icon {
+  font-size: 90px;
+  color: #600909;
+}
 
 .jumbotron {
   background-size: cover;
@@ -101,7 +95,6 @@
    padding-bottom: 75%;
    height: 0;
    overflow: hidden;
-   margin-bottom: 30px;
 }
 
 .calendar-content iframe {

@@ -94,7 +94,7 @@
       <div class="row">
         <h2>Upcoming Events</h2>
         <div class="col-lg-12 calendar-admin-btns">
-          <h4>Make changes to calendar</h4>
+          <h3>Make changes to calendar</h3>
           <% if current_admin %>
             <%= link_to 'New Calendar Event', new_events_path, class:"btn btn-primary" %>
             <%= link_to 'Get Events', list_events_path, class:"btn btn-primary" %>
@@ -115,45 +115,63 @@
       <!-- End Calendar -->
 
       <!-- General Events -->
-      <!-- <div class="row">
-        <h1>General Events</h1>
-        <div class="col-sm-4 my-4">
+      <div class="row">
+        <h1>Events</h1>
+        <div class="col-sm-3">
           <div class="card">
-            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+            <a href="\about" class="event-icon"><i class="fa fa-heart"></i></a>
             <div class="card-body">
-              <h4 class="card-title">Event 1</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, </p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Find Out More!</a>
+              <h2 class="card-title">Service</h2>
+              <p class="card-text">
+                Service is one of the pillars of NSCS. Every
+                month, we have one major service event along with many other small
+                events. Some of these events include: bingo at Magnified Nursing
+                Home, Adopt-a-Street, Big Event, and much more!
+              </p>
             </div>
           </div>
         </div>
-        <div class="col-sm-4 my-4">
+        <div class="col-sm-3">
           <div class="card">
-            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+            <a href="\about" class="event-icon"><i class="fa fa-users"></i></a>
             <div class="card-body">
-              <h4 class="card-title">Event 2</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, .</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Find Out More!</a>
+              <h2 class="card-title">Social</h2>
+              <p class="card-text">
+                In NSCS we strive to build strong leaders who
+                are not only scholars, but also active members in their communities.
+                Our social events allow members to meet fellow members and network
+                outside of our society.
+              </p>
             </div>
           </div>
         </div>
-        <div class="col-sm-4 my-4">
+        <div class="col-sm-3">
           <div class="card">
-            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+            <a href="\about" class="event-icon"><i class="fa fa-book"></i></a>
             <div class="card-body">
-              <h4 class="card-title">Event 3</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, </p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Find Out More!</a>
+              <h2 class="card-title">Study Hours</h2>
+              <p class="card-text">
+                Scholarship, another NSCS pillar, is a top priority for the Texas
+                A&M chapter of NSCS. An officer hosts study hours in a library on
+                campus twice a month and members are encouraged to come and study.
+              </p>
             </div>
           </div>
         </div>
-      </div> -->
+        <div class="col-sm-3">
+          <div class="card">
+            <a href="\about" class="event-icon"><i class="fa fa-gift"></i></a>
+            <div class="card-body">
+              <h2 class="card-title">Fundraising</h2>
+              <p class="card-text">
+                Each month, NSCS hosts fundraising events, such as profit shares.
+                These events allow us to provide exciting social and service
+                opportunities for our members.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </body>
