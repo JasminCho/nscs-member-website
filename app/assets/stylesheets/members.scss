@@ -6,3 +6,33 @@
   background-color: #600909;
   color: white;
 }
+
+.member-list p {
+  font-size: 130%;
+}
+
+.member-list .form-control {
+  height:50px;
+  font-size:14pt;
+}
+
+.member-list .profile {
+	margin: 0 auto;
+  display: table;
+}
+
+.member-list .profile h1{
+	font-weight: normal;
+	font-size: 20px;
+	margin:10px 0 10px 0;
+}
+
+.member-list .profile .img-box{
+	opacity: 1;
+	display: block;
+	position: relative;
+}
+
+.member-back {
+  margin-bottom: 20px;
+}
