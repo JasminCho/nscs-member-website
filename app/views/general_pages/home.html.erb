@@ -1,148 +1,144 @@
-<title>TAMU NSCS Home Page</title>
 <%= stylesheet_link_tag "home" %>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<body>
-  <div class="jumbotron jumbotron-fluid"></div>
-  <!-- Gallery -->
-  <!-- <div id="myCarousel" class="jumbotron jumbotron-fluid carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <%= image_tag "members.jpg" %>
-        <div class="carousel-caption">
-          <h3>NSCS Members</h3>
-          <p>This is something something something</p>
-        </div>
-      </div>
 
-      <div class="item">
-        <%= image_tag "acadbldg.jpg" %>
-        <div class="carousel-caption">
-          <h3>Academic Building</h3>
-          <p>Lorem ipsum...</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <%= image_tag "generalmeeting.jpg" %>
-        <div class="carousel-caption">
-          <h3>NSCS Member Meeting</h3>
-          <p>Lorem ipsum...</p>
-        </div>
+<div class="jumbotron jumbotron-fluid"></div>
+<!-- Gallery -->
+<!-- <div id="myCarousel" class="jumbotron jumbotron-fluid carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <%= image_tag "members.jpg" %>
+      <div class="carousel-caption">
+        <h3>NSCS Members</h3>
+        <p>This is something something something</p>
       </div>
     </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div> -->
-  <!-- End Gallery -->
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <h1 class="title-text">National Society of Collegiate Scholars</h1>
-        <h2 class="subheader-text">Texas A&M University Chapter</h2>
-        <p class="org-description">
-          The National Society of Collegiate Scholars at Texas A&M University
-          is an honor society that recognizes high-achieving students.
-          NSCS is proud to offer almost half a million dollars in scholarships.
-          More importantly, NSCS is a growth opportunity, leadership training ground,
-          and resource for our students. Students who join NSCS meet people on campus
-          they might not have meet without NSCS – people who become friends, long-term
-          supporters, and future colleagues. Our students get the tools and encouragement
-          they need to take part in transforming our campus and the community that means
-          the most to them.
-        </p>
-      </div>
-      <!-- Announcements -->
-      <div class="col-lg-12">
-        <% if current_member %>
-          <div class="well well-lg table-responsive-xl">
-            <table class="table table-striped">
-              <thead>
-                <th><h2>Announcements</h2></th>
-              </thead>
-              <% @newsfeed.each do |news| %>
-                <tr>
-                  <td> <%= news.news %> </td>
-                </tr>
-              <% end %>
-            </table>
-          </div>
-        <% end %>
+    <div class="item">
+      <%= image_tag "acadbldg.jpg" %>
+      <div class="carousel-caption">
+        <h3>Academic Building</h3>
+        <p>Lorem ipsum...</p>
       </div>
     </div>
-    <!-- End Announcements -->
-    <hr>
-    <!-- Calendar -->
-    <div class="row">
-      <h2>Upcoming Events</h2>
-      <div class="col-lg-12 calendar-admin-btns">
-        <% if current_admin %>
-          <h3>Make changes to calendar</h3>
-          <%= link_to 'New Calendar Event', new_events_path, class:"btn btn-primary" %>
-          <%= link_to 'Get Events', list_events_path, class:"btn btn-primary" %>
-        <% end %>
-      </div>
-      <div class="col-lg-12 calendar-content">
-        <iframe
-          src="https://calendar.google.com/calendar/embed?src=ubace36j9l84a6jtc252d5g0m4%40group.calendar.google.com&ctz=America%2FChicago"
-          style="border-width: 0"
-          display="block"
-          width="800"
-          height="600"
-          frameborder="0"
-          scrolling="no">
-        </iframe>
+
+    <div class="item">
+      <%= image_tag "generalmeeting.jpg" %>
+      <div class="carousel-caption">
+        <h3>NSCS Member Meeting</h3>
+        <p>Lorem ipsum...</p>
       </div>
     </div>
-    <!-- End Calendar -->
-    <!-- General Events -->
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="card">
-          <a href="\about" class="event-icon"><i class="fa fa-heart"></i></a>
-          <div class="card-body">
-            <h2 class="card-title">Service</h2>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="card">
-          <a href="\about" class="event-icon"><i class="fa fa-users"></i></a>
-          <div class="card-body">
-            <h2 class="card-title">Social</h2>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="card">
-          <a href="\about" class="event-icon"><i class="fa fa-book"></i></a>
-          <div class="card-body">
-            <h2 class="card-title">Study Hours</h2>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="card">
-          <a href="\about" class="event-icon"><i class="fa fa-gift"></i></a>
-          <div class="card-body">
-            <h2 class="card-title">Fundraising</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End General Events -->
   </div>
-</body>
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div> -->
+<!-- End Gallery -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="title-text">National Society of Collegiate Scholars</h1>
+      <h2 class="subheader-text">Texas A&M University Chapter</h2>
+      <p class="org-description">
+        The National Society of Collegiate Scholars at Texas A&M University
+        is an honor society that recognizes high-achieving students.
+        NSCS is proud to offer almost half a million dollars in scholarships.
+        More importantly, NSCS is a growth opportunity, leadership training ground,
+        and resource for our students. Students who join NSCS meet people on campus
+        they might not have meet without NSCS – people who become friends, long-term
+        supporters, and future colleagues. Our students get the tools and encouragement
+        they need to take part in transforming our campus and the community that means
+        the most to them.
+      </p>
+    </div>
+    <!-- Announcements -->
+    <div class="col-lg-12">
+      <% if current_member %>
+        <div class="well well-lg table-responsive-xl">
+          <table class="table table-striped">
+            <thead>
+              <th><h2>Announcements</h2></th>
+            </thead>
+            <% @newsfeed.each do |news| %>
+              <tr>
+                <td> <%= news.news %> </td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <!-- End Announcements -->
+  <hr>
+  <!-- Calendar -->
+  <div class="row">
+    <h2>Upcoming Events</h2>
+    <div class="col-lg-12 calendar-admin-btns">
+      <% if current_admin %>
+        <h3>Make changes to calendar</h3>
+        <%= link_to 'New Calendar Event', new_events_path, class:"btn btn-primary" %>
+        <%= link_to 'Get Events', list_events_path, class:"btn btn-primary" %>
+      <% end %>
+    </div>
+    <div class="col-lg-12 calendar-content">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=ubace36j9l84a6jtc252d5g0m4%40group.calendar.google.com&ctz=America%2FChicago"
+        style="border-width: 0"
+        display="block"
+        width="800"
+        height="600"
+        frameborder="0"
+        scrolling="no">
+      </iframe>
+    </div>
+  </div>
+  <!-- End Calendar -->
+  <!-- General Events -->
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="card">
+        <a href="\about" class="event-icon"><i class="fa fa-heart"></i></a>
+        <div class="card-body">
+          <h2 class="card-title">Service</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="card">
+        <a href="\about" class="event-icon"><i class="fa fa-users"></i></a>
+        <div class="card-body">
+          <h2 class="card-title">Social</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="card">
+        <a href="\about" class="event-icon"><i class="fa fa-book"></i></a>
+        <div class="card-body">
+          <h2 class="card-title">Study Hours</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="card">
+        <a href="\about" class="event-icon"><i class="fa fa-gift"></i></a>
+        <div class="card-body">
+          <h2 class="card-title">Fundraising</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End General Events -->
+</div>

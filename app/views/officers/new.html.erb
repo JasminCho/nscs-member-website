@@ -1,21 +1,41 @@
-<h1> HEY ADMIN! ADD A NEW USER HERE! </h1>
+<%= stylesheet_link_tag "officers" %>
 
-    <%= form_for(@officers) do |n| %>
-      
-      <%= n.label :Name %>
-      <%= n.text_field :name %>       
-      
-      <%= n.label :Email%>
-      <%= n.text_field :email %>
-      
-      <%= n.label :Position %>
-      <%= n.text_field :position %> 
-      
-      <%= n.label :Major %>
-      <%= n.text_field :major %>
-      
-      <%= n.label :Year %>
-      <%= n.text_field :year %>
-      
-      <%= n.submit "Submit"%>
-    <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 officers-text">
+      <h1 class="title-text">Add New Officer</h1>
+      <p>
+        Fill in the name, officer email, position, major, and year of the officer below!
+      </p>
+
+      <%= form_for(@officers) do |n| %>
+        <%= n.label :Name %>
+        <div class="form-group">
+          <%= n.text_field :name, class:"form-control" %>
+        </div>
+
+        <%= n.label :Position %>
+        <div class="form-group">
+          <%= n.text_field :position, class:"form-control" %>
+        </div>
+
+        <%= n.label :Email%>
+        <div class="form-group">
+          <%= n.text_field :email, class:"form-control" %>
+        </div>
+
+        <%= n.label :Major %>
+        <div class="form-group">
+          <%= n.text_field :major, class:"form-control" %>
+        </div>
+
+        <%= n.label :Year %>
+        <div class="form-group">
+          <%= n.text_field :year, class:"form-control" %>
+        </div>
+
+        <%= n.submit "Submit", class:"btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
