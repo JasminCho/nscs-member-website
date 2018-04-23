@@ -47,7 +47,7 @@ Rails.application.routes.draw do
   get 'sessions/create'
   get 'sessions/destroy'
 
-  get '/faq', to: 'members#faq'
+  # get '/faq', to: 'members#faq'
   get '/officers', to: 'members#officers'
   get '/contact', to: 'members#contact'
   get '/points', to: 'members#points'
