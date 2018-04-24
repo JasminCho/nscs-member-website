@@ -14,25 +14,82 @@
  *= require_self
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
-.business-header {
-  height: 50vh;
-  min-height: 300px;
-  background: url('http://placehold.it/1920x400') center center no-repeat scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+.row {
+  margin-bottom: 30px;
 }
 
 .card {
   height: 100%;
+  text-align: center;
 }
 
-@media (min-width: 992px) {
-  body {
-    padding-top: 56px;
+.event-icon {
+  font-size: 90px;
+  color: #600909;
+}
+
+.jumbotron {
+  background-size: cover;
+  background-image:url('members.jpg');
+  background-repeat: no-repeat;
+  height: 500px;
+  background-position: center center;
+}
+
+.carousel-inner img {
+  margin: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  // width: 50%;
+  // max-width: 100%;
+  height: 100%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.item {
+  display: block;
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+  .carousel-caption {
+    display: none;
   }
+}
+
+.org-description {
+  font-size: 120%;
+}
+
+.well {
+    background-color: #600909 !important;
+}
+
+.calendar-admin-btns {
+  margin-bottom: 30px;
+}
+
+.calendar-admin-btns .btn {
+  background-color: #600909;
+}
+
+.calendar-content {
+   text-align: center;
+   position: relative;
+   padding-bottom: 75%;
+   height: 0;
+   overflow: hidden;
+}
+
+.calendar-content iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

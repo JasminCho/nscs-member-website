@@ -1,113 +1,133 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TAMU NSCS</title>
-  <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <title>TAMU NSCS</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
 
-  <link rel="stylesheet" href="application.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+  <body>
+  <!-- Navigation Bar -->
+    <nav class="navbar navbar-default myNavbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+            <%= link_to home_path do %>
+              <%= image_tag "nscslogo.png", class: "navbar-logo" %>
+              <!-- <span id="brand-text">TAMU Chapter</span> -->
+            <% end %>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home", home_path %></li>
+            <li><%= link_to "About Us", about_path %></li>
+            <li><%= link_to "FAQ", faqs_path %></li>
+            <li><%= link_to "Officers", officers_path %></li>
+            <li><%= link_to "Gallery", photos_path %></li>
+            <% if current_member %>
+              <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <%= current_member.name %><span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Profile", points_index_path(:email => current_member.email) %></li>
+                  <li><%= link_to "Meetings", meetings_index_path %></li>
+                  <li role="separator" class="divider"></li>
+                  <% if current_admin %>
+                    <li><%= link_to "Admin", admin_page_path %></li>
+                    <li><a href="http://nscs-documentation.s3-website.us-east-2.amazonaws.com/">Documentation</a></li>
+                  <% end %>
+                  <li role="separator" class="divider"></li>
+                  <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to "Sign in", "/auth/google_oauth2", id: "sign_in" %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navigation Bar -->
 
-<body>
-<!-- Navigation Bar -->
-
-<!-- TEST NAVIGATION BAR -->
-<!-- <ul class="nav navbar-nav navbar-right">
-  <li><a href="#">Sign Up</a></li>
-  <li><a href="#">Sign In</a></li>
-  <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More<span class="caret"></span></a>
-    <ul class="dropdown-menu">
-      <li><a href="#">Start Learning</a></li>
-      <li><a href="#">View All Courses</a></li>
-      <li><a href="#">Chat with a CodeGuide</a></li>
-    </ul>
-  </li>
-</ul> -->
-<!--  -->
-
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <%= link_to home_path do %>
-        <%= image_tag "nscs-logo.png", class: "navbar-logo" %>
+    <!--  Body -->
+    <div class="body-content">
+      <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
+      <%= yield %>
     </div>
-    <div>
-      <ul class="nav navbar-nav navbar-right">
-        <% if current_admin %>
-          <li><%= link_to "Admin Only", admin_page_path %></li>
-        <% end %>
-        <li><%= link_to "Home", home_path %></li>
-        <li><%= link_to "About Us", about_path %></li>
-        <li><%= link_to "FAQ", faqs_path %></li>
-        <li><%= link_to "Officers", officers_path %></li>
-        <li><%= link_to "Gallery", photos_path %></li>
-        
-        <% if current_member %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <%= current_member.name %><span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Profile", points_index_path(:email => current_member.email) %></li>
-              <li><%= link_to "Meetings", meetings_index_path %></li>
-              <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+    <!-- End Body -->
+
+    <!-- Footer Bar -->
+    <footer id="myFooter">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <%= link_to home_path do %>
+              <%= image_tag "RGB-Crimson-Gold-Logo-1080x8352-300x298.png", class: "logo" %>
+            <% end %>
+          </div>
+          <div class="col-sm-3">
+            <h5>Contact Us</h5>
+            <p>
+              123-456-7890<br/>
+              tamunscspres@gmail.com<br/>
+              Texas A&M University Rudder Tower<br/>
+              401 Joe Routt Blvd,<br/>
+              College Station, Texas 77840
+            </p>
+          </div>
+          <div class="col-sm-2">
+            <h5>Links</h5>
+            <ul>
+              <li><a href="https://nscs.org/nscs-scholarships/">Scholarships</a></li>
+              <li><a href="https://www.nscsgear.org/store/catalog">NSCS Store</a></li>
+              <li><a href="https://my.nscs.org/s/login/?startURL=%2Fs%2F%3Ft%3D1483649887313">NSCS National Member Site</a></li>
             </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Sign in", "/auth/google_oauth2", id: "sign_in" %></li>
-        <% end %>  
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!--  Body -->
-<div class="container">
-  <%= yield %>
-</div>
-
-<!-- Footer -->
-<footer class="page-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">TAMU NSCS</h5>
-        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full
-          time job. Any amount would help support and continue development on this project and is greatly
-          appreciated.</p>
+          </div>
+          <div class="col-sm-2">
+            <h5>Connect With Us</h5>
+            <div class="social-networks">
+              <a href="https://twitter.com/NSCS?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.facebook.com/nscs.tamu" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/nscs/" class="instagram"><i class="fa fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col l3 s12">
-        <h5 class="white-text">Links</h5>
-        <ul>
-          <li><a class="white-text" href="https://www.facebook.com/nscs.tamu">Facebook</a></li>
-          <li><a class="white-text" href="https://nscs.org/nscs-scholarships/">Scholarships</a></li>
-          <li><a class="white-text" href="https://www.nscsgear.org/store/catalog">NSCS Store</a></li>
-          <% if current_member %>
-            <li><a class="white-text" href="http://nscs-documentation.s3-website.us-east-2.amazonaws.com/">Documentation</a></li>
-          <% end %>
-        </ul>
+      <div class="footer-copyright">
+          <p>Copyright © 2018. NSCS Texas A&M Chapter. All rights reserved.</p>
       </div>
-      <div class="w3-xlarge w3-section">
-        <a class="white-text" href="https://www.facebook.com/nscs.tamu"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-        <i class="fa fa-instagram w3-hover-opacity"></i>
-        <i class="fa fa-snapchat w3-hover-opacity"></i>
-        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-        <i class="fa fa-twitter w3-hover-opacity"></i>
-        <i class="fa fa-linkedin w3-hover-opacity"></i>
-      </div>
-    </div>
-  </div>
-</footer>
+    </footer>
+    <!-- End Footer Bar -->
 
-<!--  Scripts-->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="js/materialize.js"></script>
-<script src="js/init.js"></script>
-</body>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <script src="js/init.js"></script>
+    <script>
+    $(document).ready(function() {
+
+        var docHeight = $(window).height();
+        var footerHeight = $('#myFooter').height();
+        var footerTop = $('#myFooter').position().top + footerHeight;
+
+        if (footerTop < docHeight)
+            $('#myFooter').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+    });
+    </script>
+  </body>
 </html>

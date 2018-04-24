@@ -33,10 +33,10 @@ class FaqsController < ApplicationController
         end
     end
     
-    def delete
+    def destroy
         Faq.find(params[:id]).destroy
         flash[:success] = "FAQ deleted"
-        redirect_to faqs_index_path
+        redirect_to faqs_path
     end
     
     private

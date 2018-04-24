@@ -1,11 +1,27 @@
-<h1> HEY ADMIN! INSERT YOUR FAQ HERE! </h1>
+<%= stylesheet_link_tag "faq" %>
 
-    <%= form_for(@faqs) do |n| %>
-      <%= n.label :Question %>
-      <%= n.text_field :question %> 
-      
-      <%= n.label :Answer %>
-      <%= n.text_field :answer %> 
-      
-      <%= n.submit "POST"%>
-    <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 faq-btns">
+      <h1 class="title-text">Create New FAQ</h1>
+      <p>
+        Enter the FAQ and its answer below!
+      </p>
+
+      <%= form_for(@faqs) do |n| %>
+        <%= n.label :Question %>
+        <div class="form-group">
+          <%= n.text_area :question, class:"form-control" %>
+        </div>
+
+
+        <%= n.label :Answer %>
+        <div class="form-group">
+          <%= n.text_area :answer, class:"form-control" %>
+        </div>
+
+        <%= n.submit "POST", class:"btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -156,7 +156,10 @@ class Calendar<ApplicationRecord
 		response = JSON.parse(response.body)
 		puts "It got created?"
 		
+<<<<<<< HEAD
 	
+=======
+>>>>>>> b5ecd490f6abcb9c84513c285834dd5eba9a30e1
 		event[:event_id]= response["id"]
 		event[:creator_name]= response["creator"]["displayName"]
 		event[:creator_email]= response["creator"]["email"]

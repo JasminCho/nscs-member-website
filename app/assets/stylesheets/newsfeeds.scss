@@ -1,3 +1,17 @@
 // Place all the styles related to the Newsfeeds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.newsfeed .btn {
+  background-color: #600909;
+  color: white;
+}
+
+.newsfeed p {
+  font-size: 130%;
+}
+
+.newsfeed .form-control {
+  height:200px;
+  font-size:14pt;
+}

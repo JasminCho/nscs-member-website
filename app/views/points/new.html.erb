@@ -1,10 +1,31 @@
-<h1>Add new point</h1>
-<%= form_for(@point) do |f| %>
-    <%= f.label :email, 'Email'%>
-    <%= f.text_field :email, :value => params[:email], :disabled => true %>
-    <%= f.label :event_name, 'Event name'%>
-    <%= f.text_field :event_name%>
-    <%= f.label :point, 'Point'%>
-    <%= f.number_field :point %>
-    <%= f.button :submit %>
-<% end %>
+<%= stylesheet_link_tag "points" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 points">
+      <h1 class="title-text">Add Points for Event</h1>
+      <p>
+        Fill in the event name and amount of points the member earned for it below!
+      </p>
+
+      <%= form_for(@point) do |f| %>
+        <%= f.label :email, 'Member Email'%>
+        <div class="form-group">
+          <%= f.text_field :email, :value => params[:email], :readonly => true, class:"form-control" %>
+        </div>
+
+        <%= f.label :event_name, 'Event name'%>
+        <div class="form-group">
+          <%= f.text_field :event_name, class:"form-control" %>
+        </div>
+
+        <%= f.label :point, 'Point'%>
+        <div class="form-group">
+          <%= f.number_field :point, class:"form-control" %>
+        </div>
+
+        <%= f.button :submit, class:"btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
