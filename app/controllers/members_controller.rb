@@ -11,6 +11,7 @@ class MembersController < ApplicationController
   end
 
   def create
+    debugger
     @member = Member.new(members_params)
     if @member.save
       redirect_to(members_index_path)
