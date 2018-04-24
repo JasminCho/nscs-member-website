@@ -113,7 +113,7 @@
         <% @officers.each do |officer| %>
           <div class="col-lg-3 profile">
             <div class="img-box">
-              <img src="http://nabeel.co.in/files/bootsnipp/team/10.jpg" class="img-responsive">
+              <img src= <%= officer.url %>>
             </div>
             <h1><%= officer.name %></h1>
             <h2><%= officer.position %></h2>
