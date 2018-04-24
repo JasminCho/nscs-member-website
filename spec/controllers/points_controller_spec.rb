@@ -12,7 +12,7 @@ RSpec.describe PointsController, type: :controller do
     it 'receive correct arguments' do
         delete :destroy, :params => {:id => 1, :email => 'email'}
         expect(controller.params[:id]).not_to be_nil
-        exepct(controller.params[:email]).not_to be_nil
+        expect(controller.params[:email]).not_to be_nil
     end  
   end
 end
