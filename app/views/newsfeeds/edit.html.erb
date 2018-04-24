@@ -1,9 +1,22 @@
-<h1>EDIT THIS POST!</h1>
+<%= stylesheet_link_tag "newsfeeds" %>
 
-<%= form_for(@newsfeeds) do |news| %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 newsfeed">
+      <h1 class="title-text">Edit Announcement</h1>
+      <p>
+        Change the content of the announcement below!
+      </p>
 
-  <%= news.label :edit %>
-  <%= news.text_field :news %>
+      <%= form_for(@newsfeeds) do |news| %>
 
-  <%= news.submit "Save changes" %>
-<% end %>
+        <%= news.label :edit %>
+        <div class="form-group">
+          <%= news.text_area :news, class:"form-control" %>
+        </div>
+
+        <%= news.submit "Save changes", class:"btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

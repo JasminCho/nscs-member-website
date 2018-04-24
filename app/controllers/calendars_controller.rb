@@ -2,23 +2,28 @@
 class CalendarsController < ApplicationController
 	attr_accessor :calendar
 	helper_method :get_events
-	before_action :logged_in_user?
+	before_action :logged_in_user?, :except => [:list_events, :show_event, :current_user]
 	
 	#DRY method of calling current_user.
 	#If nill redirect to login and instantiate calendar.
 	def current_user
-		super
+		if(super.nil?)
+			flash[:warning] = "Please log in"
+			redirect_to root_path
+		end
 		@calendar = Calendar.new(@current_user)
 		@calendar.save!
-		puts @calendar
+
 		#Evaluate before leaving so expects the same as current_user parent!
 		@current_user
 	end
 	
 	def list_events
-
+		if(!@calendar.nil?)
 			@events = synchronize
-
+		else
+			@events = Event.all
+		end
 	end
 
 	def synchronize
@@ -34,7 +39,7 @@ class CalendarsController < ApplicationController
 	end
 
 	def show_event
-		@event = params[:event]
+		@event =Event.find_by_event_id(params["event_id"])
 	end
 
 
@@ -44,16 +49,21 @@ class CalendarsController < ApplicationController
 
 	def create_event
 
+		#Grab form paramaters.
 		@event = @calendar.events.new(new_event_params)
-		if @event.save!
+		#Save the form parameters.
+		if @event.save
+			#Receive the google extra id parameters.
 			@calendar.insert_event(@event)
+			#Save the google id params.	
+			@event.save!
 			@calendar.save!
 
 
 			flash[:notice]="Your event, " + @event[:title] + ", got saved!"
 			redirect_to new_events_path
 		else
-			@event.destroy!
+			invalid_message(@event, "saved")
 			render :new_event
 		end
 	end
@@ -67,22 +77,35 @@ class CalendarsController < ApplicationController
 	end
 
 	def delete_event
-		@calendar.delete_event(params.permit(:event_id))
+	
+		@calendar.delete_event(params.permit(:event_id)[:event_id])
 		Event.find_by_event_id(params.permit(:event_id)[:event_id]).destroy!
 		flash[:notice]="Event got deleted succesfully."
 		redirect_to list_events_path
 	end
 
-	def update_event
+	def update_event	
 		@to_update = Event.find_by_event_id(params[:event][:event_id])
-
-		if @to_update.update!(update_event_params)
+		# First update it in the database.
+		if @to_update.update(update_event_params)
+			#IF updated in database, updated in cloud.
 			@calendar.update_event(@to_update)
+			#Save changes for calendar event.
 			@calendar.save!
 			flash[:notice]="Your event, " + @to_update[:title] + ", got saved!"
 			redirect_to list_events_path
 		else
-			flash[:notice]="Your event, " + @to_update[:title] + ", could not be updated"
+			invalid_message(@to_update, "updated")
+			#:event_id => Hash.new
+			redirect_to edit_event_path( :event_id => @to_update[:event_id])
+		end
+	end
+
+	def invalid_message(inv_event, str)
+		if !inv_event.errors[:end_date].blank?
+			flash[:notice]="Your event, " + inv_event[:title] + ", could not be "+ str + " " + inv_event.errors[:end_date].first
+		elsif !inv_event.errors[:end_time].blank?
+			flash[:notice]="Your event, " + inv_event[:title] + ", could not be "+ str + " " + inv_event.errors[:end_time].first
 		end
 	end
 

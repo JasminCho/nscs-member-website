@@ -1,7 +1,21 @@
-<h1> HEY ADMIN! INSERT YOUR ANNOUNCEMENT HERE! </h1>
+<%= stylesheet_link_tag "newsfeeds" %>
 
-    <%= form_for(@newsfeeds) do |n| %>
-      <%= n.label :Enter_News_Here %>
-      <%= n.text_field :news %> <!-- :news here is the name of the column name in @newsfeed. This is what require will get in controller -->
-      <%= n.submit "POST"%>
-    <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 newsfeed">
+      <h1 class="title-text">Create New Announcement</h1>
+      <p>
+        Enter the content of a new announcement below!
+      </p>
+
+      <%= form_for(@newsfeeds) do |n| %>
+        <%= n.label :Enter_News_Here %>
+        <div class="form-group">
+          <%= n.text_area :news, class:"form-control" %>
+          <!-- :news here is the name of the column name in @newsfeed. This is what require will get in controller -->
+        </div>
+        <%= n.submit "Post New Announcement", class:"btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

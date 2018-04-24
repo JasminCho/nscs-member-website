@@ -3,16 +3,19 @@
   <% end %>
   
 <tr>
-	<td>"Title of event" <%=@event["summary"]%></td><br>
-	<td>"Created at"<%=@event["created"]%></td><br>
-	<td>"Last updated at" <%=@event["updated"]%></td><br>
-	<td>"Start datetime" <%=@event["start"]["dateTime"]%></td><br>
-	<td>"End datetime" <%=@event["end"]["dateTime"]%></td><br>
-	<td>"Location" <%=@event["location"]%></td><br>
-	<td>"Description" <%=@event["description"]%></td><br>
-	<td>"Creator" <%=@event["creator"]["email"]%></td><br>
-	<%if current_member[:pace]%>
-		<%=link_to "Edit Event", edit_event_path(:event_id => @event["id"])%><br>
-		<%=link_to "Delete Event", delete_event_path(:event_id => @event["id"]), method: :post%><br>
+	<td>"Title of event" <%=@event["title"]%></td><br>
+	<td>"Created at"<%=@event["created_at"]%></td><br>
+	<td>"Last updated at" <%=@event["updated_at"]%></td><br>
+	<td>"Start Date:" <%=@event["start_time"].strftime("%A %m/%d/%Y at %I:%M%p ") %></td><br>
+	<td>"End Date:" <%=@event["end_time"].strftime("%A %m/%d/%Y at %I:%M%p ")%></td><br>
+	<td>"Location:" <%=@event["location"]%></td><br>
+	<td>"Description:" <%=@event["description"]%></td><br>
+		<td>"Creator Name:" <%=@event["creator_email"]%></td><br>
+	<td>"Creator Email:" <%=@event["creator_email"]%></td><br>
+	<%if !current_member.nil?%>
+		<%if current_member[:pace]%>
+		<%=link_to "Edit Event", edit_event_path(:event_id => @event["event_id"])%><br>
+		<%=link_to "Delete Event", delete_event_path(:event_id => @event["event_id"]), method: :post%><br>
+		<%end%>
 	<%end%>
 </tr>

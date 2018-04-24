@@ -19,6 +19,10 @@ gem 'aws-sdk', '~> 3'
 gem 'aws-sdk-v1'
 gem 'materialize-sass'
 gem 'bootstrap-datepicker-rails'
+gem 'date_validator'
+gem 'recursive-open-struct'
+gem 'mocha'
+gem 'font-awesome-rails'
 
 # for authentication
 gem 'omniauth-google-oauth2'

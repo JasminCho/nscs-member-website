@@ -1,56 +1,115 @@
-<html>
-  <head>
-    <title>TAMU NSCS Home</title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag :application, :home, media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<%= stylesheet_link_tag "about" %>
 
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1>About Us</h1>
-          <h3>Who are we?</h3>
-          <p>
-            The National Society of Collegiate Scholars is a honor organization
-            that recognizes and elevates high-achieving college students.
-            NSCS provides career and graduate school connections, leadership and
-            service opportunities and gives out more than $1 million each year in
-            scholarships, awards and chapter funds. Our members are committed to
-            scholarship, leadership and service, and therefore, they are impacting
-            our campus and local community every day. NSCS was founded in 1994 on
-            the campus of The George Washington University in Washington, D.C.
-            NSCS is a member of the Association of College Honor Societies and
-            is a recognized organization at over 330 campuses across the country,
-            including Texas A&M
-          </p>
-          <h3>As a Member</h3>
-          <p>
-            As a member of the Texas A&M chapter of NSCS, you will be part of a
-            prestigious community of high-achieving students who exemplify scholarship,
-            leadership and commitment. NSCS members are leaders on their campus
-            in many, many ways. Taking the lead on academic integrity is a core
-            pillar of NSCS. Each year during the second week of February, members
-            nationwide host Integrity Week. Being one of Texas A&M’s core values,
-            NSCS will also be hosting an additional Integrity week in the Fall.
-            Access to NSCS exclusive awards and programs are available to members,
-            such as Semester at Sea, International Scholar Laureate Program,
-            Absolute Internship, Make School, Future Docs Abroad and Hult
-            International Business School. NSCS members give back to their
-            community in various ways. In 2017, NSCS adopted Feeding America to
-            support our scholars across the U.S. and Puerto Rico impacted by the
-            devastation of natural disasters. Recognizing the importance of mental
-            health among college students, NSCS has partnered with Active Minds
-            as its national philanthropy to help educate and break the stigma of
-            stress, anxiety, depression, etc. NSCS chapters partner across the
-            nation each year with local schools for the Planning to Achieve Collegiate
-            Excellence Program (PACE). At Texas A&M, we also assist with Magnified
-            Nursing Home, where students can establish lasting relationships with
-            the community.
-          </p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 about-text">
+      <h1 class="title-text">About Us</h1>
+      <h2 class="subheader-text">Who are we?</h2>
+      <p>
+        The National Society of Collegiate Scholars is a honor organization
+        that recognizes and elevates high-achieving college students.
+        NSCS provides career and graduate school connections, leadership and
+        service opportunities and gives out more than $1 million each year in
+        scholarships, awards and chapter funds. Our members are committed to
+        scholarship, leadership and service, and therefore, they are impacting
+        our campus and local community every day. NSCS was founded in 1994 on
+        the campus of The George Washington University in Washington, D.C.
+        NSCS is a member of the Association of College Honor Societies and
+        is a recognized organization at over 330 campuses across the country,
+        including Texas A&M
+      </p>
+    </div>
+  </div>
+  <!-- Four Pillars -->
+  <div class="row">
+    <div class="col-lg-12 about-text">
+      <h2 class="subheader-text">Four Pillars of NSCS</h2>
+      <div class="col-sm-3">
+        <div class="card">
+          <i class="fa fa-heart event-icon"></i>
+          <div class="card-body">
+            <h2 class="card-title">Service</h2>
+            <p class="card-text">
+              Service is one of the pillars of NSCS. Every
+              month, we have one major service event along with many other small
+              events. Some of these events include: bingo at Magnified Nursing
+              Home, Adopt-a-Street, Big Event, and much more!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card">
+          <i class="fa fa-users event-icon"></i>
+          <div class="card-body">
+            <h2 class="card-title">Social</h2>
+            <p class="card-text">
+              In NSCS we strive to build strong leaders who
+              are not only scholars, but also active members in their communities.
+              Our social events allow members to meet fellow members and network
+              outside of our society.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card">
+          <i class="fa fa-book event-icon"></i>
+          <div class="card-body">
+            <h2 class="card-title">Study Hours</h2>
+            <p class="card-text">
+              Scholarship, another NSCS pillar, is a top priority for the Texas
+              A&M chapter of NSCS. An officer hosts study hours in a library on
+              campus twice a month and members are encouraged to come and study.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card">
+          <i class="fa fa-gift event-icon"></i>
+          <div class="card-body">
+            <h2 class="card-title">Fundraising</h2>
+            <p class="card-text">
+              Each month, NSCS hosts fundraising events, such as profit shares.
+              These events allow us to provide exciting social and service
+              opportunities for our members.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </body>
-</html>
+  </div>
+  <!-- End of Four Pillars -->
+
+  <div class="row">
+    <div class="col-lg-12 about-text">
+      <h2 class="subheader-text">As a Member</h2>
+      <p>
+        As a member of the Texas A&M chapter of NSCS, you will be part of a
+        prestigious community of high-achieving students who exemplify scholarship,
+        leadership and commitment. NSCS members are leaders on their campus
+        in many, many ways. Taking the lead on academic integrity is a core
+        pillar of NSCS. Each year during the second week of February, members
+        nationwide host Integrity Week. Being one of Texas A&M’s core values,
+        NSCS will also be hosting an additional Integrity week in the Fall.
+        <br/><br/>
+        Access to NSCS exclusive awards and programs are available to members,
+        such as Semester at Sea, International Scholar Laureate Program,
+        Absolute Internship, Make School, Future Docs Abroad and Hult
+        International Business School. NSCS members give back to their
+        community in various ways. In 2017, NSCS adopted Feeding America to
+        support our scholars across the U.S. and Puerto Rico impacted by the
+        devastation of natural disasters.
+        <br/><br/>
+        Recognizing the importance of mental health among college students,
+        NSCS has partnered with Active Minds as its national philanthropy to
+        help educate and break the stigma of stress, anxiety, depression, etc.
+        NSCS chapters partner across the nation each year with local schools
+        for the Planning to Achieve Collegiate Excellence Program (PACE). At
+        Texas A&M, we also assist with Magnified Nursing Home, where students
+        can establish lasting relationships with the community.
+      </p>
+    </div>
+  </div>
+</div>
