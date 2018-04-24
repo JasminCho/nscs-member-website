@@ -293,6 +293,11 @@
         1,
         null,
         1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null,
         null
       ],
@@ -302,7 +307,7 @@
         1,
         null,
         1,
-        0,
+        1,
         null,
         null,
         1,
@@ -790,6 +795,10 @@
         1,
         null
       ],
+      "/Users/tripham/Desktop/Code/CSCE431/nscs-member-website/app/models/newsfeed.rb": [
+        1,
+        null
+      ],
       "/Users/tripham/Desktop/Code/CSCE431/nscs-member-website/app/models/meeting.rb": [
         1,
         null
@@ -799,6 +808,6 @@
         null
       ]
     },
-    "timestamp": 1524601042
+    "timestamp": 1524601208
   }
 }
