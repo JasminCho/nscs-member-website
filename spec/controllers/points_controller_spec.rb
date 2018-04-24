@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PointsController, type: :controller do
   describe 'New point' do 
-    it 'receieves non-nil arguments' do 
+    it 'create new empty point model' do 
         post :new
         expect(assigns(@point)).not_to be_nil
     end

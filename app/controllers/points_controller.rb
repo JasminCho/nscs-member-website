@@ -18,7 +18,7 @@ class PointsController < ApplicationController
       redirect_to(points_index_path(:email => points_params[:email]))
     else
       render 'new'
-    end
+  end
   end
 
   def destroy
