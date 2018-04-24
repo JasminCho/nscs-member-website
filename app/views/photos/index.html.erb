@@ -1,7 +1,7 @@
 <h1>Gallery</h1>
-<div>
+<div class="gallery-container">
 	<% @photos.each do |photo| %>
-		<div style="display:inline-block">
+		<div class="gallery-photo" style="display:inline-block">
 			<a href= "<%= photo %>" >
 				<%= image_tag photo, size: "300x300", alt: "img"%>
 			</a>
