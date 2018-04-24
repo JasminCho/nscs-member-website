@@ -22,6 +22,8 @@ gem 'bootstrap-datepicker-rails'
 gem 'date_validator'
 gem 'recursive-open-struct'
 gem 'mocha'
+gem 'font-awesome-rails'
+
 # for authentication
 gem 'omniauth-google-oauth2'
 # for calendar
