@@ -2,17 +2,18 @@
 class CalendarsController < ApplicationController
 	attr_accessor :calendar
 	helper_method :get_events
-	before_action :logged_in_user?, :except => [:list_events, :show_event]
+	before_action :logged_in_user?, :except => [:list_events, :show_event, :current_user]
 	
 	#DRY method of calling current_user.
 	#If nill redirect to login and instantiate calendar.
 	def current_user
 		if(super.nil?)
-			return
+			flash[:warning] = "Please log in"
+			redirect_to root_path
 		end
 		@calendar = Calendar.new(@current_user)
 		@calendar.save!
-		puts @calendar
+
 		#Evaluate before leaving so expects the same as current_user parent!
 		@current_user
 	end

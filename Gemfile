@@ -20,6 +20,8 @@ gem 'aws-sdk-v1'
 gem 'materialize-sass'
 gem 'bootstrap-datepicker-rails'
 gem 'date_validator'
+gem 'recursive-open-struct'
+gem 'mocha'
 # for authentication
 gem 'omniauth-google-oauth2'
 # for calendar
