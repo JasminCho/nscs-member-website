@@ -41,3 +41,20 @@
   height:50px;
   font-size:14pt;
 }
+
+.gallery-container{
+   text-align: center;
+   margin-bottom: 50px;
+ }
+
+ .gallery-photo{
+   broder:1px solid greenyellow;
+   margin-top:50px;
+   margin-left:15px;
+   margin-right:15px;
+   padding:10px;
+ }
+
+ .gallery-photo:hover{
+   border: 1px solid yellow;
+ }
