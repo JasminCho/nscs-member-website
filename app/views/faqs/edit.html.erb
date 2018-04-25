@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "faq" %>
-
+<%= render 'shared/error_messages' %>
 <div class="container">
   <div class="row">
     <div class="col-lg-12 faq-btns">
@@ -19,7 +19,8 @@
         <div class="form-group">
           <%= faq.text_area :answer, class:"form-control" %>
         </div>
-
+        
+        <%= link_to "Cancel", faqs_path ,class:"btn btn-primary" %>
         <%= faq.submit "Save changes", class:"btn btn-primary" %>
       <% end %>
     </div>

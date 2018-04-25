@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "newsfeeds" %>
-
+<%= render 'shared/error_messages' %>
 <div class="container">
   <div class="row">
     <div class="col-lg-12 newsfeed">
@@ -14,7 +14,8 @@
         <div class="form-group">
           <%= news.text_area :news, class:"form-control" %>
         </div>
-
+        
+        <%= link_to "Cancel", newsfeeds_index_path ,class:"btn btn-primary" %>
         <%= news.submit "Save changes", class:"btn btn-primary" %>
       <% end %>
     </div>
