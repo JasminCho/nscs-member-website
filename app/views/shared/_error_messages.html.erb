@@ -1,0 +1,44 @@
+<% if @newsfeeds %>
+    <% if @newsfeeds.errors.any? %>
+      <div id="error_explanation">
+        <div class="alert alert-danger">
+          The form contains <%= pluralize(@newsfeeds.errors.count, "error") %>.
+            <ul>
+            <% @newsfeeds.errors.full_messages.each do |msg| %>
+              <li><font color="red"><%= msg %></font></li>
+            <% end %>
+            </ul>
+        </div>
+      </div>
+    <% end %>
+<% end %>
+
+<% if @faqs %>
+    <% if @faqs.errors.any? %>
+      <div id="error_explanation">
+        <div class="alert alert-danger">
+          The form contains <%= pluralize(@faqs.errors.count, "error") %>.
+            <ul>
+            <% @faqs.errors.full_messages.each do |msg| %>
+              <li><font color="red"><%= msg.upcase %></font></li>
+            <% end %>
+            </ul>
+        </div>
+      </div>
+    <% end %>
+<% end %>
+
+<% if @officers %>
+    <% if @officers.errors.any? %>
+      <div id="error_explanation">
+        <div class="alert alert-danger">
+          The form contains <%= pluralize(@officers.errors.count, "error") %>.
+            <ul>
+            <% @officers.errors.full_messages.each do |msg| %>
+              <li><font color="red"><%= msg.upcase %></font></li>
+            <% end %>
+            </ul>
+        </div>
+      </div>
+    <% end %>
+<% end %>
