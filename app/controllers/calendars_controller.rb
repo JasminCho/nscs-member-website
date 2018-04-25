@@ -9,7 +9,8 @@ class CalendarsController < ApplicationController
 	def current_user
 		if(super.nil?)
 			flash[:warning] = "Please log in"
-			redirect_to root_path
+	
+			return
 		end
 		@calendar = Calendar.new(@current_user)
 		@calendar.save!
