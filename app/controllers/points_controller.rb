@@ -3,14 +3,14 @@ class PointsController < ApplicationController
   before_action :admin_user?, only: [:new, :destroy]
   
   def index
+    session[:member_email] = params[:email]
+    @member_email = session[:member_email]
     if (current_member.email == params[:email]) || (current_admin)
-      session[:member_email] = params[:email]
-      @member_email = session[:member_email]
       @point = Point.where(email: @member_email)
       @name_of_member = Member.find_by(email: @member_email).name
     else
       flash[:danger] = "You cannot view another member's points"
-      redirect_to(points_index_path(:email => current_member.email))
+      redirect_to(points_index_path(:email => @member_email))
     end
   end
 
