@@ -98,9 +98,9 @@ fake_faqs.each do |faqs|
 end
 
 fake_newsfeed = [
-  {event: 'NSCS official website is now deployed in Heroku'},
-  {event: 'NSCS developers say that website is well on its way'},
-  {event: 'Sen elected as NSCS\'s new president'}
+  {news: 'NSCS official website is now deployed in Heroku'},
+  {news: 'NSCS developers say that website is well on its way'},
+  {news: 'Sen elected as NSCS\'s new president'}
 ]
 
 
