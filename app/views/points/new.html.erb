@@ -23,7 +23,7 @@
         <div class="form-group">
           <%= f.number_field :point, class:"form-control" %>
         </div>
-        <%= link_to "Cancel", points_index_path(email: @member_email) %>
+        <%= link_to "Cancel", points_index_path(email: @member_email), class:"btn btn-primary" %>
         <%= f.button :submit, class:"btn btn-primary" %>
       <% end %>
     </div>
