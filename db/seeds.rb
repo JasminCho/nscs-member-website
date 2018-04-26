@@ -10,7 +10,8 @@ fake_members = [
     { email: 'jtiu.edu@gmail.com', name: 'Julian' , pace: true },
     { email: 'akashkundu92@gmail.com', name: 'Akash' , pace: true },
     { email: 'fatezero.sen@gmail.com', name: 'Sen' , pace: true },
-    { email: 'fredericcollinss@gmail.com', name: 'Tri' , pace: true },
+    { email: 'fredericcollinss@gmail.com', name: 'Tri' , pace: false },
+    { email: 'fredericcollinsss@gmail.com', name: 'Tri2' , pace: true },
     { email: 'ggregar@gmail.com', name: 'Greg' , pace: true }
 ]
 

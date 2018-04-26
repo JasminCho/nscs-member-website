@@ -11,7 +11,6 @@ class MembersController < ApplicationController
   end
 
   def create
-    debugger
     @member = Member.new(members_params)
     if @member.save
       redirect_to(members_index_path)
@@ -30,7 +29,7 @@ class MembersController < ApplicationController
     if @member.update(members_params)
       redirect_to members_url(:id => @member.id)
     else 
-      flash[:invalid_member] = 'Invalid member attributes. Try again!'
+      #flash[:invalid_member] = 'Invalid member attributes. Try again!'
       render 'edit'
     end
   end
