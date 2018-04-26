@@ -10,8 +10,10 @@ fake_members = [
     { email: 'jtiu.edu@gmail.com', name: 'Julian' , pace: true },
     { email: 'akashkundu92@gmail.com', name: 'Akash' , pace: true },
     { email: 'fatezero.sen@gmail.com', name: 'Sen' , pace: true },
-    { email: 'fredericcollinss@gmail.com', name: 'Tri' , pace: true },
-    { email: 'ggregar@gmail.com', name: 'Greg' , pace: true }
+    { email: 'fredericcollinss@gmail.com', name: 'Tri' , pace: false },
+    { email: 'fredericcollinsss@gmail.com', name: 'Tri2' , pace: true },
+    { email: 'ggregar@gmail.com', name: 'Greg' , pace: true },
+    { email: 'jtiu.main@gmail.com', name: 'Julian2' , pace: false }
 ]
 
 fake_members.each do |member|
@@ -95,15 +97,13 @@ fake_faqs.each do |faqs|
   Faq.create(faqs)
 end
 
-=begin
 fake_newsfeed = [
-  {event: 'NSCS official website is now deployed in Heroku'},
-  {event: 'NSCS developers say that website is well on its way'},
-  {event: 'Sen elected as NSCS\'s new president'}
+  {news: 'NSCS official website is now deployed in Heroku'},
+  {news: 'NSCS developers say that website is well on its way'},
+  {news: 'Sen elected as NSCS\'s new president'}
 ]
 
 
 fake_newsfeed.each do |event|
   Newsfeed.create(event)
 end
-=end

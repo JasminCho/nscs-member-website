@@ -57,7 +57,6 @@ class OfficersController < ApplicationController
           flash[:success] = "Officer updated"
           redirect_to(officers_path)
         else 
-            flash[:success] = "Failed to updated"
             render 'edit'
         end
     end

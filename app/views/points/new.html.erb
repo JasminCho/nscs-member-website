@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "points" %>
-
+<%= render 'shared/error_messages' %>
 <div class="container">
   <div class="row">
     <div class="col-lg-12 points">
@@ -11,7 +11,7 @@
       <%= form_for(@point) do |f| %>
         <%= f.label :email, 'Member Email'%>
         <div class="form-group">
-          <%= f.text_field :email, :value => params[:email], :readonly => true, class:"form-control" %>
+          <%= f.text_field :email, :value => @member_email, :readonly => true, class:"form-control" %>
         </div>
 
         <%= f.label :event_name, 'Event name'%>
@@ -23,7 +23,7 @@
         <div class="form-group">
           <%= f.number_field :point, class:"form-control" %>
         </div>
-
+        <%= link_to "Cancel", points_index_path(email: @member_email), class:"btn btn-primary" %>
         <%= f.button :submit, class:"btn btn-primary" %>
       <% end %>
     </div>
