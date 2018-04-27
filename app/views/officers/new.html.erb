@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "officers" %>
-
+<%= render 'shared/error_messages' %>
 <div class="container">
   <div class="row">
     <div class="col-lg-12 officers-text">
@@ -34,11 +34,11 @@
           <%= n.text_field :year, class:"form-control" %>
         </div>
 
-        <%= n.label :Image %>
+        <%= n.label :Officer_Picture %>
         <div class="form-group">
           <%= n.file_field :image_name, required: true, multiple: false, accept:'image/*', class:"form-control" %>
         </div>
-
+        <%= link_to "Cancel", officers_path ,class:"btn btn-primary" %>
         <%= n.submit "Submit", class:"btn btn-primary" %>
       <% end %>
     </div>

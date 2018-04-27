@@ -1,0 +1,74 @@
+<% if @newsfeeds %>
+    <% if @newsfeeds.errors.any? %>
+      <div id="error_explanation">
+        <div class="alert alert-danger">
+          The form contains <%= pluralize(@newsfeeds.errors.count, "error") %>.
+            <ul>
+            <% @newsfeeds.errors.full_messages.each do |msg| %>
+              <li><font color="red"><%= msg %></font></li>
+            <% end %>
+            </ul>
+        </div>
+      </div>
+    <% end %>
+<% end %>
+
+<% if @faqs %>
+    <% if @faqs.errors.any? %>
+      <div id="error_explanation">
+        <div class="alert alert-danger">
+          The form contains <%= pluralize(@faqs.errors.count, "error") %>.
+            <ul>
+            <% @faqs.errors.full_messages.each do |msg| %>
+              <li><font color="red"><%= msg.upcase %></font></li>
+            <% end %>
+            </ul>
+        </div>
+      </div>
+    <% end %>
+<% end %>
+
+<% if @officers %>
+    <% if @officers.errors.any? %>
+      <div id="error_explanation">
+        <div class="alert alert-danger">
+          The form contains <%= pluralize(@officers.errors.count, "error") %>.
+            <ul>
+            <% @officers.errors.full_messages.each do |msg| %>
+              <li><font color="red"><%= msg.upcase %></font></li>
+            <% end %>
+            </ul>
+        </div>
+      </div>
+    <% end %>
+<% end %>
+
+<% if @member %>
+    <% if @member.errors.any? %>
+      <div id="error_explanation">
+        <div class="alert alert-danger">
+          The form contains <%= pluralize(@member.errors.count, "error") %>.
+            <ul>
+            <% @member.errors.full_messages.each do |msg| %>
+              <li><font color="red"><%= msg %></font></li>
+            <% end %>
+            </ul>
+        </div>
+      </div>
+    <% end %>
+<% end %>
+
+<% if @point %>
+    <% if @point.errors.any? %>
+      <div id="error_explanation">
+        <div class="alert alert-danger">
+          The form contains <%= pluralize(@point.errors.count, "error") %>.
+            <ul>
+            <% @point.errors.full_messages.each do |msg| %>
+              <li><font color="red"><%= msg %></font></li>
+            <% end %>
+            </ul>
+        </div>
+      </div>
+    <% end %>
+<% end %>

@@ -3,7 +3,11 @@ class CalendarsController < ApplicationController
 	attr_accessor :calendar
 	helper_method :get_events
 	before_action :logged_in_user?, :except => [:list_events, :show_event, :current_user]
-	
+	#Check if the before an action method, will not call logged in user on current_user,
+	#However instead call just current_user.
+
+
+
 	#DRY method of calling current_user.
 	#If nill redirect to login and instantiate calendar.
 	def current_user
@@ -19,6 +23,9 @@ class CalendarsController < ApplicationController
 		@current_user
 	end
 	
+
+	#Problem. Allow non members to view the calendar events, but at the same time allow the members to edit.
+	#How was it before?
 	def list_events
 		if(!@calendar.nil?)
 			@events = synchronize
