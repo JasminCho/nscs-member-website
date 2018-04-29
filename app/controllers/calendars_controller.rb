@@ -2,22 +2,29 @@
 class CalendarsController < ApplicationController
 	attr_accessor :calendar
 	helper_method :get_events
-	before_action :logged_in_user?, :except => [:list_events, :show_event, :current_user]
+	before_action :logged_in_user?, :except => [:list_events, :show_event]
+	#before_action :logged
 	#Check if the before an action method, will not call logged in user on current_user,
 	#However instead call just current_user.
-
 
 
 	#DRY method of calling current_user.
 	#If nill redirect to login and instantiate calendar.
 	def current_user
-		if(super.nil?)
-			flash[:warning] = "Please log in"
-	
-			return
-		end
+		if(super.nil?) ;return nil ;end
+
+		#Stupid way of doing it, but we need to call each time for a new APIClient object.
+		#Since object cannot persist.
+
 		@calendar = Calendar.new(@current_user)
-		@calendar.save!
+		#No need but if need.
+		#session[:calendar_id] = @calendar.calendar_id
+		#Save once.
+
+		if (Calendar.find_by(calendar_id: @calendar.calendar_id)).nil?
+				@calendar.save!
+		end
+		
 
 		#Evaluate before leaving so expects the same as current_user parent!
 		@current_user
@@ -27,8 +34,10 @@ class CalendarsController < ApplicationController
 	#Problem. Allow non members to view the calendar events, but at the same time allow the members to edit.
 	#How was it before?
 	def list_events
+	
 		if(!@calendar.nil?)
 			@events = synchronize
+			@events = Event.all
 		else
 			@events = Event.all
 		end
@@ -58,7 +67,14 @@ class CalendarsController < ApplicationController
 	def create_event
 
 		#Grab form paramaters.
+		if((params[:event][:start_date].to_date > (DateTime.now.to_date + 5.year)) || 
+			(params[:event][:start_date].to_date < (DateTime.now.to_date - 5.year)))
+			flash[:notice]="Your event, cannot be more than five years in the future or past"
+			redirect_to new_events_path
+		end
+
 		@event = @calendar.events.new(new_event_params)
+		
 		#Save the form parameters.
 		if @event.save
 			#Receive the google extra id parameters.
@@ -95,6 +111,12 @@ class CalendarsController < ApplicationController
 	def update_event	
 		@to_update = Event.find_by_event_id(params[:event][:event_id])
 		# First update it in the database.
+		if((params[:event][:start_date].to_date > (DateTime.now.to_date + 5.year)) || 
+			(params[:event][:start_date].to_date < (DateTime.now.to_date - 5.year)))
+			flash[:notice]="Your event, cannot be more than five years in the future or past"
+			redirect_to edit_event_path( :event_id => @to_update[:event_id])
+		end
+
 		if @to_update.update(update_event_params)
 			#IF updated in database, updated in cloud.
 			@calendar.update_event(@to_update)

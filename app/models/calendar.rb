@@ -87,6 +87,7 @@ class Calendar<ApplicationRecord
 		# single_events: true,
 		# order_by: 'startTime',
 		# time_min: Time.now.iso8601))
+		@client.authorization.refresh!
 		calendars = JSON.parse(response.body)
 
 
@@ -107,7 +108,7 @@ class Calendar<ApplicationRecord
 			 items:[ id: ENV['NSCS_Calendar_ID']]
 			 }),
 			 headers: {'Content-Type' => 'application/json'})
-		
+		@client.authorization.refresh!
 		events = JSON.parse(response.body)
 		
 		#TODO iteratife over events.
@@ -154,7 +155,6 @@ class Calendar<ApplicationRecord
 		
 		#Todo Method For checking dropped.
 		response = JSON.parse(response.body)
-		puts "It got created?"
 		
 	
 		event[:event_id]= response["id"]
@@ -163,7 +163,7 @@ class Calendar<ApplicationRecord
 		event[:start_time]= DateTime.parse(response["start"]["dateTime"]).strftime('%I:%M:%S %p')
 		event[:end_time]= DateTime.parse(response["end"]["dateTime"]).strftime('%I:%M:%S %p')
 	
-		
+		@client.authorization.refresh!
 	end
 
 	def update_event(event)
@@ -200,15 +200,16 @@ class Calendar<ApplicationRecord
 		event[:creator_email]= response["creator"]["email"]
 		event[:start_time]= DateTime.parse(response["start"]["dateTime"]).strftime('%I:%M:%S %p')
 		event[:end_time]= DateTime.parse(response["end"]["dateTime"]).strftime('%I:%M:%S %p')
-	
+		@client.authorization.refresh!
 	end
 
 	def delete_event(event_id)
 		response = @client.execute(api_method: @service.events.delete,
-			parameters: {'calendarId' => ENV['NSCS_Calendar_ID'], 'eventId' => event_id})		
+			parameters: {'calendarId' => ENV['NSCS_Calendar_ID'], 'eventId' => event_id})	
+			@client.authorization.refresh!
 	end
 		
-	def timeparse(date,time)
+	def timeparse(date,time)	
 
 		dt = DateTime.new(date.year, date.month, date.day, time.hour, time.min, time.sec, Time.now.zone)
 	
