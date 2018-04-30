@@ -87,6 +87,7 @@ class Calendar<ApplicationRecord
 		# single_events: true,
 		# order_by: 'startTime',
 		# time_min: Time.now.iso8601))
+		@client.authorization.refresh!
 		calendars = JSON.parse(response.body)
 
 
@@ -107,7 +108,7 @@ class Calendar<ApplicationRecord
 			 items:[ id: ENV['NSCS_Calendar_ID']]
 			 }),
 			 headers: {'Content-Type' => 'application/json'})
-		
+		@client.authorization.refresh!
 		events = JSON.parse(response.body)
 		
 		#TODO iteratife over events.
@@ -154,16 +155,18 @@ class Calendar<ApplicationRecord
 		
 		#Todo Method For checking dropped.
 		response = JSON.parse(response.body)
-		puts "It got created?"
 		
 	
 		event[:event_id]= response["id"]
 		event[:creator_name]= response["creator"]["displayName"]
 		event[:creator_email]= response["creator"]["email"]
-		event[:start_time]= DateTime.parse(response["start"]["dateTime"]).strftime('%I:%M:%S %p')
-		event[:end_time]= DateTime.parse(response["end"]["dateTime"]).strftime('%I:%M:%S %p')
-	
-		
+		#These make the date look less brittle.
+		#event[:start_time]= DateTime.parse(response["start"]["dateTime"]).strftime('%I:%M:%S %p')
+		#event[:end_time]= DateTime.parse(response["end"]["dateTime"]).strftime('%I:%M:%S %p')
+		#However time requires date as well in Ruby but SQL Does not persists it.
+		event[:start_time]= Time.parse(response["start"]["dateTime"])
+		event[:end_time]= Time.parse(response["end"]["dateTime"])	
+		@client.authorization.refresh!
 	end
 
 	def update_event(event)
@@ -198,17 +201,24 @@ class Calendar<ApplicationRecord
 		event[:event_id]= response["id"]
 		event[:creator_name]= response["creator"]["displayName"]
 		event[:creator_email]= response["creator"]["email"]
-		event[:start_time]= DateTime.parse(response["start"]["dateTime"]).strftime('%I:%M:%S %p')
-		event[:end_time]= DateTime.parse(response["end"]["dateTime"]).strftime('%I:%M:%S %p')
-	
+		#These make the date look less brittle.
+		#event[:start_time]= DateTime.parse(response["start"]["dateTime"]).strftime('%I:%M:%S %p')
+		#event[:end_time]= DateTime.parse(response["end"]["dateTime"]).strftime('%I:%M:%S %p')
+		#However time requires date as well in Ruby but SQL Does not persists it.
+		event[:start_time]= Time.parse(response["start"]["dateTime"])
+		event[:end_time]= Time.parse(response["end"]["dateTime"])		
+		@client.authorization.refresh!
+
+
 	end
 
 	def delete_event(event_id)
 		response = @client.execute(api_method: @service.events.delete,
-			parameters: {'calendarId' => ENV['NSCS_Calendar_ID'], 'eventId' => event_id})		
+			parameters: {'calendarId' => ENV['NSCS_Calendar_ID'], 'eventId' => event_id})	
+			@client.authorization.refresh!
 	end
 		
-	def timeparse(date,time)
+	def timeparse(date,time)	
 
 		dt = DateTime.new(date.year, date.month, date.day, time.hour, time.min, time.sec, Time.now.zone)
 	
@@ -222,8 +232,8 @@ class Calendar<ApplicationRecord
 		event[:event_id]= response["id"]
 		event[:creator_name]= response["creator"]["displayName"]
 		event[:creator_email]= response["creator"]["email"]
-		event[:start_time]= DateTime.parse(response["start"]["dateTime"]).strftime('%I:%M:%S %p')
-		event[:end_time]= DateTime.parse(response["end"]["dateTime"]).strftime('%I:%M:%S %p')
+		event[:start_time]= Time.parse(response["start"]["dateTime"])
+		event[:end_time]= Time.parse(response["end"]["dateTime"])		
 		event[:start_date] =  DateTime.parse(response["start"]["dateTime"]).to_s.to_date
 		event[:end_date]= DateTime.parse(response["end"]["dateTime"]).to_s.to_date
 
