@@ -14,7 +14,7 @@
 	<td>"Description:" <%=@event["description"]%></td><br>
 		<td>"Creator Name:" <%=@event["creator_name"]%></td><br>
 	<td>"Creator Email:" <%=@event["creator_email"]%></td><br>
-	<%if :logged_in_admin?%>
+	<%if !current_admin.nil?%>
 		<%=link_to "Edit Event", edit_event_path(:event_id => @event["event_id"])%><br>
 		<%=link_to "Delete Event", delete_event_path(:event_id => @event["event_id"]), method: :post%><br>
 	<%end%>
