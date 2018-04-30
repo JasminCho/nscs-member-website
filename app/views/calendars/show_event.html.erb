@@ -6,11 +6,13 @@
 	<td>"Title of event" <%=@event["title"]%></td><br>
 	<td>"Created at"<%=@event["created_at"]%></td><br>
 	<td>"Last updated at" <%=@event["updated_at"]%></td><br>
-	<td>"Start Date:" <%=@event["start_time"].strftime("%A %m/%d/%Y at %I:%M%p ") %></td><br>
-	<td>"End Date:" <%=@event["end_time"].strftime("%A %m/%d/%Y at %I:%M%p ")%></td><br>
+	<td>"Start Date:" <%=@event["start_date"].strftime(" %A %m/%d/%Y ") %></td><br>
+	<td>"Start Time:" <%=@event["start_time"].strftime(" %I:%M%p ") %></td><br>
+	<td>"End Date:" <%=@event["end_date"].strftime("%A %m/%d/%Y")%></td><br>
+	<td>"End Time:" <%=@event["end_time"].strftime(" %I:%M%p ")%></td><br>
 	<td>"Location:" <%=@event["location"]%></td><br>
 	<td>"Description:" <%=@event["description"]%></td><br>
-		<td>"Creator Name:" <%=@event["creator_email"]%></td><br>
+		<td>"Creator Name:" <%=@event["creator_name"]%></td><br>
 	<td>"Creator Email:" <%=@event["creator_email"]%></td><br>
 	<%if !current_member.nil?%>
 		<%if current_member[:pace]%>

@@ -22,6 +22,10 @@ class Event < ApplicationRecord
 				errors.add(:end_time, "as ending time must be later than starting time.")
 			end
 		end
+
+		if(end_date > (start_date + 2.days))
+			errors.add(:end_time, "as event cannot last longer than two days.")
+		end
 	end
 
 #	validates :end_time, prescence:true, date: {if }

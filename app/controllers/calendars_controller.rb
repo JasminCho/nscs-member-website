@@ -66,15 +66,18 @@ class CalendarsController < ApplicationController
 
 	def create_event
 
-		#Grab form paramaters.
-		if((params[:event][:start_date].to_date > (DateTime.now.to_date + 5.year)) || 
-			(params[:event][:start_date].to_date < (DateTime.now.to_date - 5.year)))
-			flash[:notice]="Your event, cannot be more than five years in the future or past"
-			redirect_to new_events_path
-		end
 
 		@event = @calendar.events.new(new_event_params)
 		
+		
+		#Grab form paramaters to re render from @event.
+		if((params[:event][:start_date].to_date > (DateTime.now.to_date + 5.year)) || 
+			(params[:event][:start_date].to_date < (DateTime.now.to_date - 5.year)))
+			flash[:notice]="Your event, cannot be more than five years in the future or past"
+			#No save.
+			render :new_event and return
+		end
+
 		#Save the form parameters.
 		if @event.save
 			#Receive the google extra id parameters.
@@ -108,20 +111,25 @@ class CalendarsController < ApplicationController
 		redirect_to list_events_path
 	end
 
+	#You cannot update events that are 5 years older, or 5 years in the future.
 	def update_event	
 		@to_update = Event.find_by_event_id(params[:event][:event_id])
 		# First update it in the database.
 		if((params[:event][:start_date].to_date > (DateTime.now.to_date + 5.year)) || 
 			(params[:event][:start_date].to_date < (DateTime.now.to_date - 5.year)))
 			flash[:notice]="Your event, cannot be more than five years in the future or past"
-			redirect_to edit_event_path( :event_id => @to_update[:event_id])
+
+			redirect_to edit_event_path( :event_id => @to_update[:event_id]) and return
+			
 		end
 
 		if @to_update.update(update_event_params)
 			#IF updated in database, updated in cloud.
 			@calendar.update_event(@to_update)
 			#Save changes for calendar event.
+			@to_update.save!
 			@calendar.save!
+
 			flash[:notice]="Your event, " + @to_update[:title] + ", got saved!"
 			redirect_to list_events_path
 		else

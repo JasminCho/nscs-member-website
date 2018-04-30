@@ -160,9 +160,12 @@ class Calendar<ApplicationRecord
 		event[:event_id]= response["id"]
 		event[:creator_name]= response["creator"]["displayName"]
 		event[:creator_email]= response["creator"]["email"]
-		event[:start_time]= DateTime.parse(response["start"]["dateTime"]).strftime('%I:%M:%S %p')
-		event[:end_time]= DateTime.parse(response["end"]["dateTime"]).strftime('%I:%M:%S %p')
-	
+		#These make the date look less brittle.
+		#event[:start_time]= DateTime.parse(response["start"]["dateTime"]).strftime('%I:%M:%S %p')
+		#event[:end_time]= DateTime.parse(response["end"]["dateTime"]).strftime('%I:%M:%S %p')
+		#However time requires date as well in Ruby but SQL Does not persists it.
+		event[:start_time]= Time.parse(response["start"]["dateTime"])
+		event[:end_time]= Time.parse(response["end"]["dateTime"])	
 		@client.authorization.refresh!
 	end
 
@@ -198,9 +201,15 @@ class Calendar<ApplicationRecord
 		event[:event_id]= response["id"]
 		event[:creator_name]= response["creator"]["displayName"]
 		event[:creator_email]= response["creator"]["email"]
-		event[:start_time]= DateTime.parse(response["start"]["dateTime"]).strftime('%I:%M:%S %p')
-		event[:end_time]= DateTime.parse(response["end"]["dateTime"]).strftime('%I:%M:%S %p')
+		#These make the date look less brittle.
+		#event[:start_time]= DateTime.parse(response["start"]["dateTime"]).strftime('%I:%M:%S %p')
+		#event[:end_time]= DateTime.parse(response["end"]["dateTime"]).strftime('%I:%M:%S %p')
+		#However time requires date as well in Ruby but SQL Does not persists it.
+		event[:start_time]= Time.parse(response["start"]["dateTime"])
+		event[:end_time]= Time.parse(response["end"]["dateTime"])		
 		@client.authorization.refresh!
+
+
 	end
 
 	def delete_event(event_id)
@@ -223,8 +232,8 @@ class Calendar<ApplicationRecord
 		event[:event_id]= response["id"]
 		event[:creator_name]= response["creator"]["displayName"]
 		event[:creator_email]= response["creator"]["email"]
-		event[:start_time]= DateTime.parse(response["start"]["dateTime"]).strftime('%I:%M:%S %p')
-		event[:end_time]= DateTime.parse(response["end"]["dateTime"]).strftime('%I:%M:%S %p')
+		event[:start_time]= Time.parse(response["start"]["dateTime"])
+		event[:end_time]= Time.parse(response["end"]["dateTime"])		
 		event[:start_date] =  DateTime.parse(response["start"]["dateTime"]).to_s.to_date
 		event[:end_date]= DateTime.parse(response["end"]["dateTime"]).to_s.to_date
 
