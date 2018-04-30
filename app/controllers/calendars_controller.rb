@@ -3,6 +3,7 @@ class CalendarsController < ApplicationController
 	attr_accessor :calendar
 	helper_method :get_events
 	before_action :logged_in_user?, :except => [:list_events, :show_event]
+	before_action :logged_in_admin?, :only => [:new_event, :create_event, :delete_event, :update_event, :edit_event]
 	#before_action :logged
 	#Check if the before an action method, will not call logged in user on current_user,
 	#However instead call just current_user.
@@ -27,6 +28,7 @@ class CalendarsController < ApplicationController
 		
 
 		#Evaluate before leaving so expects the same as current_user parent!
+	
 		@current_user
 	end
 	
@@ -34,13 +36,14 @@ class CalendarsController < ApplicationController
 	#Problem. Allow non members to view the calendar events, but at the same time allow the members to edit.
 	#How was it before?
 	def list_events
-	
-		if(!@calendar.nil?)
+
+		if(current_user)
 			@events = synchronize
 			@events = Event.all
 		else
 			@events = Event.all
 		end
+
 	end
 
 	def synchronize

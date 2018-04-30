@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
 	  !current_user.nil?
   end
 
+  
   #This method allow us to call selectively from controllers, instead of applying to all. 
   def logged_in_user?
 	  unless logged_in?
@@ -33,4 +34,12 @@ class ApplicationController < ActionController::Base
     end
 
   end 
+
+  def logged_in_admin?
+    unless !current_admin.nil?
+      flash[:danger] = "Need to be an admin to access this page."
+      redirect_to root_path
+    end
+  end
+
 end

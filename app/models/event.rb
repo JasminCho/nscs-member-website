@@ -4,14 +4,10 @@ class Event < ApplicationRecord
 	#End date after start date.
 	validates :end_date, presence: true, date: {after_or_equal_to: :start_date}
 
-	#Limit the event to 2 days.
-	#TODO.
-	#validates :end_date, presence: true, date: {before: Proc.new {:start_date + 2.day}}
-
 	#Cannot validate limit on year since there could be events that Google has previous to such.
 	#validates :start_date, presence: true, date: {after_or_equal_to: Proc.new{Time.now - 5.year} ,
 	# before: Proc.new{Time.now + 5.year}}
-	
+	#Validation is done at application level. In controller.
 	#Check if time is after too.
 	validate :valid_time
 

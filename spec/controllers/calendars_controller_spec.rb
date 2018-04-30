@@ -55,24 +55,45 @@ RSpec.describe CalendarsController, type: :controller do
             
             controller = CalendarsController.new()
             #This is a default event. It is actually on the database.
-            get :show_event, :params => {:event_id => 'rlr6kcd9imlq02078af6dg21co'}
+            event = Event.find_by_id(1)
+            get :show_event, :params => {:event_id => event[:event_id]}
             expect(response.status).to eq(200)
             expect(response.content_type).to eq 'text/html'
         end
     end
 
-    describe 'create_calendars' do
+    describe 'Creates the calendar in logging.' do
         it 'Creates the calendar if the user is logged in, otherwise returns (200)' do
-            new_user = stub_user
-            new_user.save
+
             get :current_user, :session => {:email => 'ggregar@gmail.com'}
             #Is nil. There is nothing to do.
             expect(response.status).to eq(200)
         end
     end
 
-    describe 'create_calendars' do
-        it 'Creates the calendar if the user is logged in, othrewise redirects.' do
+    describe 'Creates a new event for the calendar.' do
+        it 'Creates a new event given proper credentials' do
+            get :current_user, :session => {:email => 'ggregar@gmail.com'}
+            event = Event.find(1)
+            new_event = Event.new
+
+            new_event[:title] = "RSPec test"
+            new_event[:description] = event[:description]
+            new_event[:start_date] = event[:start_date]
+            new_event[:end_date] = event[:end_date] 
+            new_event[:location] = event[:location] 
+            new_event[:start_time] =  Time.now
+            new_event[:end_time] = (Time.now + 1.hour)
+
+
+            post :create_event, :params => {:event => new_event}
+            expect(resposne).to redirect(new_events_path)
+        
+        end
+    end
+
+    describe 'Fails to create the calendar due to invalid loggin.' do
+        it 'Redirects to the root path.' do
             new_user = stub_user
             new_user.save
             get :current_user, :session => {:email => 'jesse@mountainmantechnologies.com'}
